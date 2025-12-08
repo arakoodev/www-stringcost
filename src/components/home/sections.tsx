@@ -18,10 +18,10 @@ export function HeroSection() {
 			<div className='container-custom flex flex-col gap-8 py-[72px] sm:py-[100px] lg:py-[128px]'>
 				<span className='font-body text-[15px] uppercase tracking-[0.3em] text-brand-text-muted font-medium'>SAP for AI Agents</span>
 				<div className='flex flex-col gap-6 max-w-3xl'>
-					<h1 className='font-display text-[42px] sm:text-[56px] lg:text-[72px] font-bold tracking-tight leading-[1.1]'>
-						StringCost AI: Think SAP<br />for AI Agents.
+					<h1 className='font-display text-[28px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold tracking-tight leading-[1.1] text-balance'>
+						StringCost AI: Think SAP for AI Agents.
 					</h1>
-					<p className='font-body text-lg leading-[1.55] text-brand-text-secondary'>A revenue-first framework that creates a <strong className='text-brand-text-primary font-semibold'>double-entry ledger</strong> for every agent operation. Stop building on shallow proxies. Start building on a true system of record for your AI business.</p>
+					<p className='font-body text-lg leading-[1.55] text-brand-text-secondary text-pretty text-pretty'>A revenue-first framework that creates a <strong className='text-brand-text-primary font-semibold'>double-entry ledger</strong> for every agent operation. Stop building on shallow proxies—start building on a true system of record.</p>
 					<div className='flex flex-wrap gap-2 pt-1'>
 						{accentTags.map((tag) => (
 							<span key={tag.label} className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${tag.color}`}>
@@ -34,7 +34,7 @@ export function HeroSection() {
 				{/* a16z Outcome-Based Pricing Callout */}
 				<div className='max-w-3xl rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 shadow-sm'>
 					<div className='flex flex-col gap-4'>
-						<div className='flex flex-col sm:flex-row items-start gap-3'>
+						<div className='flex flex-col sm:flex-row items-start sm:items-center gap-3'>
 							<div className='flex-shrink-0'>
 								<img src='/img/a16z-logo.svg' alt='a16z' className='h-8 w-auto' />
 							</div>
@@ -54,7 +54,7 @@ export function HeroSection() {
 								But where is the infrastructure for outcome-based <strong className='underline-hand text-brand-text-primary'>billing &amp; accounting</strong>?
 							</p>
 							<p className='mt-2 font-body text-base text-brand-text-secondary'>
-								This <span className='line-through'>not a <strong>payments</strong> problem</span>, but an <strong>accounting</strong> problem that leads to catastrophic failure. The future is outcome based...but the tools to build it don&apos;t exist.
+								This is <span className='line-through'>not a <strong>payments</strong> problem</span>—it&apos;s an <strong>accounting</strong> problem. The future is outcome-based, but the tools to build it don&apos;t exist.
 								<br />
 								<span className='highlight-hand mt-2 font-display font-semibold text-brand-text-primary text-lg sm:text-xl'>
 									Until now.
@@ -87,8 +87,8 @@ export function RootCauseSection() {
 	return (
 		<section id='rootcause' className='bg-brand-base text-brand-text-primary'>
 			<div className='container-custom flex flex-col gap-8 py-[72px] lg:py-[100px]'>
-				<div className='max-w-3xl'><h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>The Root Cause: A New Cost Paradigm</h2></div>
-				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary'>Why is monetizing AI agents so difficult? Because the financial models that powered the last decade of SaaS are fundamentally broken in the world of Generative AI.</p>
+				<div className='max-w-3xl'><h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>The Root Cause: A New Cost Paradigm</h2></div>
+				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Why is monetizing AI agents so difficult? Because the financial models that powered the last decade of SaaS are fundamentally broken in the world of Generative AI.</p>
 				<div className='flex flex-col md:flex-row gap-6 items-center'>
 					<article className='flex-1 flex flex-col gap-4 p-6 rounded-2xl border border-brand-overlay/60 bg-brand-surface shadow-sm'>
 						<div className='flex items-center gap-3'>
@@ -98,7 +98,7 @@ export function RootCauseSection() {
 						<div className='space-y-4 text-sm text-brand-text-secondary'>
 							<div>
 								<p className='font-semibold text-brand-text-primary mb-1'>Predictable, Per-Call Cost</p>
-								<p>API calls have a fixed, amortizable compute cost. The size of the JSON payload has a negligible impact on the price.</p>
+								<p>API calls have fixed, predictable costs. Payload size barely affects price.</p>
 							</div>
 							<div>
 								<p className='font-semibold text-brand-text-primary mb-1'>Billed by the Request</p>
@@ -121,16 +121,16 @@ export function RootCauseSection() {
 						<div className='space-y-4 text-sm text-brand-text-secondary'>
 							<div>
 								<p className='font-semibold text-brand-text-primary mb-1'>Variable, Computational Cost</p>
-								<p>An agent&apos;s cost is directly tied to the <em>&ldquo;work&rdquo;</em> it performs. It&apos;s a metered, computational resource, not a fixed endpoint.</p>
+								<p>An agent&apos;s cost is tied to the work it performs—a metered computational resource, not a fixed endpoint.</p>
 							</div>
 							<div>
 								<p className='font-semibold text-brand-text-primary mb-1'>Billed by the Computation</p>
-								<p>The billable events are the <strong className='text-brand-text-primary'>input tokens</strong>, <strong className='text-brand-text-primary'>output tokens</strong>, the <strong className='text-brand-text-primary'>number of thoughts</strong>, and every <strong className='text-brand-text-primary'>downstream tool call</strong> the agent makes.</p>
+								<p>Billable events include <strong className='text-brand-text-primary'>input tokens</strong>, <strong className='text-brand-text-primary'>output tokens</strong>, <strong className='text-brand-text-primary'>reasoning steps</strong>, and every <strong className='text-brand-text-primary'>downstream tool call</strong>.</p>
 							</div>
 						</div>
 					</article>
 				</div>
-				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary'>This creates a <strong className='text-brand-text-primary'>massive accounting problem</strong> that traditional billing systems cannot solve. Trying to price a variable, multi-step agentic workflow like a simple API call forces you to either guess—and consistently <strong className='underline-hand text-brand-text-primary'>underbill or overcharge</strong> your customers—or build a complex, brittle accounting system from scratch.</p>
+				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary text-pretty'>This creates a <strong className='text-brand-text-primary'>massive accounting problem</strong> traditional billing can&apos;t solve. Pricing variable, multi-step agent workflows like simple API calls forces you to guess—consistently <strong className='underline-hand text-brand-text-primary'>underbill or overcharge</strong>—or build brittle accounting systems from scratch.</p>
 			</div>
 		</section>
 	);
@@ -140,28 +140,28 @@ export function TrilemmaSection() {
 	return (
 		<section id='trilemma' className='bg-brand-base text-brand-text-primary'>
 			<div className='container-custom flex flex-col gap-8 py-[72px] lg:py-[100px]'>
-				<div className='max-w-3xl'><h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>The AI Agent Trilemma is Stalling Your Go-to-Market.</h2></div>
-				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary'>This new cost paradigm creates a trilemma for enterprises, forcing a choice between three conflicting demands. Getting one right often means sacrificing the others.</p>
+				<div className='max-w-3xl'><h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>The AI Agent Trilemma is Stalling Your Go-to-Market.</h2></div>
+				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary text-pretty'>This new cost paradigm forces enterprises to choose between three conflicting demands. Getting one right often means sacrificing the others.</p>
 				<div className='overflow-hidden rounded-2xl border border-brand-overlay/60 bg-brand-surface shadow-sm'>
 					<div className='grid divide-y divide-brand-border/60 text-left md:grid-cols-3 md:divide-y-0 md:divide-x'>
 						<article className='flex flex-col gap-3 p-6'>
 							<span className='inline-flex w-fit items-center rounded-full bg-brand-accent-100 px-3 py-1 text-xs font-semibold text-brand-text-secondary'>Flexibility</span>
 							<h3 className='text-sm font-semibold text-brand-text-primary'>Engineering</h3>
-							<p className='text-sm text-brand-text-secondary'>Your engineers need to build powerful, custom agents with complex logic (Tree-of-Thought, custom loops, chained tool use) to solve real business problems.</p>
+							<p className='text-sm text-brand-text-secondary'>Engineers need to build custom agents with complex logic—Tree-of-Thought, custom loops, chained tool use—to solve real problems.</p>
 						</article>
 						<article className='flex flex-col gap-3 p-6'>
 							<span className='inline-flex w-fit items-center rounded-full bg-brand-accent-300 px-3 py-1 text-xs font-semibold text-white'>Scalability</span>
 							<h3 className='text-sm font-semibold text-brand-text-primary'>Platform</h3>
-							<p className='text-sm text-brand-text-secondary'>Your platform team needs to deploy these agents globally and reliably on scalable, serverless infrastructure without getting locked into a proprietary, black-box runtime.</p>
+							<p className='text-sm text-brand-text-secondary'>Platform teams need to deploy agents globally on scalable infrastructure without getting locked into proprietary, black-box runtimes.</p>
 						</article>
 						<article className='flex flex-col gap-3 p-6'>
 							<span className='inline-flex w-fit items-center rounded-full bg-brand-accent-200 px-3 py-1 text-xs font-semibold text-brand-text-primary'>Profitability</span>
 							<h3 className='text-sm font-semibold text-brand-text-primary'>Business</h3>
-						<p className='text-sm text-brand-text-secondary'>Your finance & product teams need to accurately meter usage and implement flexible billing without <strong className='text-brand-text-primary'>underbilling customers or overcharging them</strong>—a problem that kills margins and trust.</p>
+						<p className='text-sm text-brand-text-secondary'>Finance teams need to meter usage and implement flexible billing without <strong className='text-brand-text-primary'>underbilling or overcharging</strong>—a problem that kills margins and trust.</p>
 						</article>
 					</div>
 				</div>
-				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary'>Solving this trilemma forces teams into months of brittle, internal billing workarounds—delaying revenue and innovation.</p>
+				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Solving this trilemma forces teams into months of brittle, internal billing workarounds—delaying revenue and innovation.</p>
 			</div>
 		</section>
 	);
@@ -173,7 +173,7 @@ export function RevenueFirstSection() {
 			<div className='container-custom py-[72px] lg:py-[100px]'>
 				<div className='space-y-8'>
 					<div className='max-w-3xl space-y-4'>
-						<h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>The Double-Entry Ledger for AI Agent Operations</h2>
+						<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>The Double-Entry Ledger for AI Agent Operations</h2>
 						<blockquote className='border-l-4 border-brand-accent-200 bg-brand-surface/50 pl-5 py-4 italic text-brand-text-secondary rounded-r-lg'>
 							<p className='text-sm sm:text-base'>Simple token counters and API proxies are failing. They see the token count and total bill from your model provider, but they <strong className='underline-hand text-brand-text-primary'>can&apos;t tell you the profitability of a single agent run</strong>.</p>
 						</blockquote>
@@ -182,7 +182,7 @@ export function RevenueFirstSection() {
 						<div className='flex flex-col lg:flex-row gap-6 items-center'>
 							<div className='flex-1 rounded-2xl border border-brand-accent-100 bg-brand-accent-100/20 p-6 shadow-sm w-full'>
 								<h3 className='text-lg font-matter font-semibold text-brand-text-primary'>Deep Runtime Inspection</h3>
-								<p className='mt-3 text-sm text-brand-text-secondary'>StringCost isn&apos;t a library that invades your code; it&apos;s a <strong className='underline-hand-green text-brand-text-primary'>runtime-aware control plane</strong> that intelligently inspects your agent&apos;s traffic. We integrate at the network level using a <strong className='underline-hand-green text-brand-text-primary'>secure, signed-URL architecture</strong>. Your code calls our Gateway run this request through an <strong className='underline-hand-green text-brand-text-primary'>asynchronous deep prompt inspection engine</strong>, using a meta-classifier to understand the business intent of the action without adding a single millisecond of latency to your user&apos;s request.</p>
+								<p className='mt-3 text-sm text-brand-text-secondary'>StringCost isn&apos;t a library that invades your code—it&apos;s a <strong className='underline-hand-green text-brand-text-primary'>runtime-aware control plane</strong> that inspects your agent&apos;s traffic at the network level via a <strong className='underline-hand-green text-brand-text-primary'>secure, signed-URL architecture</strong>. Requests flow through an <strong className='underline-hand-green text-brand-text-primary'>asynchronous deep prompt inspection engine</strong> that classifies business intent with zero added latency.</p>
 							</div>
 							<div className='flex items-center justify-center'>
 								<div className='rounded-full bg-brand-accent-300 text-white w-12 h-12 flex items-center justify-center text-2xl font-bold'>
@@ -191,15 +191,15 @@ export function RevenueFirstSection() {
 							</div>
 							<div className='flex-1 rounded-2xl border border-brand-accent-200 bg-brand-accent-200/20 p-6 shadow-sm w-full'>
 								<h3 className='text-lg font-matter font-semibold text-brand-text-primary'>Every Action is a Ledger Entry</h3>
-								<p className='mt-3 text-sm text-brand-text-secondary'>Automatic instrumentation is the core of this ledger. Our Local Sidecar and asynchronous classifier automatically record every discrete computational action—whether it&apos;s an LLM call or an external tool—as a distinct line item with two sides:</p>
+								<p className='mt-3 text-sm text-brand-text-secondary'>Our sidecar and asynchronous classifier record every computational action—LLM calls, tool invocations—as a distinct line item with two sides:</p>
 								<ul className='mt-3 space-y-2 text-sm text-brand-text-secondary'>
 									<li className='flex items-start gap-2'>
 										<span className='mt-1 inline-block size-1.5 rounded-full bg-brand-accent-200' />
-										<span><strong className='text-brand-text-primary'>Cost Side (Debits):</strong> The tokens you paid your provider, the price of the tool call, and the compute time.</span>
+										<span><strong className='text-brand-text-primary'>Cost Side (Debits):</strong> Tokens paid to your provider, tool call costs, compute time.</span>
 									</li>
 									<li className='flex items-start gap-2'>
 										<span className='mt-1 inline-block size-1.5 rounded-full bg-brand-accent-200' />
-										<span><strong className='text-brand-text-primary'>Revenue Side (Credits):</strong> The billable event for your customer based on your pricing model for that specific action.</span>
+										<span><strong className='text-brand-text-primary'>Revenue Side (Credits):</strong> The billable event for your customer based on your pricing model.</span>
 									</li>
 								</ul>
 							</div>
@@ -210,7 +210,7 @@ export function RevenueFirstSection() {
 							</svg>
 						</div>
 						<div className='max-w-3xl mx-auto rounded-2xl border border-brand-accent-300 bg-brand-accent-300/15 p-6 shadow-sm'>
-							<p className='text-sm text-brand-text-secondary'>The result is a perfect, auditable, real-time <strong className='text-brand-text-primary'>P&amp;L for every single agent run</strong>. You can finally answer critical business questions: <em>&ldquo;Which agents are most profitable?&rdquo;</em>, <em>&ldquo;Which tools are driving the most cost?&rdquo;</em>, and <em>&ldquo;What is the true margin on our AI features?&rdquo;</em></p>
+							<p className='text-sm text-brand-text-secondary'>The result: an auditable, real-time <strong className='text-brand-text-primary'>P&amp;L for every agent run</strong>. Finally answer: <em>&ldquo;Which agents are most profitable?&rdquo;</em> <em>&ldquo;Which tools drive the most cost?&rdquo;</em> <em>&ldquo;What&apos;s our true AI margin?&rdquo;</em></p>
 						</div>
 					</div>
 				</div>
@@ -224,9 +224,9 @@ export function SystemSection() {
 		<section id='system' className='bg-gradient-to-br from-[#210F26] to-[#3D1F4A] text-white'>
 			<div className='container-custom flex flex-col gap-10 py-[72px] lg:py-[100px]'>
 				<div className='text-center max-w-4xl mx-auto space-y-4'>
-					<h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>Your Single Financial Endpoint for your Entire AI Deployment</h2>
-					<p className='text-lg leading-[1.55] text-white/80'>Zero-time Integration. No SDK. 250+ Providers, 1 API.</p>
-					<p className='text-sm font-light italic text-white/70 mt-2'>Account for your usage of OpenAI, Anthropic, Google Gemini, Cohere, Groq, and hundreds more through a single, unified, OpenAI-compatible proxy</p>
+					<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>One Financial Endpoint for Your Entire AI Stack</h2>
+					<p className='text-lg leading-[1.55] text-white/80'>Zero-time integration. No SDK. 250+ providers, one API.</p>
+					<p className='text-sm font-light italic text-white/70 mt-2'>OpenAI, Anthropic, Gemini, Cohere, Groq, and hundreds more—through a single, OpenAI-compatible proxy.</p>
 				</div>
 				
 				<div className="w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-4 sm:p-8">
@@ -249,9 +249,9 @@ export function SourceOfTruthSection() {
 						<div className='inline-block px-4 py-2 rounded-full bg-brand-accent-100 text-brand-text-secondary text-xs font-semibold uppercase tracking-wider'>
 							Double-Entry Accounting
 						</div>
-						<h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>A True Ledger, Not Just a Token Counter</h2>
-						<p className='text-lg leading-[1.55] text-brand-text-secondary'>Your AI bill is a black box. StringCost gives you X-ray vision.</p>
-						<p className='text-lg leading-[1.55] text-brand-text-secondary border-l-4 border-brand-accent-300 pl-6 py-2'>While other proxies just count total tokens, we provide a <strong className='text-brand-text-primary'>double-entry ledger</strong> for every agent run. Our asynchronous background worker inspects every prompt to give you a true P&L statement for your AI.</p>
+						<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>A True Ledger, Not Just a Token Counter</h2>
+						<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Your AI bill is a black box. StringCost gives you X-ray vision.</p>
+						<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty border-l-4 border-brand-accent-300 pl-6 py-2'>While other proxies just count total tokens, we provide a <strong className='text-brand-text-primary'>double-entry ledger</strong> for every agent run. Our asynchronous background worker inspects every prompt to give you a true P&L statement for your AI.</p>
 					</div>
 					<div className='lg:w-1/2 space-y-6'>
 						<div className='relative p-6 rounded-2xl bg-gradient-to-br from-brand-accent-100/50 to-transparent border-l-4 border-brand-accent-100 shadow-lg'>
@@ -259,21 +259,21 @@ export function SourceOfTruthSection() {
 								<Zap className="w-6 h-6" />
 							</div>
 							<h3 className='text-lg font-matter font-bold mb-2'>Zero-Latency Accounting</h3>
-							<p className='text-sm text-brand-text-secondary'>Our <code className='text-xs bg-white px-2 py-1 rounded border border-brand-accent-100'>Event Collector</code> logs the raw event instantly and returns the response to your user with zero delay.</p>
+							<p className='text-sm text-brand-text-secondary'>Our <code className='text-xs bg-white px-2 py-1 rounded border border-brand-accent-100'>Event Collector</code> logs events instantly and returns responses with zero delay.</p>
 						</div>
 						<div className='relative p-6 rounded-2xl bg-gradient-to-br from-brand-accent-300/20 to-transparent border-l-4 border-brand-accent-300 shadow-lg'>
 							<div className='absolute -left-8 top-8 w-12 h-12 rounded-full bg-brand-accent-300 flex items-center justify-center text-white shadow-md'>
 								<Settings className="w-6 h-6" />
 							</div>
 							<h3 className='text-lg font-matter font-bold mb-2'>Asynchronous Classification</h3>
-							<p className='text-sm text-brand-text-secondary'>A background <code className='text-xs bg-white px-2 py-1 rounded border border-brand-accent-300'>Worker</code> (polling every 200ms) calls a meta-classifier to tag every request with an <code className='text-xs bg-white px-2 py-1 rounded border border-brand-accent-300'>action_type</code> (e.g., <em>synthesis</em>, <em>tool_selection</em>, <em>evaluation</em>).</p>
+							<p className='text-sm text-brand-text-secondary'>A background <code className='text-xs bg-white px-2 py-1 rounded border border-brand-accent-300'>Worker</code> polls every 200ms, calling a meta-classifier to tag each request with an <code className='text-xs bg-white px-2 py-1 rounded border border-brand-accent-300'>action_type</code>: <em>synthesis</em>, <em>tool_selection</em>, <em>evaluation</em>, etc.</p>
 						</div>
 						<div className='relative p-6 rounded-2xl bg-gradient-to-br from-brand-accent-200/30 to-transparent border-l-4 border-brand-accent-200 shadow-lg'>
 							<div className='absolute -left-8 top-8 w-12 h-12 rounded-full bg-brand-accent-200 flex items-center justify-center text-brand-text-primary shadow-md'>
 								<Lightbulb className="w-6 h-6" />
 							</div>
 							<h3 className='text-lg font-matter font-bold mb-2'>Know Your &ldquo;Why&rdquo;</h3>
-							<p className='text-sm text-brand-text-secondary'>Finally, you can answer critical business questions. What&apos;s the P&L of your Tree-of-Thought agent? Are &ldquo;evaluation&rdquo; steps costing more than &ldquo;synthesis&rdquo; steps? StringCost gives you the answers.</p>
+							<p className='text-sm text-brand-text-secondary'>Finally answer critical questions: What&apos;s the P&amp;L of your Tree-of-Thought agent? Are evaluation steps costing more than synthesis? StringCost tells you.</p>
 						</div>
 					</div>
 				</div>
@@ -291,8 +291,8 @@ export function AccountingSection() {
 						<Lock className="w-5 h-5 text-red-600" />
 						<span className='text-xs font-bold text-red-600 uppercase tracking-wider'>Security First</span>
 					</div>
-					<h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>Unbreakable Security: No More Static API Keys</h2>
-					<p className='text-lg leading-[1.55] text-brand-text-secondary'>Stop embedding <code className='text-xs bg-red-50 border border-red-200 px-2 py-1 rounded text-red-600 font-mono'>sk-xxx</code> keys in your agents, clients, or servers. Our architecture is built on a <strong>dynamic, signed-URL model</strong> that makes key leakage impossible.</p>
+					<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>Unbreakable Security: No More Static API Keys</h2>
+					<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Stop embedding <code className='text-xs bg-red-50 border border-red-200 px-2 py-1 rounded text-red-600 font-mono'>sk-xxx</code> keys in your code. Our <strong>dynamic, signed-URL model</strong> makes key leakage impossible.</p>
 				</div>
 				<div className='relative max-w-5xl mx-auto w-full'>
 					<div className='absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-brand-accent-100 via-brand-accent-300 to-brand-accent-200 transform -translate-y-1/2 hidden lg:block'></div>
@@ -302,21 +302,21 @@ export function AccountingSection() {
 								1
 							</div>
 							<h3 className='text-lg font-matter font-bold'>Request a One-Time URL</h3>
-							<p className='text-sm text-brand-text-secondary'>Your application asks the <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded font-mono'>Control Plane</code> for permission to run a call.</p>
+							<p className='text-sm text-brand-text-secondary'>Your app asks the <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded font-mono'>Control Plane</code> for permission to make a call.</p>
 						</article>
 						<article className='flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white border-2 border-brand-accent-300 shadow-lg relative'>
 							<div className='w-20 h-20 rounded-full bg-gradient-to-br from-brand-accent-300 to-[#210F26] flex items-center justify-center text-white font-black text-3xl shadow-lg ring-4 ring-white z-10'>
 								2
 							</div>
 							<h3 className='text-lg font-matter font-bold'>Get a Signed URL</h3>
-							<p className='text-sm text-brand-text-secondary'>The <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded font-mono'>Control Plane</code> returns a short-lived, single-use signed URL that contains the encrypted credentials and user context.</p>
+							<p className='text-sm text-brand-text-secondary'>The <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded font-mono'>Control Plane</code> returns a short-lived, single-use signed URL with encrypted credentials.</p>
 						</article>
 						<article className='flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white border-2 border-brand-accent-200 shadow-lg relative'>
 							<div className='w-20 h-20 rounded-full bg-gradient-to-br from-brand-accent-200 to-brand-accent-100 flex items-center justify-center text-brand-text-primary font-black text-3xl shadow-lg ring-4 ring-white z-10'>
 								3
 							</div>
 							<h3 className='text-lg font-matter font-bold'>Call the Gateway</h3>
-							<p className='text-sm text-brand-text-secondary'>Your agent uses this temporary URL to call the <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded font-mono'>Gateway</code>. Our system validates the signature, checks for replay attacks, and proxies the call.</p>
+							<p className='text-sm text-brand-text-secondary'>Your agent calls the <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded font-mono'>Gateway</code> with this URL. We validate the signature, check for replay attacks, and proxy the call.</p>
 						</article>
 					</div>
 				</div>
@@ -330,8 +330,8 @@ export function BYOKSection() {
 		<section id='byok' className='bg-gradient-to-br from-brand-accent-100/30 via-brand-base to-brand-accent-200/20 text-brand-text-primary'>
 			<div className='container-custom flex flex-col gap-10 py-[72px] lg:py-[100px]'>
 				<div className='max-w-3xl space-y-3'>
-					<h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>The Enterprise Feature You&apos;ve Been Waiting For: &ldquo;Bring Your Own Key&rdquo; (BYOK)</h2>
-					<p className='text-lg leading-[1.55] text-brand-text-secondary'>Stop subsidizing your customers&apos; AI usage. StringCost is built for B2B, allowing your users to provide their <em>own</em> provider keys.</p>
+					<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>The Enterprise Feature You&apos;ve Been Waiting For: &ldquo;Bring Your Own Key&rdquo; (BYOK)</h2>
+					<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Stop subsidizing your customers&apos; AI usage. Let them provide their <em>own</em> provider keys.</p>
 				</div>
 				<div className='grid gap-6 lg:grid-cols-3'>
 					<article className='flex flex-col gap-4 rounded-2xl border border-brand-accent-100 bg-white p-6 shadow-sm'>
@@ -340,11 +340,11 @@ export function BYOKSection() {
 					</article>
 					<article className='flex flex-col gap-4 rounded-2xl border border-brand-accent-300 bg-white p-6 shadow-sm'>
 						<h3 className='text-lg font-matter font-semibold'>Secure &amp; Temporary Storage</h3>
-						<p className='text-sm text-brand-text-secondary'>We encrypt their key at rest using <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded'>pgcrypto</code> and set a configurable TTL (e.g., 1 hour).</p>
+						<p className='text-sm text-brand-text-secondary'>Keys encrypted at rest with <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded'>pgcrypto</code> and configurable TTL.</p>
 					</article>
 					<article className='flex flex-col gap-4 rounded-2xl border border-brand-accent-200 bg-white p-6 shadow-sm'>
 						<h3 className='text-lg font-matter font-semibold'>Automatic Cleanup</h3>
-						<p className='text-sm text-brand-text-secondary'>Our <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded'>pg_cron</code> job automatically and permanently deletes expired keys. You get all the benefits of BYOK without the risk or liability.</p>
+						<p className='text-sm text-brand-text-secondary'><code className='text-xs bg-brand-accent-100 px-2 py-1 rounded'>pg_cron</code> automatically deletes expired keys. All benefits of BYOK, none of the liability.</p>
 					</article>
 				</div>
 			</div>
@@ -357,25 +357,25 @@ export function DeploymentSection() {
 		<section id='deployment' className='bg-brand-base text-brand-text-primary'>
 			<div className='container-custom flex flex-col gap-10 py-[72px] lg:py-[100px]'>
 				<div className='max-w-3xl space-y-3'>
-					<h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>Built for Enterprise Scale &amp; Data Control</h2>
-					<p className='text-lg leading-[1.55] text-brand-text-secondary'>StringCost is not a simple SaaS tool; it&apos;s a production-grade stack designed for serious enterprise deployment. You get the control of an on-premise solution with the flexibility of the cloud.</p>
+					<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>Built for Enterprise Scale &amp; Data Control</h2>
+					<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Not a simple SaaS tool—a production-grade stack for enterprise deployment. On-prem control with cloud flexibility.</p>
 				</div>
 				<div className='grid gap-6 lg:grid-cols-2'>
 					<article className='flex flex-col gap-4 rounded-2xl border border-brand-accent-100 bg-brand-surface p-6 shadow-sm'>
 						<h3 className='text-lg font-matter font-semibold'>Your Cloud, Your Data</h3>
-						<p className='text-sm text-brand-text-secondary'>Run the high-performance <strong>Gateway</strong> and <strong>Control Plane</strong> in your own Kubernetes cluster. This ensures your sensitive prompts, keys, and AI responses never leave your network, giving you maximum security and compliance.</p>
+						<p className='text-sm text-brand-text-secondary'>Run the <strong>Gateway</strong> and <strong>Control Plane</strong> in your own K8s cluster. Prompts, keys, and responses never leave your network.</p>
 					</article>
 					<article className='flex flex-col gap-4 rounded-2xl border border-brand-accent-300 bg-brand-accent-300/15 p-6 shadow-sm'>
 						<h3 className='text-lg font-matter font-semibold'>Flexible Hybrid Model</h3>
-						<p className='text-sm text-brand-text-secondary'>Use our powerful, managed <strong>Classifier</strong> service in our cloud, or deploy the entire stack—including the <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded'>Worker</code>—within your own VPC. The choice is yours.</p>
+						<p className='text-sm text-brand-text-secondary'>Use our managed <strong>Classifier</strong> in our cloud, or deploy the entire stack in your VPC. Your choice.</p>
 					</article>
 					<article className='flex flex-col gap-4 rounded-2xl border border-brand-accent-200 bg-brand-accent-200/25 p-6 shadow-sm'>
 						<h3 className='text-lg font-matter font-semibold'>Kubernetes-Native</h3>
-						<p className='text-sm text-brand-text-secondary'>Our system is a production-grade, K8s-native application, packaged with <strong>Helm</strong> for easy, repeatable deployment to any certified Kubernetes cluster, whether it&apos;s GKE, EKS, AKS, or self-hosted.</p>
+						<p className='text-sm text-brand-text-secondary'>K8s-native, packaged with <strong>Helm</strong> for easy deployment to GKE, EKS, AKS, or self-hosted clusters.</p>
 					</article>
 					<article className='flex flex-col gap-4 rounded-2xl border border-brand-accent-100 bg-brand-surface p-6 shadow-sm'>
 						<h3 className='text-lg font-matter font-semibold'>Idempotent &amp; Safe Deployments</h3>
-						<p className='text-sm text-brand-text-secondary'>We ensure your infrastructure is always in a reliable state. Database migrations are built to run automatically as Kubernetes Jobs before any service starts, guaranteeing your deployments are safe, idempotent, and roll back cleanly.</p>
+						<p className='text-sm text-brand-text-secondary'>Database migrations run automatically as K8s Jobs before services start. Safe, idempotent, clean rollbacks.</p>
 					</article>
 				</div>
 			</div>
@@ -388,8 +388,8 @@ export function FinalCtaSection() {
 		<section id='demo' className='bg-brand-base text-brand-text-primary'>
 			<div className='container-custom flex flex-col gap-6 py-[72px] text-center lg:py-[100px]'>
 				<div className='mx-auto flex max-w-3xl flex-col gap-4 rounded-3xl border border-brand-accent-100 bg-brand-surface p-10 shadow-sm'>
-					<h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>Get the Control You Need and the Scalability You Deserve.</h2>
-					<p className='text-lg leading-[1.55] text-brand-text-secondary'>Stop building brittle, insecure, and non-monetizable AI apps. Start building on a true enterprise-grade control plane.</p>
+					<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>Get the Control You Need and the Scalability You Deserve.</h2>
+					<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Stop building brittle, insecure AI apps. Start building on a true enterprise-grade control plane.</p>
 					<div className='flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row'>
 						<a href='https://calendar.app.google/hjN2HkZBLJMtSuku7' className={primaryButton}>
 							Schedule a Demo

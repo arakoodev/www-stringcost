@@ -130,17 +130,6 @@ body {
 		word-wrap: break-word;
 		overflow-wrap: break-word;
 	}
-
-	/* Reduce font sizes slightly on mobile for better fit */
-	h1 {
-		font-size: 2rem !important;
-		line-height: 1.2 !important;
-	}
-
-	h2 {
-		font-size: 1.5rem !important;
-		line-height: 1.3 !important;
-	}
 }
 
 .navbar__title {
@@ -187,4 +176,13 @@ body {
 	padding: 8px 12px;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
+}
+
+/* Stripe-style text wrapping for balanced headings and pretty paragraphs */
+.text-balance {
+	text-wrap: balance;
+}
+
+.text-pretty {
+	text-wrap: pretty;
 }
