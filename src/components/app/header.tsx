@@ -38,19 +38,16 @@ export const Header = () => {
       }`}
     >
       <div className="flex justify-between container-custom items-center py-5">
-        {/* Desktop Logo */}
-        <img
-          src={logoSrc}
-          alt="StringCost logo"
-          className="hidden md:block w-60 xl:w-auto"
-        />
-
-        {/* Mobile Logo */}
-        <img
-          src={logoSrc}
-          alt="StringCost logo"
-          className="md:hidden w-44"
-        />
+        {/* Logo */}
+        <h1 className="m-0 leading-none">
+          <a href="/" className="block hover:opacity-80 transition-opacity">
+            <img
+              src={logoSrc}
+              alt="StringCost logo"
+              className="h-8 sm:h-9 md:h-10 w-auto"
+            />
+          </a>
+        </h1>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-10">
