@@ -92,19 +92,19 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	max-width: 1120px;
-	padding-inline: 1.5rem;
+	max-width: 1112px;
+	padding-inline: 1rem;
 }
 
 @media (min-width: 640px) {
 	.container-custom {
-		padding-inline: 3rem;
+		padding-inline: 1.5rem;
 	}
 }
 
 @media (min-width: 1024px) {
 	.container-custom {
-		padding-inline: 4rem;
+		padding-inline: 2.5rem;
 	}
 }
 
