@@ -2,7 +2,7 @@
   <!-- Background -->
   <rect width="1200" height="630" fill="#F4EAF3"/>
 
-  <!-- Arakoo Triangle Logo -->
+  <!-- StringCost Logo -->
   <g transform="translate(300, 180)">
     <!-- Outer triangle -->
     <path d="M 0,80 L 40,0 L 80,80 L 0,80 Z" fill="none" stroke="#210F26" stroke-width="8" stroke-linejoin="miter"/>

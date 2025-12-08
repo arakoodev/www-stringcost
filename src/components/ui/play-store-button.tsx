@@ -4,7 +4,7 @@ import {twMerge} from "tailwind-merge";
 export function PlayStoreButton({ bg_color }: { bg_color?: string }) {
 	return (
 		<a
-			href="https://play.google.com/store/apps/details?id=com.arakoo.web"
+			href="https://play.google.com/store/apps/details?id=com.stringcost.web"
 			target="_blank"
 			rel="noreferrer"
 		>

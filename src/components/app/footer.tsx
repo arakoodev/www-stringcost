@@ -19,11 +19,11 @@ const footerLinks = {
     },
     {
       label: "Twitter",
-      href: "https://x.com/arakoo",
+      href: "https://x.com/stringcost",
     },
     {
       label: "Github",
-      href: "https://github.com/arakoodev/stringcost",
+      href: "https://github.com/stringcost/stringcost",
     },
   ],
 };
@@ -36,7 +36,7 @@ export function Footer() {
 				<div className='flex flex-col gap-4'>
 					<span className='text-2xl font-semibold tracking-wide'>StringCost</span>
 					<p className='max-w-xs text-sm text-brand-text-muted'>
-						{`© ${currentYear} Arakoo Inc. All rights reserved.`}
+						{`© ${currentYear} StringCost Inc. All rights reserved.`}
 					</p>
 				</div>
 
@@ -45,8 +45,8 @@ export function Footer() {
 					<p className='text-sm text-brand-text-muted'>
 						For technical documentation, partnership inquiries, or investor information please reach out.
 					</p>
-					<a href='mailto:founders@arakoo.com' className='text-sm font-medium text-brand-accent-200 hover:underline'>
-						founders@arakoo.com
+					<a href='mailto:founders@stringcost.com' className='text-sm font-medium text-brand-accent-200 hover:underline'>
+						founders@stringcost.com
 					</a>
 				</div>
 

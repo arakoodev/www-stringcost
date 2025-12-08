@@ -92,13 +92,25 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	max-width: 1400px;
-	padding-inline: 1rem;
+	max-width: 1120px;
+	padding-inline: 1.5rem;
+}
+
+@media (min-width: 640px) {
+	.container-custom {
+		padding-inline: 3rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container-custom {
+		padding-inline: 4rem;
+	}
 }
 
 @media (max-width: 768px) {
 	.container-custom {
-		padding-inline: 1rem;
+		padding-inline: 1.5rem;
 	}
 
 	/* Ensure all cards and content blocks fit within mobile viewport */

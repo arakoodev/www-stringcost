@@ -9,14 +9,14 @@ const config: Config = {
 
 
 // Set the production url of your site here
-url: "https://www.arakoo.com",
+url: "https://www.stringcost.com",
 
 // Set the /<baseUrl>/ pathname under which your site is served
 // For GitHub pages deployment, it is often '/<projectName>/'
 //baseUrl: "/docusaurus-www/",
 baseUrl: "/",
 
-  organizationName: "arakoodev", // Usually your GitHub org/user name.
+  organizationName: "stringcost", // Usually your GitHub org/user name.
   projectName: "docusaurus-www", // Usually your repo name.
 
   onBrokenLinks: "throw",
@@ -76,7 +76,7 @@ baseUrl: "/",
   ],
 
   themeConfig: {
-    image: "/img/og-arakoo.png",
+    image: "/img/og-stringcost.png",
     metadata: [
     // 1) Standard meta description
     {
@@ -102,15 +102,15 @@ baseUrl: "/",
       title: "",
       logo: {
         alt: "StringCost",
-        src: "/img/arakoo-01.png",
+        src: "/img/stringcost-logo.png",
       },
       items: [
         {
           position: "left",
           label: "Github",
-          to: "https://github.com/arakoodev/stringcost",
+          to: "https://github.com/stringcost/stringcost",
         },
-        { to: "https://x.com/arakoo", label: "Twitter", position: "left" },
+        { to: "https://x.com/stringcost", label: "Twitter", position: "left" },
       ],
     },
     footer: {
