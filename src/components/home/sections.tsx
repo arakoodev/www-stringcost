@@ -18,7 +18,9 @@ export function HeroSection() {
 			<div className='container-custom flex flex-col gap-8 py-24 sm:py-28'>
 				<span className='font-body text-sm uppercase tracking-[0.3em] text-brand-text-muted font-medium'>SAP for AI Agents</span>
 				<div className='flex flex-col gap-4 max-w-3xl'>
-					<h1 className='font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight'>StringCost: Think SAP for AI Agents.</h1>
+					<h1 className='font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight'>
+						StringCost AI: Think SAP<br />for AI Agents.
+					</h1>
 					<p className='font-body text-lg sm:text-xl text-brand-text-secondary'>A revenue-first framework that creates a <strong className='text-brand-text-primary font-semibold'>double-entry ledger</strong> for every agent operation. Stop building on shallow proxies. Start building on a true system of record for your AI business.</p>
 					<div className='flex flex-wrap gap-2 pt-1'>
 						{accentTags.map((tag) => (

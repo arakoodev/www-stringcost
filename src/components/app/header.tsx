@@ -44,7 +44,9 @@ export const Header = () => {
             <img
               src={logoSrc}
               alt="StringCost logo"
-              className="h-8 sm:h-9 md:h-10 w-auto"
+              width={120}
+              height={41}
+              className="w-[120px] h-[41px] object-contain"
             />
           </a>
         </h1>

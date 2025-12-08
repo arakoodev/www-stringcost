@@ -34,7 +34,13 @@ export function Footer() {
 		<footer className='bg-brand-base py-16 text-brand-text-primary'>
 			<div className='container-custom flex flex-col gap-12 md:flex-row md:justify-between'>
 				<div className='flex flex-col gap-4'>
-					<span className='text-2xl font-semibold tracking-wide'>StringCost</span>
+					<img
+						src='/img/stringcost-logo.png'
+						alt='StringCost'
+						width={120}
+						height={41}
+						className='w-[120px] h-[41px] object-contain'
+					/>
 					<p className='max-w-xs text-sm text-brand-text-muted'>
 						{`© ${currentYear} StringCost Inc. All rights reserved.`}
 					</p>
