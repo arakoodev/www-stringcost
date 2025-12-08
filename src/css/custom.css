@@ -146,3 +146,45 @@ body {
 .navbar__title {
 	color: var(--ifm-color-primary);
 }
+
+/* Hand-drawn underline that follows text wrapping */
+.underline-hand {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8'%3E%3Cpath d='M0,5 Q25,3 50,5 T100,5' stroke='%23EF4444' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E");
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-size: 100px 8px;
+	padding-bottom: 4px;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+.underline-hand-green {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8'%3E%3Cpath d='M0,5 Q25,3 50,5 T100,5' stroke='%2310B981' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E");
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-size: 100px 8px;
+	padding-bottom: 4px;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+/* Hand-drawn strikethrough that follows text wrapping */
+.strikethrough-hand {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8'%3E%3Cpath d='M0,4 Q25,3 50,5 T100,4' stroke='%23EF4444' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.6'/%3E%3C/svg%3E");
+	background-repeat: repeat-x;
+	background-position: center;
+	background-size: 100px 8px;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+/* Hand-drawn circle highlight */
+.highlight-hand {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'%3E%3Cpath d='M5,20 Q8,8 25,5 T75,8 Q92,10 95,20 Q92,30 75,32 T25,35 Q8,32 5,20' stroke='%2310B981' stroke-width='2.5' fill='none' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	padding: 8px 12px;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}

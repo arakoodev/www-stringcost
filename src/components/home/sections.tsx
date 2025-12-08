@@ -34,43 +34,30 @@ export function HeroSection() {
 				{/* a16z Outcome-Based Pricing Callout */}
 				<div className='max-w-3xl rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 shadow-sm'>
 					<div className='flex flex-col gap-4'>
-						<div className='flex items-start gap-3'>
+						<div className='flex flex-col sm:flex-row items-start gap-3'>
 							<div className='flex-shrink-0'>
 								<img src='/img/a16z-logo.svg' alt='a16z' className='h-8 w-auto' />
 							</div>
-							<div className='flex-1'>
+							<div className='sm:flex-1'>
 								<p className='font-body text-base font-semibold text-brand-text-primary sm:text-lg'>
 									<a href='https://a16z.com/newsletter/december-2024-enterprise-newsletter-ai-is-driving-a-shift-towards-outcome-based-pricing/' target='_blank' rel='noopener noreferrer' className='hover:underline'>
 										Andreessen Horowitz just declared:
 									</a>
 								</p>
 								<p className='mt-2 font-body text-base italic text-brand-text-secondary sm:text-lg'>
-									<em>&ldquo;AI is driving a shift towards <span className='relative inline-block'>
-										<span className='relative z-10'>outcome-based pricing</span>
-										<svg className='absolute -bottom-0.5 left-0 w-full h-2 z-0' viewBox='0 0 200 8' preserveAspectRatio='none'>
-											<path d='M3,5 Q40,3 80,5 T195,6' stroke='#EF4444' strokeWidth='2' fill='none' strokeLinecap='round' opacity='0.7' />
-										</svg>
-									</span>. Software is becoming labor.&rdquo;</em>
+									<em>&ldquo;AI is driving a shift towards <strong className='underline-hand text-brand-text-primary'>outcome-based pricing</strong>. Software is becoming labor.&rdquo;</em>
 								</p>
 							</div>
 						</div>
 						<div className='border-l-4 border-brand-accent-200 pl-4'>
 							<p className='font-body text-lg font-semibold text-brand-text-primary sm:text-xl'>
-								But where is the infrastructure for outcome-based <span className='relative inline-block'>
-									<span className='relative z-10'>billing &amp; accounting</span>
-									<svg className='absolute -bottom-1 left-0 w-full h-3 z-0' viewBox='0 0 300 12' preserveAspectRatio='none'>
-										<path d='M5,8 Q50,4 100,6 T200,7 T295,9' stroke='#EF4444' strokeWidth='2.5' fill='none' strokeLinecap='round' opacity='0.8' />
-									</svg>
-								</span>?
+								But where is the infrastructure for outcome-based <strong className='underline-hand text-brand-text-primary'>billing &amp; accounting</strong>?
 							</p>
 							<p className='mt-2 font-body text-base text-brand-text-secondary'>
 								This <span className='line-through'>not a <strong>payments</strong> problem</span>, but an <strong>accounting</strong> problem that leads to catastrophic failure. The future is outcome based...but the tools to build it don&apos;t exist.
 								<br />
-								<span className='relative inline-block mt-2 font-display font-semibold text-brand-text-primary text-lg sm:text-xl'>
+								<span className='highlight-hand mt-2 font-display font-semibold text-brand-text-primary text-lg sm:text-xl'>
 									Until now.
-									<svg className='absolute -inset-2 w-[calc(100%+20px)] h-[calc(100%+20px)]' viewBox='0 0 100 40' preserveAspectRatio='none'>
-										<path d='M5,20 Q8,8 25,5 T75,8 Q92,10 95,20 Q92,30 75,32 T25,35 Q8,32 5,20' stroke='#10B981' strokeWidth='2.5' fill='none' strokeLinecap='round' strokeLinejoin='round' opacity='0.8' />
-									</svg>
 								</span>
 							</p>
 						</div>
@@ -143,12 +130,7 @@ export function RootCauseSection() {
 						</div>
 					</article>
 				</div>
-				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary'>This creates a <strong className='text-brand-text-primary'>massive accounting problem</strong> that traditional billing systems cannot solve. Trying to price a variable, multi-step agentic workflow like a simple API call forces you to either guess—and consistently <span className='relative inline-block'>
-					<strong className='relative z-10 text-brand-text-primary'>underbill or overcharge</strong>
-					<svg className='absolute -bottom-0.5 left-0 w-full h-2 z-0' viewBox='0 0 250 8' preserveAspectRatio='none'>
-						<path d='M3,5 Q50,3 100,5 T245,6' stroke='#EF4444' strokeWidth='2' fill='none' strokeLinecap='round' opacity='0.7' />
-					</svg>
-				</span> your customers—or build a complex, brittle accounting system from scratch.</p>
+				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary'>This creates a <strong className='text-brand-text-primary'>massive accounting problem</strong> that traditional billing systems cannot solve. Trying to price a variable, multi-step agentic workflow like a simple API call forces you to either guess—and consistently <strong className='underline-hand text-brand-text-primary'>underbill or overcharge</strong> your customers—or build a complex, brittle accounting system from scratch.</p>
 			</div>
 		</section>
 	);
@@ -193,34 +175,14 @@ export function RevenueFirstSection() {
 					<div className='max-w-3xl space-y-4'>
 						<h2 className='text-[28px] font-matter font-semibold sm:text-[34px] lg:text-[38px] tracking-tight leading-[1.26]'>The Double-Entry Ledger for AI Agent Operations</h2>
 						<blockquote className='border-l-4 border-brand-accent-200 bg-brand-surface/50 pl-5 py-4 italic text-brand-text-secondary rounded-r-lg'>
-							<p className='text-sm sm:text-base'>Simple token counters and API proxies are failing. They see the token count and total bill from your model provider, but they <span className='relative inline-block'>
-								<strong className='relative z-10 text-brand-text-primary'>can&apos;t tell you the profitability of a single agent run</strong>
-								<svg className='absolute -bottom-0.5 left-0 w-full h-2 z-0' viewBox='0 0 400 8' preserveAspectRatio='none'>
-									<path d='M3,5 Q80,3 160,5 T395,6' stroke='#EF4444' strokeWidth='2' fill='none' strokeLinecap='round' opacity='0.7' />
-								</svg>
-							</span>.</p>
+							<p className='text-sm sm:text-base'>Simple token counters and API proxies are failing. They see the token count and total bill from your model provider, but they <strong className='underline-hand text-brand-text-primary'>can&apos;t tell you the profitability of a single agent run</strong>.</p>
 						</blockquote>
 					</div>
 					<div className='space-y-6'>
 						<div className='flex flex-col lg:flex-row gap-6 items-center'>
 							<div className='flex-1 rounded-2xl border border-brand-accent-100 bg-brand-accent-100/20 p-6 shadow-sm w-full'>
 								<h3 className='text-lg font-matter font-semibold text-brand-text-primary'>Deep Runtime Inspection</h3>
-								<p className='mt-3 text-sm text-brand-text-secondary'>StringCost isn&apos;t a library that invades your code; it&apos;s a <span className='relative inline-block'>
-									<strong className='relative z-10 text-brand-text-primary'>runtime-aware control plane</strong>
-									<svg className='absolute -bottom-0.5 left-0 w-full h-2 z-0' viewBox='0 0 250 8' preserveAspectRatio='none'>
-										<path d='M3,5 Q50,3 100,5 T245,6' stroke='#10B981' strokeWidth='2' fill='none' strokeLinecap='round' opacity='0.7' />
-									</svg>
-								</span> that intelligently inspects your agent&apos;s traffic. We integrate at the network level using a <span className='relative inline-block'>
-									<strong className='relative z-10 text-brand-text-primary'>secure, signed-URL architecture</strong>
-									<svg className='absolute -bottom-0.5 left-0 w-full h-2 z-0' viewBox='0 0 270 8' preserveAspectRatio='none'>
-										<path d='M3,5 Q50,3 100,5 T265,6' stroke='#10B981' strokeWidth='2' fill='none' strokeLinecap='round' opacity='0.7' />
-									</svg>
-								</span>. Your code calls our Gateway run this request through an <span className='relative inline-block'>
-									<strong className='relative z-10 text-brand-text-primary'>asynchronous deep prompt inspection engine</strong>
-									<svg className='absolute -bottom-0.5 left-0 w-full h-2 z-0' viewBox='0 0 380 8' preserveAspectRatio='none'>
-										<path d='M3,5 Q70,3 140,5 T375,6' stroke='#10B981' strokeWidth='2' fill='none' strokeLinecap='round' opacity='0.7' />
-									</svg>
-								</span>, using a meta-classifier to understand the business intent of the action without adding a single millisecond of latency to your user&apos;s request.</p>
+								<p className='mt-3 text-sm text-brand-text-secondary'>StringCost isn&apos;t a library that invades your code; it&apos;s a <strong className='underline-hand-green text-brand-text-primary'>runtime-aware control plane</strong> that intelligently inspects your agent&apos;s traffic. We integrate at the network level using a <strong className='underline-hand-green text-brand-text-primary'>secure, signed-URL architecture</strong>. Your code calls our Gateway run this request through an <strong className='underline-hand-green text-brand-text-primary'>asynchronous deep prompt inspection engine</strong>, using a meta-classifier to understand the business intent of the action without adding a single millisecond of latency to your user&apos;s request.</p>
 							</div>
 							<div className='flex items-center justify-center'>
 								<div className='rounded-full bg-brand-accent-300 text-white w-12 h-12 flex items-center justify-center text-2xl font-bold'>
