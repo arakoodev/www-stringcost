@@ -32,7 +32,7 @@ export function HeroSection() {
 				</div>
 
 				{/* a16z Outcome-Based Pricing Callout */}
-				<div className='max-w-3xl rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 shadow-sm'>
+				<div className='max-w-3xl rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 shadow-sm mesh-gradient-bg'>
 					<div className='flex flex-col gap-4'>
 						<div className='flex flex-col sm:flex-row items-start sm:items-center gap-3'>
 							<div className='flex-shrink-0'>
@@ -113,7 +113,7 @@ export function RootCauseSection() {
 						</div>
 					</div>
 
-					<article className='flex-1 flex flex-col gap-4 p-6 rounded-2xl border border-brand-accent-300 bg-brand-accent-300/15 shadow-sm'>
+					<article className='flex-1 flex flex-col gap-4 p-6 rounded-2xl border border-brand-accent-300 bg-brand-accent-300/15 shadow-sm mesh-gradient-bg mesh-gradient-bg-delay-2'>
 						<div className='flex items-center gap-3'>
 							<span className='inline-flex items-center rounded-full bg-brand-accent-300 px-3 py-1 text-xs font-semibold text-white'>NEW</span>
 							<h3 className='text-lg font-matter font-semibold text-brand-text-primary'>Agentic APIs</h3>
@@ -142,7 +142,7 @@ export function TrilemmaSection() {
 			<div className='container-custom flex flex-col gap-8 py-[72px] lg:py-[100px]'>
 				<div className='max-w-3xl'><h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>The AI Agent Trilemma is Stalling Your Go-to-Market.</h2></div>
 				<p className='max-w-3xl text-lg leading-[1.55] text-brand-text-secondary text-pretty'>This new cost paradigm forces enterprises to choose between three conflicting demands. Getting one right often means sacrificing the others.</p>
-				<div className='overflow-hidden rounded-2xl border border-brand-overlay/60 bg-brand-surface shadow-sm'>
+				<div className='rounded-2xl border border-brand-overlay/60 bg-brand-surface shadow-sm mesh-gradient-bg'>
 					<div className='grid divide-y divide-brand-border/60 text-left md:grid-cols-3 md:divide-y-0 md:divide-x'>
 						<article className='flex flex-col gap-3 p-6'>
 							<span className='inline-flex w-fit items-center rounded-full bg-brand-accent-100 px-3 py-1 text-xs font-semibold text-brand-text-secondary'>Flexibility</span>
@@ -209,7 +209,7 @@ export function RevenueFirstSection() {
 								<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 14l-7 7m0 0l-7-7m7 7V3' />
 							</svg>
 						</div>
-						<div className='max-w-3xl mx-auto rounded-2xl border border-brand-accent-300 bg-brand-accent-300/15 p-6 shadow-sm'>
+						<div className='max-w-3xl mx-auto rounded-2xl border border-brand-accent-300 bg-brand-accent-300/15 p-6 shadow-sm mesh-gradient-bg'>
 							<p className='text-sm text-brand-text-secondary'>The result: an auditable, real-time <strong className='text-brand-text-primary'>P&amp;L for every agent run</strong>. Finally answer: <em>&ldquo;Which agents are most profitable?&rdquo;</em> <em>&ldquo;Which tools drive the most cost?&rdquo;</em> <em>&ldquo;What&apos;s our true AI margin?&rdquo;</em></p>
 						</div>
 					</div>
@@ -297,21 +297,21 @@ export function AccountingSection() {
 				<div className='relative max-w-5xl mx-auto w-full'>
 					<div className='absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-brand-accent-100 via-brand-accent-300 to-brand-accent-200 transform -translate-y-1/2 hidden lg:block'></div>
 					<div className='grid gap-8 lg:gap-12 lg:grid-cols-3 relative'>
-						<article className='flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white border-2 border-brand-accent-100 shadow-lg relative'>
+						<article className='flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white border-2 border-brand-accent-100 shadow-lg relative mesh-gradient-bg'>
 							<div className='w-20 h-20 rounded-full bg-gradient-to-br from-brand-accent-100 to-brand-accent-200 flex items-center justify-center text-brand-text-primary font-black text-3xl shadow-lg ring-4 ring-white z-10'>
 								1
 							</div>
 							<h3 className='text-lg font-matter font-bold'>Request a One-Time URL</h3>
 							<p className='text-sm text-brand-text-secondary'>Your app asks the <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded font-mono'>Control Plane</code> for permission to make a call.</p>
 						</article>
-						<article className='flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white border-2 border-brand-accent-300 shadow-lg relative'>
+						<article className='flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white border-2 border-brand-accent-300 shadow-lg relative mesh-gradient-bg mesh-gradient-bg-delay-1'>
 							<div className='w-20 h-20 rounded-full bg-gradient-to-br from-brand-accent-300 to-[#210F26] flex items-center justify-center text-white font-black text-3xl shadow-lg ring-4 ring-white z-10'>
 								2
 							</div>
 							<h3 className='text-lg font-matter font-bold'>Get a Signed URL</h3>
 							<p className='text-sm text-brand-text-secondary'>The <code className='text-xs bg-brand-accent-100 px-2 py-1 rounded font-mono'>Control Plane</code> returns a short-lived, single-use signed URL with encrypted credentials.</p>
 						</article>
-						<article className='flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white border-2 border-brand-accent-200 shadow-lg relative'>
+						<article className='flex flex-col items-center text-center gap-4 p-8 rounded-3xl bg-white border-2 border-brand-accent-200 shadow-lg relative mesh-gradient-bg mesh-gradient-bg-delay-2'>
 							<div className='w-20 h-20 rounded-full bg-gradient-to-br from-brand-accent-200 to-brand-accent-100 flex items-center justify-center text-brand-text-primary font-black text-3xl shadow-lg ring-4 ring-white z-10'>
 								3
 							</div>
@@ -387,7 +387,7 @@ export function FinalCtaSection() {
 	return (
 		<section id='demo' className='bg-brand-base text-brand-text-primary'>
 			<div className='container-custom flex flex-col gap-6 py-[72px] text-center lg:py-[100px]'>
-				<div className='mx-auto flex max-w-3xl flex-col gap-4 rounded-3xl border border-brand-accent-100 bg-brand-surface p-10 shadow-sm'>
+				<div className='mx-auto flex max-w-3xl flex-col gap-4 rounded-3xl border border-brand-accent-100 bg-brand-surface p-10 shadow-sm mesh-gradient-bg'>
 					<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>Get the Control You Need and the Scalability You Deserve.</h2>
 					<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Stop building brittle, insecure AI apps. Start building on a true enterprise-grade control plane.</p>
 					<div className='flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row'>
