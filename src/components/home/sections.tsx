@@ -16,12 +16,12 @@ export function HeroSection() {
 	return (
 		<section id='overview' className='bg-brand-base text-brand-text-primary'>
 			<div className='container-custom flex flex-col gap-8 py-[72px] sm:py-[100px] lg:py-[128px]'>
-				<span className='font-body text-[15px] uppercase tracking-[0.3em] text-brand-text-muted font-medium'>SAP for AI Agents</span>
+				<span className='font-body text-[15px] uppercase tracking-[0.3em] text-brand-text-muted font-medium'>AI Accounting Infrastructure</span>
 				<div className='flex flex-col gap-6 max-w-3xl'>
 					<h1 className='font-display text-[28px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold tracking-tight leading-[1.1] text-balance'>
-						StringCost AI: Think SAP for AI Agents.
+						StringCost:<br />Cloudflare meets SAP for AI.
 					</h1>
-					<p className='font-body text-lg leading-[1.55] text-brand-text-secondary text-pretty text-pretty'>A revenue-first framework that creates a <strong className='text-brand-text-primary font-semibold'>double-entry ledger</strong> for every agent operation. Stop building on shallow proxies—start building on a true system of record.</p>
+					<p className='font-body text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Think Cloudflare for AI Accounting—we sit in front of your API and automatically calculate per-user, per-agent, per-outcome costs.</p>
 					<div className='flex flex-wrap gap-2 pt-1'>
 						{accentTags.map((tag) => (
 							<span key={tag.label} className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${tag.color}`}>
