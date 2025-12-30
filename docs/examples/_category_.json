@@ -1,0 +1,11 @@
+{
+  "label": "Examples",
+  "position": 1,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Usage Examples",
+    "description": "Real-world examples for LLM gateway and MCP proxying",
+    "slug": "/examples"
+  }
+}

@@ -249,3 +249,207 @@ body {
 			0 0 60px rgba(168, 85, 247, 0.4);
 	}
 }
+
+/* =============================================================================
+   Documentation Pages Styling
+   ============================================================================= */
+
+/* Navbar on docs pages - solid background instead of transparent */
+.docs-wrapper .navbar,
+.docs-doc-page .navbar {
+	background-color: #FFFFFF !important;
+	box-shadow: 0 1px 2px rgba(33, 15, 38, 0.08);
+}
+
+/* Main docs container */
+.docs-wrapper .main-wrapper,
+.docs-doc-page .main-wrapper {
+	background-color: #FFFFFF;
+}
+
+/* Sidebar styling */
+.theme-doc-sidebar-container {
+	background-color: #FAFAFA;
+	border-right: 1px solid #E5E5E5;
+}
+
+.menu__link {
+	color: #374151 !important;
+	font-weight: 500;
+}
+
+.menu__link:hover {
+	color: #210F26 !important;
+	background-color: #F3F4F6;
+}
+
+.menu__link--active {
+	color: #210F26 !important;
+	background-color: #F4EAF3 !important;
+	font-weight: 600;
+}
+
+/* Main content area */
+.theme-doc-markdown {
+	color: #1F2937;
+}
+
+.theme-doc-markdown h1 {
+	color: #210F26;
+	font-weight: 700;
+	border-bottom: 1px solid #E5E7EB;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.theme-doc-markdown h2 {
+	color: #210F26;
+	font-weight: 600;
+	margin-top: 2rem;
+	border-bottom: 1px solid #F3F4F6;
+	padding-bottom: 0.4rem;
+}
+
+.theme-doc-markdown h3 {
+	color: #374151;
+	font-weight: 600;
+}
+
+.theme-doc-markdown p {
+	color: #4B5563;
+	line-height: 1.75;
+}
+
+.theme-doc-markdown li {
+	color: #4B5563;
+}
+
+.theme-doc-markdown strong {
+	color: #1F2937;
+}
+
+.theme-doc-markdown a {
+	color: #7C3AED;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.theme-doc-markdown a:hover {
+	color: #5B21B6;
+}
+
+/* Inline code in docs */
+.theme-doc-markdown code:not(pre code) {
+	background-color: #F3F4F6;
+	color: #1F2937;
+	padding: 0.2em 0.4em;
+	border-radius: 4px;
+	font-size: 0.875em;
+	border: 1px solid #E5E7EB;
+}
+
+/* Code block container styling */
+[class*="codeBlockContainer"] {
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	border: 1px solid #333;
+	margin: 1rem 0;
+}
+
+/* Code block title bar */
+[class*="codeBlockTitle"] {
+	background-color: #2d2d2d !important;
+	color: #d4d4d4 !important;
+	border-bottom: 1px solid #404040;
+	padding: 0.5rem 1rem;
+	font-size: 0.85rem;
+}
+
+/* Copy button */
+[class*="copyButton"] {
+	color: #858585 !important;
+}
+
+[class*="copyButton"]:hover {
+	color: #d4d4d4 !important;
+	background-color: #404040 !important;
+}
+
+/* Breadcrumbs */
+.breadcrumbs__link {
+	color: #6B7280;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+	color: #210F26;
+}
+
+/* Table of contents */
+.table-of-contents__link {
+	color: #6B7280;
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+	color: #210F26;
+}
+
+/* Pagination nav */
+.pagination-nav__link {
+	border-color: #E5E7EB;
+	background-color: #FAFAFA;
+}
+
+.pagination-nav__link:hover {
+	border-color: #D9C1D7;
+	background-color: #F4EAF3;
+}
+
+.pagination-nav__sublabel {
+	color: #6B7280;
+}
+
+.pagination-nav__label {
+	color: #210F26;
+}
+
+/* Horizontal rule */
+.theme-doc-markdown hr {
+	border-color: #E5E7EB;
+}
+
+/* Tables in docs */
+.theme-doc-markdown table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1.5rem 0;
+	font-size: 0.9rem;
+}
+
+.theme-doc-markdown th {
+	background-color: #F9FAFB;
+	color: #111827;
+	font-weight: 600;
+	text-align: left;
+	padding: 0.75rem 1rem;
+	border: 1px solid #E5E7EB;
+}
+
+.theme-doc-markdown td {
+	padding: 0.75rem 1rem;
+	border: 1px solid #E5E7EB;
+	color: #374151;
+}
+
+.theme-doc-markdown tr:nth-child(even) td {
+	background-color: #F9FAFB;
+}
+
+/* Inline code in tables */
+.theme-doc-markdown td code {
+	background-color: #EEF2FF;
+	color: #4338CA;
+	padding: 0.15em 0.35em;
+	font-size: 0.85em;
+}
