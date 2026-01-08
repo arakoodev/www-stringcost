@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "StringCost",
   tagline: "SAP for AI Agents.",
-  favicon: "/img/favicon.png",
+  favicon: "/img/favicon.jpg",
 
 
 // Set the production url of your site here
@@ -83,7 +83,7 @@ baseUrl: "/",
   ],
 
   themeConfig: {
-    image: "/img/og-stringcost.png",
+    image: "/img/og.png",
     metadata: [
     // 1) Standard meta description
     {
