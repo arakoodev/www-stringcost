@@ -115,7 +115,9 @@ export function OutcomeCreditsContent() {
 						<h3 className='font-display text-2xl font-semibold text-brand-text-primary'>Why AI Companies Must Learn to Stop Worrying and Love Credits</h3>
 						<div className='p-8 rounded-2xl bg-brand-surface border border-brand-accent-200 shadow-sm'>
 							<div className='flex items-center gap-3 mb-6'>
-								<span className='inline-flex items-center justify-center w-10 h-10 rounded-lg bg-[#FF4F4F]/10 text-[#FF4F4F] font-bold text-xl'>L</span>
+								<div className='flex items-center justify-center p-1.5 rounded-md border border-brand-accent-100 bg-white'>
+									<img src='/img/lovable-logo.svg' alt='Lovable' className='h-4 w-auto' />
+								</div>
 								<h4 className='text-xl font-matter font-bold text-brand-text-primary'>Real-World Example: AI Builder &ldquo;Lovable&rdquo;</h4>
 							</div>
 							
