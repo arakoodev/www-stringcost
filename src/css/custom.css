@@ -178,6 +178,19 @@ body {
 	-webkit-box-decoration-break: clone;
 }
 
+/* Tighter highlight for inline text */
+.highlight-hand-inline {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 40'%3E%3Cpath d='M2,20 Q5,5 35,2 T115,5 Q145,5 148,20 Q145,35 115,38 T35,35 Q5,35 2,20' stroke='%2310B981' stroke-width='2.5' fill='none' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	padding: 4px 18px;
+	margin: 0 -8px;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	display: inline-block;
+}
+
 /* Stripe-style text wrapping for balanced headings and pretty paragraphs */
 .text-balance {
 	text-wrap: balance;
