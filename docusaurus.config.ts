@@ -94,6 +94,18 @@ baseUrl: "/",
       property: 'og:description',
       content: 'SAP for AI Agents.',
     },
+    {
+      property: 'og:site_name',
+      content: 'StringCost',
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'og:updated_time',
+      content: '1704720000', // Example timestamp, updated automatically by some platforms or ignored
+    },
     // 3) Twitter Card description
     {
       name: 'twitter:description',
@@ -103,6 +115,27 @@ baseUrl: "/",
     {
       name: 'twitter:card',
       content: 'summary_large_image',
+    },
+    // Extra OG tags for WhatsApp/compatibility
+    {
+      itemprop: 'image',
+      content: 'https://www.stringcost.com/img/og.png',
+    },
+    {
+      property: 'og:image:secure_url',
+      content: 'https://www.stringcost.com/img/og.png',
+    },
+    {
+      property: 'og:image:type',
+      content: 'image/png',
+    },
+    {
+      property: 'og:image:width',
+      content: '1200',
+    },
+    {
+      property: 'og:image:height',
+      content: '630',
     },
   ],
     navbar: {
