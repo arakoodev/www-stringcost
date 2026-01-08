@@ -122,7 +122,7 @@ export function OutcomeCreditsContent() {
 							</div>
 							
 							<p className='text-brand-text-secondary mb-6'>
-								Lovable, an AI coding assistant, adopted a credit system (e.g., 100 credits for €25). On the surface, it&apos;s a great example of outcome-based billing. But the implementation revealed critical lessons:
+								Lovable transitioned to a credit-based billing system with its Agent Mode launch on July 23, 2025, making complex AI tasks cost variable credits. On the surface, it&apos;s a <span className='underline-hand-green'>great</span> example of outcome-based billing. But the implementation revealed critical lessons:
 							</p>
 
 							<div className='grid gap-6 md:grid-cols-2'>
