@@ -23,7 +23,7 @@ export function OutcomeCreditsHero() {
 					<div className='space-y-6 max-w-3xl'>
 						<div className='space-y-4'>
 							<p className='font-display text-lg sm:text-xl font-medium leading-[1.4] text-brand-text-primary text-pretty border-l-4 border-brand-accent-300 pl-4'>
-								StringCost automatically creates and <span className='highlight-hand-inline font-semibold'>prices credit</span>, based on your input token/reasoning/MCP costs. Then <span className='underline-hand'>calculates consumption</span>, <span className='underline-hand'>margin</span>, handles <span className='underline-hand'>billing overages</span> and <span className='underline-hand'>invoicing</span> with complex <span className='underline-hand'>Cost-Plus</span> calculations.
+								StringCost automatically creates and <span className='highlight-hand-inline font-semibold'>prices credits</span> from your underlying token, reasoning, and MCP costs. Then <span className='underline-hand'>calculates consumption</span>, <span className='underline-hand'>margin</span>, handles <span className='underline-hand'>billing overages</span> and <span className='underline-hand'>invoicing</span> with complex <span className='underline-hand'>Cost-Plus</span> calculations.
 							</p>
 							
 							<p className='font-body text-lg leading-[1.55] text-brand-text-secondary text-pretty'>
