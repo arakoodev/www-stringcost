@@ -21,6 +21,7 @@ const buttonBase =
 	"inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-matter font-semibold transition-all duration-200";
 const primaryButton = `${buttonBase} bg-[#210F26] text-white hover:bg-[#0D0D0D] hover:scale-[1.02] active:scale-[0.98]`;
 const secondaryButton = `${buttonBase} border border-brand-accent-300 text-brand-text-secondary hover:bg-brand-accent-100/60`;
+const secondaryButtonLight = `${buttonBase} border border-white/40 text-white hover:bg-white/10 hover:border-white/60`;
 
 const painPoints = [
 	{
@@ -144,7 +145,7 @@ export function X402Hero() {
 							</span>
 						</h1>
 
-						<p className="font-body text-lg sm:text-xl leading-[1.6] text-white/70 max-w-xl text-pretty">
+						<p className="font-body text-lg sm:text-xl leading-[1.6] text-white/80 max-w-xl text-pretty">
 							Payments are the last step. The hard part is everything before: <span className="underline-hand-green text-white">credits</span>, <span className="underline-hand-green text-white">prepaid plans</span>, <span className="underline-hand-green text-white">refunds</span>, <span className="underline-hand-green text-white">usage caps</span>, and <span className="underline-hand-green text-white">line-item audit trails</span>.
 						</p>
 
@@ -153,7 +154,7 @@ export function X402Hero() {
 								Schedule a Demo
 								<ArrowRight className="ml-2 h-4 w-4" />
 							</a>
-							<a href="https://calendar.app.google/hjN2HkZBLJMtSuku7" className={secondaryButton}>
+							<a href="https://calendar.app.google/hjN2HkZBLJMtSuku7" className={secondaryButtonLight}>
 								Talk to Sales
 							</a>
 						</div>
@@ -167,7 +168,7 @@ export function X402Hero() {
 							<div className="glow-sheen" />
 
 							<div className="flex items-center justify-between mb-8">
-								<span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">Live Session</span>
+								<span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Live Session</span>
 								<span className="pulse-ring inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-400">
 									<span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
 									Active
@@ -177,7 +178,7 @@ export function X402Hero() {
 							<div className="space-y-4">
 								<div className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
 									<div>
-										<p className="text-xs uppercase tracking-wider text-white/40">Authorization</p>
+										<p className="text-xs uppercase tracking-wider text-white/60">Authorization</p>
 										<p className="text-2xl font-bold text-white mt-1">$2,000</p>
 									</div>
 									<div className="h-12 w-12 rounded-xl bg-brand-accent-300/20 flex items-center justify-center">
@@ -187,7 +188,7 @@ export function X402Hero() {
 
 								<div className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
 									<div>
-										<p className="text-xs uppercase tracking-wider text-white/40">Usage</p>
+										<p className="text-xs uppercase tracking-wider text-white/60">Usage</p>
 										<p className="text-2xl font-bold text-white mt-1">$134.22</p>
 									</div>
 									<div className="h-2 flex-1 mx-6 rounded-full bg-white/10 overflow-hidden">
@@ -197,18 +198,18 @@ export function X402Hero() {
 
 								<div className="grid grid-cols-2 gap-3">
 									<div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20">
-										<p className="text-xs text-rose-400/70">Debits</p>
+										<p className="text-xs text-rose-300">Debits</p>
 										<p className="text-lg font-semibold text-rose-400 mt-1">-$1.02</p>
 									</div>
 									<div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-										<p className="text-xs text-emerald-400/70">Credits</p>
+										<p className="text-xs text-emerald-300">Credits</p>
 										<p className="text-lg font-semibold text-emerald-400 mt-1">+$1.55</p>
 									</div>
 								</div>
 
 								<div className="pt-4 border-t border-white/10">
 									<div className="flex items-center justify-between text-sm">
-										<span className="text-white/50">Margin</span>
+										<span className="text-white/70">Margin</span>
 										<span className="font-semibold text-emerald-400">+$0.53 (52%)</span>
 									</div>
 								</div>
@@ -321,20 +322,20 @@ export function X402Content() {
 								<span className="text-brand-accent-200">not prefunded wallets</span>
 							</h2>
 
-							<p className="text-lg leading-[1.6] text-white/70 text-pretty">
+							<p className="text-lg leading-[1.6] text-white/80 text-pretty">
 								Run a credit-style model on top of <code className="text-brand-accent-200 font-mono">x402</code>. Agents transact independently within limits set by human or org owners.
 							</p>
 
 							<div className="grid grid-cols-2 gap-4">
 								<div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-									<p className="text-xs uppercase tracking-wider text-white/40 mb-2">Micro</p>
+									<p className="text-xs uppercase tracking-wider text-white/60 mb-2">Micro</p>
 									<p className="text-3xl font-bold text-white">$0.001</p>
-									<p className="text-sm text-white/50 mt-2">Single tool call</p>
+									<p className="text-sm text-white/70 mt-2">Single tool call</p>
 								</div>
 								<div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-									<p className="text-xs uppercase tracking-wider text-white/40 mb-2">Macro</p>
+									<p className="text-xs uppercase tracking-wider text-white/60 mb-2">Macro</p>
 									<p className="text-3xl font-bold text-white">$1,000</p>
-									<p className="text-sm text-white/50 mt-2">High-value workflow</p>
+									<p className="text-sm text-white/70 mt-2">High-value workflow</p>
 								</div>
 							</div>
 
@@ -348,7 +349,7 @@ export function X402Content() {
 
 							<div className="relative rounded-3xl border border-white/15 bg-white/5 p-6 backdrop-blur-xl space-y-4">
 								<div className="flex items-center justify-between">
-									<span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Credit Flow</span>
+									<span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Credit Flow</span>
 									<span className="text-xs text-brand-accent-200">Auth → Capture</span>
 								</div>
 
@@ -365,7 +366,7 @@ export function X402Content() {
 										</div>
 										<div>
 											<h4 className="text-sm font-semibold text-white">{item.title}</h4>
-											<p className="text-xs text-white/50 mt-0.5">{item.desc}</p>
+											<p className="text-xs text-white/70 mt-0.5">{item.desc}</p>
 										</div>
 									</div>
 								))}
@@ -491,7 +492,7 @@ export function X402Content() {
 							</span>
 						</h2>
 
-						<p className="text-lg text-white/70 max-w-xl mx-auto">
+						<p className="text-lg text-white/80 max-w-xl mx-auto">
 							Proxy accounting, credits, and settlements in one stack. Built for usage-based AI.
 						</p>
 
@@ -505,7 +506,7 @@ export function X402Content() {
 							</a>
 						</div>
 
-						<div className="flex flex-wrap items-center justify-center gap-6 pt-8 text-sm text-white/50">
+						<div className="flex flex-wrap items-center justify-center gap-6 pt-8 text-sm text-white/70">
 							<div className="flex items-center gap-2">
 								<CheckCircle2 className="h-4 w-4 text-emerald-400" />
 								<span>No integration required</span>
