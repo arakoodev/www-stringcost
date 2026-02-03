@@ -180,12 +180,12 @@ body {
 
 /* Tighter highlight for inline text */
 .highlight-hand-inline {
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 40'%3E%3Cpath d='M2,20 Q5,5 35,2 T115,5 Q145,5 148,20 Q145,35 115,38 T35,35 Q5,35 2,20' stroke='%2310B981' stroke-width='2.5' fill='none' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M4,30 Q8,8 50,4 T150,8 Q192,10 196,30 Q192,50 150,54 T50,52 Q8,48 4,30' stroke='%2310B981' stroke-width='2.5' fill='none' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100% 100%;
-	padding: 4px 18px;
-	margin: 0 -8px;
+	padding: 12px 28px;
+	margin: 0 -14px;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
 	display: inline-block;
@@ -454,6 +454,30 @@ body {
 	}
 	.x402-shimmer {
 		animation: none;
+	}
+}
+
+/* Glowing gradient text for x402 */
+.x402-glow-text {
+	background: linear-gradient(135deg, #D9C1D7 0%, #D9B9A7 25%, #fff 50%, #D9C1D7 75%, #D9B9A7 100%);
+	background-size: 200% auto;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: x402GlowShift 4s ease-in-out infinite;
+	filter: drop-shadow(0 0 8px rgba(217, 193, 215, 0.8)) drop-shadow(0 0 20px rgba(217, 185, 167, 0.5));
+	font-weight: 700;
+}
+
+@keyframes x402GlowShift {
+	0%, 100% { background-position: 0% center; }
+	50% { background-position: 200% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.x402-glow-text {
+		animation: none;
+		background-position: 100% center;
 	}
 }
 

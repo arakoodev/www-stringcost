@@ -137,7 +137,7 @@ export function X402Hero() {
 						</div>
 
 						<h1 className="font-display text-[32px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold tracking-tight leading-[1.05]">
-							<code className="text-brand-accent-200 font-mono">x402</code> needs accounting.
+							<span className="x402-glow-text font-mono">x402</span> needs accounting.
 							<br />
 							<span className="bg-gradient-to-r from-white via-brand-accent-100 to-brand-accent-200 bg-clip-text text-transparent">
 								StringCost delivers it.
@@ -484,7 +484,7 @@ export function X402Content() {
 				<div className="container-custom relative z-10 py-[100px] lg:py-[140px]">
 					<div className="max-w-3xl mx-auto text-center space-y-8">
 						<h2 className="text-[28px] sm:text-[36px] lg:text-[48px] font-matter font-bold tracking-tight leading-[1.15]">
-							Make <code className="text-brand-accent-200 font-mono">x402</code> actually work
+							Make <span className="x402-glow-text font-mono">x402</span> actually work
 							<br />
 							<span className="bg-gradient-to-r from-white via-brand-accent-100 to-brand-accent-200 bg-clip-text text-transparent">
 								for the agent economy
