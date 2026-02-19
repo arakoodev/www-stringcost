@@ -42,13 +42,13 @@ export function OutcomeCreditsHero() {
 
 				<div className='flex flex-col gap-3 sm:flex-row sm:items-center pt-4'>
 					<a
-						href='https://calendar.app.google/hjN2HkZBLJMtSuku7'
+						href='http://app.stringcost.com/'
 						className={primaryButton}
 					>
 						Schedule a Demo
 					</a>
 					<a
-						href='https://calendar.app.google/hjN2HkZBLJMtSuku7'
+						href='http://app.stringcost.com/'
 						className={secondaryButton}
 					>
 						Contact Sales
@@ -564,7 +564,7 @@ export function OutcomeCreditsContent() {
 							Building a credit system is hard. You need to handle top-ups, expirations, decimals, and concurrency. StringCost gives you a robust Credits Proxy Gateway so you can focus on building your agent, not your billing engine.
 						</p>
 						<div className='flex flex-col items-center justify-center gap-3 pt-4 sm:flex-row'>
-							<a href='https://calendar.app.google/hjN2HkZBLJMtSuku7' className={primaryButton}>
+							<a href='http://app.stringcost.com/' className={primaryButton}>
 								Get the Gateway
 							</a>
 						</div>

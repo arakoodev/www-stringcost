@@ -150,11 +150,11 @@ export function X402Hero() {
 						</p>
 
 						<div className="flex flex-col gap-4 sm:flex-row sm:items-center pt-2">
-							<a href="https://calendar.app.google/hjN2HkZBLJMtSuku7" className={primaryButton}>
+							<a href="http://app.stringcost.com/" className={primaryButton}>
 								Schedule a Demo
 								<ArrowRight className="ml-2 h-4 w-4" />
 							</a>
-							<a href="https://calendar.app.google/hjN2HkZBLJMtSuku7" className={secondaryButtonLight}>
+							<a href="http://app.stringcost.com/" className={secondaryButtonLight}>
 								Talk to Sales
 							</a>
 						</div>
@@ -498,7 +498,7 @@ export function X402Content() {
 
 						<div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
 							<a
-								href="https://calendar.app.google/hjN2HkZBLJMtSuku7"
+								href="http://app.stringcost.com/"
 								className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-matter font-semibold transition-all duration-200 bg-white text-[#210F26] hover:bg-brand-accent-100 hover:scale-[1.02] active:scale-[0.98]"
 							>
 								Schedule a Demo

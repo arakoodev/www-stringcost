@@ -66,13 +66,13 @@ export function HeroSection() {
 
 				<div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
 					<a
-						href='https://calendar.app.google/hjN2HkZBLJMtSuku7'
+						href='http://app.stringcost.com/'
 						className="inline-flex items-center justify-center rounded-full px-6 py-3 font-display text-base font-semibold transition-colors duration-150 bg-[#210F26] text-white hover:bg-[#0D0D0D]"
 					>
 						Schedule a Strategic Demo
 					</a>
 					<a
-						href='https://calendar.app.google/hjN2HkZBLJMtSuku7'
+						href='http://app.stringcost.com/'
 						className="inline-flex items-center justify-center rounded-full px-6 py-3 font-display text-base font-semibold transition-colors duration-150 border border-brand-accent-300 text-brand-text-secondary hover:bg-brand-accent-100/60"
 					>
 						Contact Sales
@@ -391,7 +391,7 @@ export function FinalCtaSection() {
 					<h2 className='text-[26px] sm:text-[34px] lg:text-[38px] font-matter font-semibold tracking-tight leading-[1.26] text-balance'>Get the Control You Need and the Scalability You Deserve.</h2>
 					<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Stop building brittle, insecure AI apps. Start building on a true enterprise-grade control plane.</p>
 					<div className='flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row'>
-						<a href='https://calendar.app.google/hjN2HkZBLJMtSuku7' className={primaryButton}>
+						<a href='http://app.stringcost.com/' className={primaryButton}>
 							Schedule a Demo
 						</a>
 					</div>

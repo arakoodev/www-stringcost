@@ -77,7 +77,7 @@ export default function NavbarContent(): ReactNode {
 <div className="hidden md:inline-block relative group mr-4">
   <div className="bg-brand-border rounded-md absolute inset-0 translate-y-[2px]"></div>
   <a
-    href="https://calendar.app.google.com/UCdRbHAHJYTwUEgF6"
+    href="http://app.stringcost.com/"
     target="_blank"
     rel="noopener noreferrer"
     className="w-full hover:no-underline"
