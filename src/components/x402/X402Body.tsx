@@ -150,14 +150,17 @@ export function X402Hero() {
 						</p>
 
 						<div className="flex flex-col gap-4 sm:flex-row sm:items-center pt-2">
-							<a href="http://app.stringcost.com/" className={primaryButton}>
-								Schedule a Demo
-								<ArrowRight className="ml-2 h-4 w-4" />
-							</a>
+							<span className="cta-glow">
+								<a href="http://app.stringcost.com/" className={primaryButton}>
+									Ship x402 Billing Today
+									<ArrowRight className="ml-2 h-4 w-4" />
+								</a>
+							</span>
 							<a href="http://app.stringcost.com/" className={secondaryButtonLight}>
-								Talk to Sales
+								Explore the Dashboard
 							</a>
 						</div>
+						<p className="text-xs text-white/50 mt-3 tracking-wide">Processing 10K+ API calls daily</p>
 					</div>
 
 					{/* Hero visual - animated ledger card */}
@@ -501,7 +504,7 @@ export function X402Content() {
 								href="http://app.stringcost.com/"
 								className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-matter font-semibold transition-all duration-200 bg-white text-[#210F26] hover:bg-brand-accent-100 hover:scale-[1.02] active:scale-[0.98]"
 							>
-								Schedule a Demo
+								Go Live — No SDK Required
 								<ArrowRight className="ml-2 h-5 w-5" />
 							</a>
 						</div>

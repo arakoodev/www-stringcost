@@ -58,12 +58,12 @@ export default function NavbarContent(): ReactNode {
 		<NavbarContentLayout
 			left={
 				// TODO stop hardcoding items?
-				<div className='flex items-center h-[44px] md:h-auto w-full '>
+				<div className='flex items-center justify-between h-[44px] md:h-auto w-full'>
 					<div className='min-w-[160px]'>
 						<NavbarLogo />
 					</div>
 
-					<div className='flex items-center justify-center w-full'>
+					<div className='hidden lg:flex items-center justify-center flex-1'>
 						<NavbarItems items={leftItems} />
 					</div>
 					{!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
@@ -83,7 +83,7 @@ export default function NavbarContent(): ReactNode {
     className="w-full hover:no-underline"
   >
     <button className="relative px-4 py-0.5 md:px-6 md:py-2 text-brand-black-100 text-sm lg:text-base font-matter font-medium bg-brand-accent-100 rounded-md transition-transform duration-150 -translate-y-1 group-hover:-translate-y-1.5 active:-translate-y-0.5 cursor-pointer border-[1.5px] border-brand-accent-200 w-full">
-      Get Started
+      Start Free
     </button>
   </a>
 </div>

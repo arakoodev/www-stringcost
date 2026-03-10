@@ -1,7 +1,7 @@
 import React from "react";
-import { Zap, Settings, Lightbulb, Lock } from 'lucide-react';
+import { Zap, Settings, Lightbulb, Lock, ArrowRight } from 'lucide-react';
 
-const buttonBase = "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-matter font-semibold transition-colors duration-150";
+const buttonBase = "inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-matter font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]";
 const primaryButton = `${buttonBase} bg-[#210F26] text-white hover:bg-[#0D0D0D]`;
 const secondaryButton = `${buttonBase} border border-brand-accent-300 text-brand-text-secondary hover:bg-brand-accent-100/60`;
 const tertiaryButton = `${buttonBase} border border-transparent text-brand-text-secondary hover:text-brand-text-primary`;
@@ -65,19 +65,23 @@ export function HeroSection() {
 				</div>
 
 				<div className='flex flex-col gap-3 sm:flex-row sm:items-center'>
+					<span className="cta-glow">
+						<a
+							href='http://app.stringcost.com/'
+							className={primaryButton}
+						>
+							Protect Your Margins — Free
+							<ArrowRight className="w-4 h-4 ml-2" />
+						</a>
+					</span>
 					<a
 						href='http://app.stringcost.com/'
-						className="inline-flex items-center justify-center rounded-full px-6 py-3 font-display text-base font-semibold transition-colors duration-150 bg-[#210F26] text-white hover:bg-[#0D0D0D]"
+						className={secondaryButton}
 					>
-						Schedule a Strategic Demo
-					</a>
-					<a
-						href='http://app.stringcost.com/'
-						className="inline-flex items-center justify-center rounded-full px-6 py-3 font-display text-base font-semibold transition-colors duration-150 border border-brand-accent-300 text-brand-text-secondary hover:bg-brand-accent-100/60"
-					>
-						Contact Sales
+						See It in Action
 					</a>
 				</div>
+				<p className="text-xs text-brand-text-muted mt-3 tracking-wide">Trusted by YC and a16z-backed teams</p>
 			</div>
 		</section>
 	);
@@ -392,9 +396,11 @@ export function FinalCtaSection() {
 					<p className='text-lg leading-[1.55] text-brand-text-secondary text-pretty'>Stop building brittle, insecure AI apps. Start building on a true enterprise-grade control plane.</p>
 					<div className='flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row'>
 						<a href='http://app.stringcost.com/' className={primaryButton}>
-							Schedule a Demo
+							Start Saving on AI Costs
+							<ArrowRight className="w-4 h-4 ml-2" />
 						</a>
 					</div>
+					<p className="text-xs text-brand-text-muted mt-3 tracking-wide">Trusted by YC and a16z-backed teams</p>
 				</div>
 			</div>
 		</section>

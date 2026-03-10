@@ -1,7 +1,7 @@
 import React from "react";
-import { Zap, AlertTriangle, ShieldCheck, PieChart, Coins, Scale, CheckCircle, BarChart3, Lock, RefreshCw, Layers, ArrowRightLeft, Cpu, Server, Code } from 'lucide-react';
+import { Zap, AlertTriangle, ShieldCheck, PieChart, Coins, Scale, CheckCircle, BarChart3, Lock, RefreshCw, Layers, ArrowRightLeft, Cpu, Server, Code, ArrowRight } from 'lucide-react';
 
-const buttonBase = "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-matter font-semibold transition-colors duration-150";
+const buttonBase = "inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-matter font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]";
 const primaryButton = `${buttonBase} bg-[#210F26] text-white hover:bg-[#0D0D0D]`;
 const secondaryButton = `${buttonBase} border border-brand-accent-300 text-brand-text-secondary hover:bg-brand-accent-100/60`;
 
@@ -41,19 +41,23 @@ export function OutcomeCreditsHero() {
 				</div>
 
 				<div className='flex flex-col gap-3 sm:flex-row sm:items-center pt-4'>
-					<a
-						href='http://app.stringcost.com/'
-						className={primaryButton}
-					>
-						Schedule a Demo
-					</a>
+					<span className="cta-glow">
+						<a
+							href='http://app.stringcost.com/'
+							className={primaryButton}
+						>
+							Launch Credit Billing Free
+							<ArrowRight className="w-4 h-4 ml-2" />
+						</a>
+					</span>
 					<a
 						href='http://app.stringcost.com/'
 						className={secondaryButton}
 					>
-						Contact Sales
+						Take a Quick Tour
 					</a>
 				</div>
+				<p className="text-xs text-brand-text-muted mt-3 tracking-wide">Used by AI-first companies worldwide</p>
 			</div>
 		</section>
 	);
@@ -565,9 +569,11 @@ export function OutcomeCreditsContent() {
 						</p>
 						<div className='flex flex-col items-center justify-center gap-3 pt-4 sm:flex-row'>
 							<a href='http://app.stringcost.com/' className={primaryButton}>
-								Get the Gateway
+								Launch Credits Today
+								<ArrowRight className="w-4 h-4 ml-2" />
 							</a>
 						</div>
+						<p className="text-xs text-brand-text-muted mt-3 tracking-wide">Used by AI-first companies worldwide</p>
 					</div>
 				</div>
 			</section>

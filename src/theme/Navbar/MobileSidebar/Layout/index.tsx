@@ -25,7 +25,7 @@ export default function NavbarMobileSidebarLayout({header, primaryMenu, secondar
       className="w-full hover:no-underline"
     >
       <button className='relative py-2 text-brand-black-100 text-base font-matter font-medium bg-brand-accent-100 rounded-md transition-transform duration-150 -translate-y-1 active:-translate-y-0.5 cursor-pointer border-[1.5px] border-brand-accent-200 w-full'>
-        Get Started
+        Start Free
       </button>
     </a>
   </div>
