@@ -1,11 +1,17 @@
 import Layout from "@theme/Layout";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Head from "@docusaurus/Head";
 import { X402Hero, X402Content } from "../components/x402/X402Body";
 
 export default function X402Page() {
-	const { siteConfig } = useDocusaurusContext();
 	return (
-		<Layout title="StringCost - The missing layer that makes x402 viable" description="x402 needs accounting. StringCost provides credits, prepaid plans, refunds, usage caps, and line-item audit trails for agentic payments.">
+		<Layout title="The Missing Layer That Makes x402 Viable | StringCost" description="x402 needs accounting. StringCost provides credits, prepaid plans, refunds, usage caps, and line-item audit trails for agentic payments.">
+			<Head>
+				<meta property="og:image" content="https://www.stringcost.com/img/og-x402.png" />
+				<meta property="og:image:secure_url" content="https://www.stringcost.com/img/og-x402.png" />
+				<meta name="twitter:image" content="https://www.stringcost.com/img/og-x402.png" />
+				<meta property="og:description" content="x402 needs accounting. StringCost provides credits, prepaid plans, refunds, usage caps, and line-item audit trails for agentic payments." />
+				<meta name="twitter:description" content="x402 needs accounting. StringCost provides proxy accounting for agentic payments." />
+			</Head>
 			<div className="-mt-[64px] flex flex-col">
 				<X402Hero />
 				<X402Content />

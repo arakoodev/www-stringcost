@@ -1,17 +1,20 @@
 import Layout from "@theme/Layout";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Head from "@docusaurus/Head";
 import {
   OutcomeCreditsHero,
   OutcomeCreditsContent,
 } from "./OutcomeCreditsBody";
 
 export default function OutcomeCreditsPage() {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Outcome Credits | ${siteConfig.title}`}
-      description="Outcome-based credits for AI Agents"
+      title="Credit-based Billing for AI Companies | StringCost"
+      description="Implement the credit-based billing model used by Lovable without building the backend yourself. Automatic credit pricing from underlying token, reasoning, and MCP costs."
     >
+      <Head>
+        <meta property="og:description" content="Implement the credit-based billing model used by Lovable without building the backend yourself. Automatic credit pricing, consumption tracking, and margin protection." />
+        <meta name="twitter:description" content="Credit-based billing infrastructure for AI companies. Ship the Lovable billing model without building it yourself." />
+      </Head>
       <div className="-mt-[64px] flex flex-col">
         <OutcomeCreditsHero />
         <OutcomeCreditsContent />

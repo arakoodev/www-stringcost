@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "StringCost",
-  tagline: "SAP for AI Agents.",
+  tagline: "Credit-based Billing for AI Companies.",
   favicon: "/img/favicon.jpg",
 
 
@@ -87,12 +87,12 @@ baseUrl: "/",
     metadata: [
     // 1) Standard meta description
     {
-      content: 'SAP for AI Agents.',
+      content: 'Credit-based billing infrastructure for AI companies. Automatic credit pricing, consumption tracking, and margin protection.',
     },
     // 2) Open Graph description (used by Telegram, Facebook, LinkedIn…)
     {
       property: 'og:description',
-      content: 'SAP for AI Agents.',
+      content: 'Credit-based billing infrastructure for AI companies. Automatic credit pricing, consumption tracking, and margin protection.',
     },
     {
       property: 'og:site_name',
@@ -102,29 +102,16 @@ baseUrl: "/",
       property: 'og:type',
       content: 'website',
     },
-    {
-      property: 'og:updated_time',
-      content: '1704720000', // Example timestamp, updated automatically by some platforms or ignored
-    },
     // 3) Twitter Card description
     {
       name: 'twitter:description',
-      content: 'SAP for AI Agents.',
+      content: 'Credit-based billing infrastructure for AI companies. Ship the Lovable billing model without building it yourself.',
     },
-    // (you can still leave twitter:card or override it to “summary_large_image”)
     {
       name: 'twitter:card',
       content: 'summary_large_image',
     },
-    // Extra OG tags for WhatsApp/compatibility
-    {
-      itemprop: 'image',
-      content: 'https://www.stringcost.com/img/og.png',
-    },
-    {
-      property: 'og:image:secure_url',
-      content: 'https://www.stringcost.com/img/og.png',
-    },
+    // Default OG image (overridden per-page via <Head>)
     {
       property: 'og:image:type',
       content: 'image/png',
