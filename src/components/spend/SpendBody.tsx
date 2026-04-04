@@ -4,7 +4,6 @@ import {
 	ArrowRight,
 	BarChart3,
 	CheckCircle2,
-	FolderGit2,
 	ShieldCheck,
 	Sparkles,
 	TrendingUp,
@@ -78,6 +77,86 @@ const controlPillars = [
 	},
 ];
 
+const heroArchitectureLayers = [
+	{
+		kicker: "Runtime",
+		title: "OpenShell-based agent sandbox",
+		description:
+			"Run coding agents inside a locked-down runtime with explicit permissions and a defined egress path.",
+		icon: ShieldCheck,
+	},
+	{
+		kicker: "Proxy",
+		title: "StringCost proxy in your environment",
+		description:
+			"Every model call, tool call, and CLI session flows through the proxy before it becomes vendor spend.",
+		icon: Zap,
+	},
+	{
+		kicker: "Managed plane",
+		title: "Cloud policy, reporting, and governance",
+		description:
+			"Budgets, repo attribution, anomaly detection, and chargebacks live in one managed control plane.",
+		icon: BarChart3,
+	},
+];
+
+const runtimePressurePoints = [
+	{
+		title: "Agent runtime traffic",
+		description: "Parallel sessions create spend long before procurement or finance sees a vendor invoice.",
+	},
+	{
+		title: "CLI and tool loops",
+		description: "Generated code, bash commands, and tool retries are now the real metered surface.",
+	},
+	{
+		title: "Invoice lag",
+		description: "By the time the bill arrives, the only thing left to do is explain the overage.",
+	},
+];
+
+const runtimeBoundarySteps = [
+	{
+		step: "01",
+		title: "OpenShell runtime",
+		description: "Agents execute inside a permissioned sandbox instead of directly on a raw workstation or server.",
+	},
+	{
+		step: "02",
+		title: "CLI and tool traffic",
+		description: "Most real work becomes shell commands, code generation, file edits, and external tool calls.",
+	},
+	{
+		step: "03",
+		title: "Customer-prem proxy",
+		description: "StringCost sits on the egress path in your environment and turns execution into enforceable spend events.",
+	},
+	{
+		step: "04",
+		title: "Managed control plane",
+		description: "Finance and platform teams get live policy, reporting, attribution, and chargeback workflows.",
+	},
+];
+
+const heroLiveMetrics = [
+	{label: "Today", value: "$482.70", tone: "text-white"},
+	{label: "Flagged", value: "03", tone: "text-rose-300"},
+	{label: "Protected", value: "$1.2k", tone: "text-emerald-300"},
+];
+
+const heroAttributionLines = [
+	"agent-coder-12 -> payments-api -> platform",
+	"cursor-credit-burst -> akhil -> engineering",
+	"claude-code-session -> rollout client -> chargeback",
+];
+
+const heroVendorMix = [
+	{label: "Cursor", amount: "$182.40", width: "78%"},
+	{label: "Claude Code", amount: "$149.20", width: "61%"},
+	{label: "Copilot", amount: "$94.60", width: "42%"},
+];
+
 function SectionLabel({
 	children,
 	light = false,
@@ -109,20 +188,26 @@ export function SpendHero() {
 			<div className="glow-orb glow-orb--peach float-medium -bottom-24 right-0 h-96 w-96 opacity-30" />
 
 			<div className="container-custom relative z-10 py-[96px] lg:py-[132px]">
-				<div className="grid gap-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-					<div className="space-y-8">
-						<SectionLabel light>Financial control plane for AI developer tools</SectionLabel>
+				<div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_480px] lg:items-center lg:gap-16 xl:grid-cols-[minmax(0,1fr)_520px] xl:gap-20">
+					<div className="max-w-3xl space-y-8">
+						<SectionLabel light>OpenShell-based runtime + customer-prem proxy</SectionLabel>
 
 						<div className="space-y-5">
 							<h1 className="font-display text-[34px] sm:text-[50px] md:text-[64px] lg:text-[78px] font-bold tracking-tight leading-[1.02] text-balance">
-								Developer velocity is compounding.
+								Control AI spend where agents run.
 								<br />
-								<span className="text-white/65">So is AI spend.</span>
+								<span className="text-white/65">Not after the invoice lands.</span>
 							</h1>
-							<p className="max-w-2xl text-lg sm:text-xl leading-[1.62] text-white/78 text-pretty">
-								Seats, pooled credits, premium requests, and token overages now live in the same budget line.
-								StringCost turns that chaos into one operating system for finance and engineering.
-							</p>
+							<div className="max-w-2xl space-y-4 text-lg sm:text-xl leading-[1.62] text-white/78 text-pretty">
+								<p>
+									StringCost gives enterprises an OpenShell-based runtime for coding agents and a proxy
+									deployed in the customer environment.
+								</p>
+								<p>
+									Every model call, tool call, and CLI session flows through that proxy, while the managed
+									control plane handles policy, reporting, and governance.
+								</p>
+							</div>
 						</div>
 
 						<div className="grid max-w-2xl gap-3 sm:grid-cols-3">
@@ -152,68 +237,191 @@ export function SpendHero() {
 							</a>
 						</div>
 
-						<p className="text-sm text-white/56">
-							Built for finance, procurement, engineering management, and platform teams buying AI tooling at
-							scale.
-						</p>
+						<div className="lg:hidden">
+							<div className="glow-card spend-hero-glow rounded-[28px] border border-white/14 spend-dark-panel p-5 shadow-xl">
+								<div className="flex items-start justify-between gap-4">
+									<div>
+										<p className="text-xs uppercase tracking-[0.22em] text-white/45">Deployment</p>
+										<p className="mt-2 text-lg font-semibold text-white">Runtime, proxy, and managed controls</p>
+									</div>
+									<span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
+										Live
+									</span>
+								</div>
+
+								<div className="mt-5 space-y-3">
+									{heroArchitectureLayers.map((layer) => (
+										<div
+											key={layer.title}
+											className="rounded-2xl border border-white/10 bg-white/5 p-4"
+										>
+											<div className="flex items-start gap-3">
+												<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-black/20">
+													<layer.icon className="h-4 w-4 text-brand-accent-200" />
+												</div>
+												<div className="min-w-0">
+													<p className="text-[10px] uppercase tracking-[0.22em] text-white/45">
+														{layer.kicker}
+													</p>
+													<p className="mt-1.5 text-sm font-semibold text-white">{layer.title}</p>
+													<p className="mt-1.5 text-sm leading-6 text-white/68">{layer.description}</p>
+												</div>
+											</div>
+										</div>
+									))}
+								</div>
+
+								<div className="my-5 spend-divider" />
+
+								<div className="rounded-2xl border border-rose-400/18 bg-rose-500/10 p-4">
+									<div className="flex items-start justify-between gap-3">
+										<div className="min-w-0">
+											<p className="text-[10px] uppercase tracking-[0.22em] text-rose-200/70">Proxy event</p>
+											<p className="mt-2 text-sm font-semibold text-white">Agent loop exceeded baseline by 18x</p>
+											<p className="mt-1 text-sm leading-6 text-white/68">
+												Paused after 15 minutes with repo mapping and chargeback preserved.
+											</p>
+										</div>
+										<AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-rose-300" />
+									</div>
+								</div>
+
+								<div className="mt-4 grid grid-cols-3 gap-2">
+									{heroLiveMetrics.map((stat) => (
+										<div
+											key={stat.label}
+											className="rounded-2xl border border-white/10 bg-black/20 p-3"
+										>
+											<p className="text-[10px] uppercase tracking-[0.18em] text-white/45">{stat.label}</p>
+											<p className={`mt-2 text-base font-semibold ${stat.tone}`}>{stat.value}</p>
+										</div>
+									))}
+								</div>
+							</div>
+						</div>
+
+						<div className="hidden max-w-2xl gap-3 text-sm text-white/58 md:grid md:grid-cols-3">
+							<div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+								<p className="font-semibold text-white">Runtime boundary</p>
+								<p className="mt-1">OpenShell-based sandboxes for agent execution.</p>
+							</div>
+							<div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+								<p className="font-semibold text-white">Proxy boundary</p>
+								<p className="mt-1">Deployed in your environment before vendor billing starts.</p>
+							</div>
+							<div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+								<p className="font-semibold text-white">Finance boundary</p>
+								<p className="mt-1">Managed policy, attribution, alerts, and chargebacks.</p>
+							</div>
+						</div>
 					</div>
 
-					<div className="relative hidden lg:block">
+					<div className="relative hidden w-full max-w-[520px] justify-self-start lg:block lg:justify-self-end">
 						<div className="absolute -inset-6 rounded-[40px] bg-gradient-to-br from-white/10 via-transparent to-brand-accent-200/15 blur-3xl" />
-						<div className="glow-card spend-hero-glow relative rounded-[32px] border border-white/14 spend-dark-panel p-6 shadow-2xl">
+						<div className="glow-card spend-hero-glow relative w-full rounded-[32px] border border-white/14 spend-dark-panel p-6 shadow-2xl xl:p-7">
 							<div className="glow-sheen" />
 							<div className="space-y-5">
 								<div className="flex items-center justify-between">
 									<div>
 										<p className="text-xs uppercase tracking-[0.24em] text-white/55">StringCost</p>
-										<p className="mt-2 text-xl font-semibold text-white">AI Spend Control Plane</p>
+										<p className="mt-2 text-xl font-semibold text-white">Runtime, proxy, and spend control</p>
 									</div>
 									<span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
 										Live anomaly detection
 									</span>
 								</div>
 
-								<div className="grid gap-3 sm:grid-cols-3">
-									<div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-										<p className="text-xs uppercase tracking-[0.2em] text-white/45">Today</p>
-										<p className="mt-2 text-2xl font-semibold text-white">$482.70</p>
-									</div>
-									<div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-										<p className="text-xs uppercase tracking-[0.2em] text-white/45">Flagged sessions</p>
-										<p className="mt-2 text-2xl font-semibold text-rose-300">03</p>
-									</div>
-									<div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-										<p className="text-xs uppercase tracking-[0.2em] text-white/45">Protected budget</p>
-										<p className="mt-2 text-2xl font-semibold text-emerald-300">$1.2k</p>
-									</div>
-								</div>
-
-								<div className="rounded-[28px] border border-rose-400/18 bg-rose-500/10 p-5">
-									<div className="flex items-start justify-between gap-4">
-										<div>
-											<p className="text-xs uppercase tracking-[0.22em] text-rose-200/70">Incident prevented</p>
-											<p className="mt-2 text-lg font-semibold text-white">Agent loop exceeded baseline by 18x</p>
-											<p className="mt-1 text-sm text-white/70">
-												Session paused after 15 minutes. Repo mapped. Chargeback route preserved.
-											</p>
+								<div className="space-y-4">
+									{heroArchitectureLayers.map((layer) => (
+										<div
+											key={layer.title}
+											className="rounded-[28px] border border-white/10 bg-white/5 p-5"
+										>
+											<div className="flex items-start gap-4">
+												<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-black/20">
+													<layer.icon className="h-5 w-5 text-brand-accent-200" />
+												</div>
+												<div className="min-w-0">
+													<p className="text-[11px] uppercase tracking-[0.22em] text-white/45">
+														{layer.kicker}
+													</p>
+													<p className="mt-2 text-base font-semibold text-white">{layer.title}</p>
+													<p className="mt-2 text-sm leading-6 text-white/68">{layer.description}</p>
+												</div>
+											</div>
 										</div>
-										<AlertTriangle className="mt-1 h-5 w-5 flex-shrink-0 text-rose-300" />
-									</div>
+									))}
 								</div>
 
-								<div className="grid gap-4 sm:grid-cols-[1.1fr_0.9fr]">
+								<div className="spend-divider" />
+
+								<div className="grid gap-4 xl:grid-cols-2">
+									<div className="rounded-[28px] border border-rose-400/18 bg-rose-500/10 p-5 sm:col-span-2">
+										<div className="flex items-start justify-between gap-4">
+											<div className="min-w-0">
+												<p className="text-xs uppercase tracking-[0.22em] text-rose-200/70">
+													Proxy event
+												</p>
+												<p className="mt-2 text-lg font-semibold text-white">
+													Agent loop exceeded baseline by 18x
+												</p>
+												<p className="mt-1 text-sm leading-6 text-white/70">
+													The proxy paused the session after 15 minutes, preserved repo attribution,
+													and kept the chargeback route intact.
+												</p>
+											</div>
+											<AlertTriangle className="mt-1 h-5 w-5 flex-shrink-0 text-rose-300" />
+										</div>
+									</div>
+
 									<div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
 										<div className="flex items-center justify-between">
-											<p className="text-xs uppercase tracking-[0.22em] text-white/50">By surface</p>
-											<p className="text-xs text-white/45">Today</p>
+											<p className="text-xs uppercase tracking-[0.22em] text-white/50">Managed plane</p>
+											<p className="text-xs text-white/45">Live</p>
 										</div>
-										<div className="mt-4 space-y-4">
-											{[
-												{label: "Cursor", amount: "$182.40", width: "78%"},
-												{label: "Claude Code", amount: "$149.20", width: "61%"},
-												{label: "Copilot", amount: "$94.60", width: "42%"},
-												{label: "Direct APIs", amount: "$56.50", width: "26%"},
-											].map((row) => (
+										<div className="mt-4 grid grid-cols-3 gap-3">
+											{heroLiveMetrics.map((stat) => (
+												<div
+													key={stat.label}
+													className="rounded-2xl border border-white/10 bg-black/20 p-3"
+												>
+													<p className="text-[11px] uppercase tracking-[0.2em] text-white/45">
+														{stat.label}
+													</p>
+													<p className={`mt-2 text-lg font-semibold ${stat.tone}`}>{stat.value}</p>
+												</div>
+											))}
+										</div>
+										<div className="mt-4 space-y-3 text-sm">
+											<div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
+												<span className="text-white/72">User cap</span>
+												<span className="font-semibold text-white">$300 / day</span>
+											</div>
+											<div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
+												<span className="text-white/72">Incident rule</span>
+												<span className="font-semibold text-white">Suspend at 8x</span>
+											</div>
+										</div>
+									</div>
+
+									<div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
+										<div className="flex items-center justify-between">
+											<p className="text-xs uppercase tracking-[0.22em] text-white/50">Attribution feed</p>
+											<p className="text-xs text-white/45">Live</p>
+										</div>
+										<div className="mt-4 space-y-3 text-sm">
+											{heroAttributionLines.map((line) => (
+												<div
+													key={line}
+													className="flex items-center gap-3 rounded-2xl border border-white/8 bg-black/20 px-4 py-3 text-white/70"
+												>
+													<span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+													<span>{line}</span>
+												</div>
+											))}
+										</div>
+										<div className="mt-4 space-y-3">
+											{heroVendorMix.map((row) => (
 												<div key={row.label} className="space-y-2">
 													<div className="flex items-center justify-between text-sm">
 														<span className="text-white/72">{row.label}</span>
@@ -229,49 +437,9 @@ export function SpendHero() {
 											))}
 										</div>
 									</div>
-
-									<div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
-										<p className="text-xs uppercase tracking-[0.22em] text-white/50">Policy engine</p>
-										<div className="mt-4 space-y-3 text-sm">
-											<div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-												<p className="text-white/92">User cap</p>
-												<p className="mt-1 text-white/58">$300 / day</p>
-											</div>
-											<div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-												<p className="text-white/92">Repo mapping</p>
-												<p className="mt-1 text-white/58">payments-api -&gt; Fintech / OpEx</p>
-											</div>
-											<div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-												<p className="text-white/92">Incident rule</p>
-												<p className="mt-1 text-white/58">Suspend at 8x baseline</p>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
-									<div className="flex items-center justify-between">
-										<p className="text-xs uppercase tracking-[0.22em] text-white/50">Attribution feed</p>
-										<p className="text-xs text-white/45">Live</p>
-									</div>
-									<div className="mt-4 space-y-3 text-sm">
-										{[
-											"agent-coder-12 -&gt; repo: payments-api -&gt; team: platform",
-											"cursor-credit-burst -&gt; user: akhil -&gt; department: eng",
-											"claude-code-session -&gt; client: enterprise rollout -&gt; chargeback ready",
-										].map((line) => (
-											<div
-												key={line}
-												className="flex items-center gap-3 rounded-2xl border border-white/8 bg-black/20 px-4 py-3 text-white/70"
-											>
-												<span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-												<span>{line}</span>
-											</div>
-										))}
-									</div>
-								</div>
 							</div>
 						</div>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -289,11 +457,11 @@ export function SpendContent() {
 					<div className="max-w-3xl mx-auto text-center space-y-4 mb-10">
 						<SectionLabel>Runaway spend</SectionLabel>
 						<h2 className="text-[28px] sm:text-[36px] lg:text-[46px] font-display font-bold tracking-tight leading-[1.1] text-balance">
-							The pricing model that broke your budget.
+							The budget breaks inside the runtime.
 						</h2>
 						<p className="text-lg text-brand-text-secondary max-w-2xl mx-auto text-pretty">
-							AI tools did not just change how developers write code. They changed how vendors charge for it,
-							and that broke the old SaaS budget model.
+							AI coding tools moved cost from flat seats to live execution. Agent loops, CLI sessions, and tool
+							calls now create spend before a vendor invoice exists.
 						</p>
 					</div>
 
@@ -337,14 +505,40 @@ export function SpendContent() {
 							<div className="space-y-4 text-sm text-brand-text-secondary">
 								<div>
 									<p className="font-semibold text-brand-text-primary mb-1">Volatile per-token cost</p>
-									<p>A single agent loop can 10x your bill overnight.</p>
+									<p>A single runtime loop can 10x your bill before anyone sees the invoice.</p>
 								</div>
 								<div>
 									<p className="font-semibold text-brand-text-primary mb-1">Dynamic consumption</p>
-									<p>Power users cost 50x more than light users.</p>
+									<p>Power users, CLIs, and tool retries can cost 50x more than light users.</p>
 								</div>
 							</div>
 						</article>
+					</div>
+
+					<div className="spend-signal-mask mt-8">
+						<div className="spend-signal-track py-2">
+							{Array.from({length: 2}).map((_, copyIndex) => (
+								<div
+									key={copyIndex}
+									className="spend-signal-group"
+									aria-hidden={copyIndex === 1}
+								>
+									{runtimePressurePoints.map((point) => (
+										<div
+											key={`${copyIndex}-${point.title}`}
+											className="w-[280px] sm:w-[320px] rounded-2xl border border-brand-overlay/60 bg-white/85 px-5 py-5 shadow-sm backdrop-blur-sm"
+										>
+											<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">
+												{point.title}
+											</p>
+											<p className="mt-3 text-sm leading-6 text-brand-text-secondary">
+												{point.description}
+											</p>
+										</div>
+									))}
+								</div>
+							))}
+						</div>
 					</div>
 
 					<div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto mt-8">
@@ -373,9 +567,9 @@ export function SpendContent() {
 								</div>
 								<div className="border-l-4 border-brand-accent-200 pl-4">
 									<p className="font-body text-sm text-brand-text-secondary">
-										Code generation is no longer constrained. One developer can produce more output than an entire
-										team. Without tight spend controls, that velocity translates directly into{" "}
-										<strong className="text-brand-text-primary">uncapped token consumption</strong> and{" "}
+										When one developer can ship that much AI-generated code, the real meter is runtime
+										execution, not seat count. Without a proxy on that path, the extra velocity turns straight
+										into <strong className="text-brand-text-primary">uncapped token burn</strong> and{" "}
 										<strong className="text-brand-text-primary">runaway invoices</strong>.
 									</p>
 								</div>
@@ -407,7 +601,8 @@ export function SpendContent() {
 							</blockquote>
 							<div className="border-l-4 border-brand-accent-200 pl-3">
 								<p className="text-xs text-brand-text-muted">
-									One developer now produces more code than an entire team. Every line is a metered token burn.
+									Fifteen concurrent sessions means fifteen live cost surfaces. The control point is the runtime
+									and proxy boundary, not the invoice artifact at month-end.
 								</p>
 							</div>
 						</div>
@@ -468,15 +663,31 @@ export function SpendContent() {
 							</span>
 						</h2>
 						<p className="text-lg text-white/80 max-w-2xl mx-auto text-pretty">
-							AI agents are not chatbots anymore. They generate code at industrial scale, and they all run
-							through CLIs. That makes the CLI your financial control plane.
+							Modern agents package work as shell commands, generated code, and tool calls. Run them inside an
+							OpenShell-based runtime, route egress through a StringCost proxy in your environment, and the
+							managed control plane gets the budget, attribution, and audit trail.
 						</p>
 					</div>
 
+					<div className="grid gap-4 lg:grid-cols-4 max-w-6xl mx-auto mb-10">
+						{runtimeBoundarySteps.map((item) => (
+							<div
+								key={item.step}
+								className="rounded-[28px] border border-white/15 bg-white/5 p-5 backdrop-blur-sm"
+							>
+								<div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/20 text-sm font-semibold text-brand-accent-200">
+									{item.step}
+								</div>
+								<p className="mt-4 text-base font-semibold text-white">{item.title}</p>
+								<p className="mt-2 text-sm leading-6 text-white/68">{item.description}</p>
+							</div>
+						))}
+					</div>
+
 					<div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto mb-10">
-						<div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+						<div className="rounded-2xl border border-rose-300/25 bg-gradient-to-br from-rose-400/12 via-white/5 to-transparent p-6 backdrop-blur-sm shadow-[0_20px_60px_-40px_rgba(251,113,133,0.6)]">
 							<div className="flex items-center gap-3 mb-4">
-								<div className="h-10 w-10 rounded-full bg-brand-accent-300/30 flex items-center justify-center text-sm font-bold text-brand-accent-200">
+								<div className="h-10 w-10 rounded-full bg-rose-300/20 ring-1 ring-rose-200/30 flex items-center justify-center text-sm font-bold text-rose-200">
 									GT
 								</div>
 								<div>
@@ -484,11 +695,11 @@ export function SpendContent() {
 										href="https://x.com/garrytan/status/2031910564344262988"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-sm font-semibold text-white hover:underline"
+										className="text-sm font-semibold text-white hover:text-rose-100 hover:underline"
 									>
 										@garrytan
 									</a>
-									<p className="text-xs text-white/50">Y Combinator CEO</p>
+									<p className="text-xs text-rose-100/65">Y Combinator CEO</p>
 								</div>
 							</div>
 							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
@@ -497,14 +708,14 @@ export function SpendContent() {
 								<strong className="underline-hand-green text-white not-italic">CLI wrapper</strong> in 30
 								minutes... it worked 100x better and was like 100LOC.&rdquo;
 							</blockquote>
-							<p className="text-xs text-white/50 border-l-2 border-brand-accent-200 pl-3">
+							<p className="text-xs text-rose-100/70 border-l-2 border-rose-200/60 pl-3">
 								YC&apos;s CEO ditched MCP for a CLI he built in 30 minutes.
 							</p>
 						</div>
 
-						<div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+						<div className="rounded-2xl border border-sky-300/25 bg-gradient-to-br from-sky-400/12 via-white/5 to-transparent p-6 backdrop-blur-sm shadow-[0_20px_60px_-40px_rgba(56,189,248,0.55)]">
 							<div className="flex items-center gap-3 mb-4">
-								<div className="h-10 w-10 rounded-full bg-brand-accent-300/30 flex items-center justify-center text-sm font-bold text-brand-accent-200">
+								<div className="h-10 w-10 rounded-full bg-sky-300/20 ring-1 ring-sky-200/30 flex items-center justify-center text-sm font-bold text-sky-200">
 									ML
 								</div>
 								<div>
@@ -512,11 +723,11 @@ export function SpendContent() {
 										href="https://x.com/morganlinton/status/2031795683897077965"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-sm font-semibold text-white hover:underline"
+										className="text-sm font-semibold text-white hover:text-sky-100 hover:underline"
 									>
 										@morganlinton
 									</a>
-									<p className="text-xs text-white/50">on Perplexity</p>
+									<p className="text-xs text-sky-100/65">on Perplexity</p>
 								</div>
 							</div>
 							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
@@ -524,14 +735,14 @@ export function SpendContent() {
 								<strong className="underline-hand-green text-white not-italic">moving away from MCPs</strong> and
 								instead using APIs and CLIs.&rdquo;
 							</blockquote>
-							<p className="text-xs text-white/50 border-l-2 border-brand-accent-200 pl-3">
+							<p className="text-xs text-sky-100/70 border-l-2 border-sky-200/60 pl-3">
 								Perplexity is dropping MCP for APIs and CLIs internally.
 							</p>
 						</div>
 
-						<div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+						<div className="rounded-2xl border border-amber-300/25 bg-gradient-to-br from-amber-300/12 via-white/5 to-transparent p-6 backdrop-blur-sm shadow-[0_20px_60px_-40px_rgba(251,191,36,0.5)]">
 							<div className="flex items-center gap-3 mb-4">
-								<div className="h-10 w-10 rounded-full bg-brand-accent-300/30 flex items-center justify-center text-sm font-bold text-brand-accent-200">
+								<div className="h-10 w-10 rounded-full bg-amber-300/20 ring-1 ring-amber-200/30 flex items-center justify-center text-sm font-bold text-amber-100">
 									KV
 								</div>
 								<div>
@@ -539,11 +750,11 @@ export function SpendContent() {
 										href="https://x.com/KaranVaidya6/status/2037530089706176638"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-sm font-semibold text-white hover:underline"
+										className="text-sm font-semibold text-white hover:text-amber-50 hover:underline"
 									>
 										@KaranVaidya6
 									</a>
-									<p className="text-xs text-white/50">Composio</p>
+									<p className="text-xs text-amber-50/65">Composio</p>
 								</div>
 							</div>
 							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
@@ -551,7 +762,7 @@ export function SpendContent() {
 								- <strong className="underline-hand-green text-white not-italic">MCP: 3 vs CLI: 17</strong>. SF
 								has spoken.&rdquo;
 							</blockquote>
-							<p className="text-xs text-white/50 border-l-2 border-brand-accent-200 pl-3">
+							<p className="text-xs text-amber-50/70 border-l-2 border-amber-200/60 pl-3">
 								SF developers voted. The CLI won in a landslide.
 							</p>
 						</div>
@@ -573,8 +784,9 @@ export function SpendContent() {
 					<div className="max-w-3xl mx-auto">
 						<div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6 text-center">
 							<p className="text-sm font-medium text-white">
-								If every agent writes code through a CLI, then the CLI is your financial control plane.
-								StringCost sits at that boundary, tracking every token, every session, and every dollar.
+								If agents write code through a CLI, then the spend boundary is where that CLI leaves the
+								sandbox. StringCost owns that path: runtime policy in OpenShell, egress control in the proxy,
+								and ledger policy in the managed plane.
 							</p>
 						</div>
 					</div>
@@ -721,43 +933,45 @@ export function SpendContent() {
 						</p>
 					</div>
 
-					<div className="rounded-2xl border border-brand-border bg-white shadow-md overflow-hidden">
-						<div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] bg-brand-accent-100/30 border-b border-brand-border">
-							<div className="p-4 text-xs font-semibold uppercase tracking-wider text-brand-text-muted">
-								Dimension
+					<div className="overflow-x-auto rounded-2xl border border-brand-border bg-white shadow-md">
+						<div className="min-w-[760px] overflow-hidden">
+							<div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] bg-brand-accent-100/30 border-b border-brand-border">
+								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-brand-text-muted">
+									Dimension
+								</div>
+								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-brand-text-muted border-x border-brand-border/50">
+									GitHub Copilot
+								</div>
+								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-brand-text-muted border-r border-brand-border/50">
+									Cursor
+								</div>
+								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-brand-text-muted">
+									Claude Code
+								</div>
 							</div>
-							<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-brand-text-muted border-x border-brand-border/50">
-								GitHub Copilot
-							</div>
-							<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-brand-text-muted border-r border-brand-border/50">
-								Cursor
-							</div>
-							<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-brand-text-muted">
-								Claude Code
-							</div>
-						</div>
 
-						{vendorComparisons.map((row, index) => (
-							<div
-								key={row.dimension}
-								className={`grid grid-cols-[1.2fr_1fr_1fr_1fr] ${
-									index % 2 === 1 ? "bg-brand-surface/50" : ""
-								} ${index !== vendorComparisons.length - 1 ? "border-b border-brand-border/50" : ""}`}
-							>
-								<div className="p-4 flex items-center">
-									<span className="text-sm font-medium text-brand-text-primary">{row.dimension}</span>
+							{vendorComparisons.map((row, index) => (
+								<div
+									key={row.dimension}
+									className={`grid grid-cols-[1.2fr_1fr_1fr_1fr] ${
+										index % 2 === 1 ? "bg-brand-surface/50" : ""
+									} ${index !== vendorComparisons.length - 1 ? "border-b border-brand-border/50" : ""}`}
+								>
+									<div className="p-4 flex items-center">
+										<span className="text-sm font-medium text-brand-text-primary">{row.dimension}</span>
+									</div>
+									<div className="p-4 flex items-center justify-center border-x border-brand-border/30 text-sm text-brand-text-secondary text-center">
+										{row.copilot}
+									</div>
+									<div className="p-4 flex items-center justify-center border-r border-brand-border/30 text-sm text-brand-text-secondary text-center">
+										{row.cursor}
+									</div>
+									<div className="p-4 flex items-center justify-center text-sm text-brand-text-secondary text-center">
+										{row.claude}
+									</div>
 								</div>
-								<div className="p-4 flex items-center justify-center border-x border-brand-border/30 text-sm text-brand-text-secondary text-center">
-									{row.copilot}
-								</div>
-								<div className="p-4 flex items-center justify-center border-r border-brand-border/30 text-sm text-brand-text-secondary text-center">
-									{row.cursor}
-								</div>
-								<div className="p-4 flex items-center justify-center text-sm text-brand-text-secondary text-center">
-									{row.claude}
-								</div>
-							</div>
-						))}
+							))}
+						</div>
 					</div>
 
 					<div className="mt-8">

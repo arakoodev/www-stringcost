@@ -6,7 +6,7 @@ export default function SpendPage() {
 	return (
 		<Layout
 			title="AI Developer Tool Spend Management | StringCost"
-			description="Financial control plane for AI developer tools. Detect runaway agent loops, attribute costs by user and repo, and enforce budgets before the invoice lands."
+			description="OpenShell-based agent runtime and customer-prem proxy for controlling AI developer-tool spend. Attribute costs by user and repo, enforce policy live, and stop runaway sessions before the invoice lands."
 		>
 			<Head>
 				<meta property="og:image" content="https://www.stringcost.com/img/og-spend.png" />
@@ -14,11 +14,11 @@ export default function SpendPage() {
 				<meta name="twitter:image" content="https://www.stringcost.com/img/og-spend.png" />
 				<meta
 					property="og:description"
-					content="Detect runaway agent loops, attribute AI tool costs by user and repo, and enforce spend policy before the invoice lands."
+					content="OpenShell-based agent runtime and customer-prem proxy for controlling AI developer-tool spend."
 				/>
 				<meta
 					name="twitter:description"
-					content="AI tool spend now behaves like infrastructure. StringCost gives finance and engineering one control plane."
+					content="Run agents in an OpenShell-based runtime, route traffic through a customer-prem proxy, and govern spend from one managed control plane."
 				/>
 			</Head>
 			<div className="-mt-[64px] flex flex-col">
