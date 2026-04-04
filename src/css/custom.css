@@ -457,6 +457,46 @@ body {
 	}
 }
 
+/* =============================================================================
+   Spend Page
+   ============================================================================= */
+
+.spend-grid {
+	background-image:
+		linear-gradient(to right, rgba(217, 193, 215, 0.12) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(217, 193, 215, 0.1) 1px, transparent 1px);
+	background-size: 64px 64px;
+	mask-image: radial-gradient(circle at 50% 24%, rgba(0, 0, 0, 0.85), transparent 76%);
+}
+
+.spend-panel {
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.86) 100%);
+	backdrop-filter: blur(18px);
+}
+
+.spend-dark-panel {
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+	backdrop-filter: blur(18px);
+}
+
+.spend-divider {
+	height: 1px;
+	background: linear-gradient(
+		90deg,
+		rgba(217, 193, 215, 0) 0%,
+		rgba(217, 193, 215, 0.8) 50%,
+		rgba(217, 193, 215, 0) 100%
+	);
+}
+
+.spend-hero-glow {
+	box-shadow:
+		0 20px 60px -34px rgba(217, 193, 215, 0.38),
+		0 28px 80px -42px rgba(217, 185, 167, 0.28);
+}
+
 /* Glowing gradient text for x402 */
 .x402-glow-text {
 	background: linear-gradient(135deg, #D9C1D7 0%, #D9B9A7 25%, #fff 50%, #D9C1D7 75%, #D9B9A7 100%);

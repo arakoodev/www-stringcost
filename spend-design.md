@@ -26,6 +26,12 @@
 
 7. **Alternating visual weight** — Alternate between heavy sections (dark gradient, full imagery) and lighter sections (white/surface bg, airy cards). But never two identical-weight sections in a row.
 
+8. **Controlled whitespace** — Body text lines should stay within 65-75 characters. Use `text-balance` on headings and `max-w-2xl` on body paragraphs to prevent orphaned commas or single words wrapping to their own line. Heading-to-content gap should be tight (8-10 = 32-40px `mb`), not cavernous (`mb-16` = 64px is too much). Sections use `py-[60px] lg:py-[80px]` as baseline — only hero and CTA get the extra-large `py-[100px] lg:py-[140px]`.
+
+9. **Consistent card padding** — All cards use `p-6` (24px). Featured/hero cards use `p-8` (32px). Never mix without reason. Internal spacing within cards uses `gap-3` or `gap-4`, never `gap-6`.
+
+10. **No loose elements** — Every callout, stat, or quote should feel connected to the content above or below it. Avoid floating elements with large top margins (`mt-12`, `mt-6`) that create visual orphans. Use `mt-8` max between related content blocks.
+
 ---
 
 ## Current Page Structure (Post-Revert)
