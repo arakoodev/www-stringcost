@@ -242,16 +242,24 @@ export function SpendContent() {
 				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(217,193,215,0.2),transparent_60%)]" />
 
 				<div className="container-custom relative z-10 py-[80px] lg:py-[120px]">
-					<div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15]">
-							The Pricing Model That
-							<br />
-							<span className="underline-hand">Broke Your Budget</span>
-						</h2>
-						<p className="text-lg text-brand-text-secondary text-pretty">
-							AI tools didn&apos;t just change how developers write code — they changed how vendors charge for it.
-						</p>
-					</div>
+					<div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-start mb-12">
+						<div className="space-y-6 lg:sticky lg:top-24">
+							<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15]">
+								The Pricing Model That
+								<br />
+								<span className="underline-hand">Broke Your Budget</span>
+							</h2>
+							<p className="text-lg text-brand-text-secondary text-pretty">
+								AI tools didn&apos;t just change how developers write code — they changed how vendors charge for it.
+							</p>
+							<div className="rounded-2xl border border-brand-overlay/60 bg-brand-surface p-5">
+								<p className="text-sm font-medium text-brand-text-primary">
+									78% of IT leaders report unexpected charges from AI consumption tiers. The flat-rate SaaS budget is a myth in the age of LLM inference.
+								</p>
+							</div>
+						</div>
+
+						<div className="space-y-6">
 
 					<div className="flex flex-col md:flex-row gap-6 items-center">
 						<article className="flex-1 flex flex-col gap-4 p-6 rounded-2xl border border-brand-overlay/60 bg-brand-surface shadow-sm w-full">
@@ -341,16 +349,30 @@ export function SpendContent() {
 					</div>
 
 					</div>
-
-					<div className="max-w-3xl mx-auto mt-6">
-						<div className="rounded-2xl border border-brand-overlay/60 bg-brand-surface p-6">
-							<p className="text-sm font-medium text-brand-text-primary text-center">
-								78% of IT leaders report unexpected charges from AI consumption tiers. The flat-rate SaaS budget is a myth in the age of LLM inference.
-							</p>
-						</div>
+					</div>
 					</div>
 				</div>
 			</section>
+
+			{/* Stat strip — interstitial */}
+			<div className="bg-gradient-to-r from-brand-accent-100/30 via-brand-accent-200/20 to-brand-accent-100/30 border-y border-brand-border/30">
+				<div className="container-custom py-6 flex flex-wrap items-center justify-center gap-8 sm:gap-16 text-center">
+					<div>
+						<p className="text-2xl sm:text-3xl font-bold text-brand-text-primary">250x</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Cost variance between users</p>
+					</div>
+					<div className="hidden sm:block w-px h-10 bg-brand-border/50" />
+					<div>
+						<p className="text-2xl sm:text-3xl font-bold text-brand-text-primary">$1,500</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Single runaway agent session</p>
+					</div>
+					<div className="hidden sm:block w-px h-10 bg-brand-border/50" />
+					<div>
+						<p className="text-2xl sm:text-3xl font-bold text-brand-text-primary">15 min</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">StringCost detection time</p>
+					</div>
+				</div>
+			</div>
 
 			{/* All Agents Are Coding Agents */}
 			<section className="relative overflow-hidden bg-gradient-to-br from-[#120A14] via-[#231029] to-[#3D1F4A] text-white">
@@ -453,35 +475,41 @@ export function SpendContent() {
 			{/* Section 3: The Shadow AI Crisis */}
 			<section className="bg-brand-surface border-y border-brand-border/40">
 				<div className="container-custom py-[80px] lg:py-[120px]">
-					<div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15]">
-							Shadow AI Is Already
-							<br />
-							<span className="underline-hand">in Your Organization</span>
-						</h2>
-						<p className="text-lg text-brand-text-secondary text-pretty">
-							When procurement moves slower than productivity, developers take matters into their own hands.
-						</p>
-					</div>
+					<div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+						<div className="space-y-6 lg:sticky lg:top-24">
+							<h2 className="text-[28px] sm:text-[36px] lg:text-[40px] font-matter font-bold tracking-tight leading-[1.15]">
+								Shadow AI Is Already
+								<br />
+								<span className="underline-hand">in Your Organization</span>
+							</h2>
+							<p className="text-lg text-brand-text-secondary text-pretty">
+								When procurement moves slower than productivity, developers take matters into their own hands.
+							</p>
+							<div className="flex items-baseline gap-3">
+								<span className="text-5xl font-bold text-brand-accent-300">$4,800</span>
+								<span className="text-sm text-brand-text-muted">/year in unmanaged spend<br />from just 20 developers</span>
+							</div>
+						</div>
 
-					<div className="grid gap-6 md:grid-cols-3">
-						{shadowAICards.map((card, index) => (
-							<article
-								key={card.title}
-								className="group relative rounded-2xl border border-brand-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-brand-accent-300 hover:-translate-y-1"
-								style={{ animationDelay: `${index * 100}ms` }}
-							>
-								<div className="flex items-start gap-4">
-									<div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-accent-100/60 to-brand-accent-200/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-										<card.icon className="h-6 w-6 text-brand-text-secondary" />
+						<div className="space-y-4">
+							{shadowAICards.map((card, index) => (
+								<article
+									key={card.title}
+									className="group relative rounded-2xl border border-brand-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-brand-accent-300 hover:-translate-y-1"
+									style={{ animationDelay: `${index * 100}ms` }}
+								>
+									<div className="flex items-start gap-4">
+										<div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-accent-100/60 to-brand-accent-200/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+											<card.icon className="h-6 w-6 text-brand-text-secondary" />
+										</div>
+										<div>
+											<h3 className="text-base font-semibold text-brand-text-primary mb-2">{card.title}</h3>
+											<p className="text-sm text-brand-text-secondary leading-relaxed">{card.description}</p>
+										</div>
 									</div>
-									<div>
-										<h3 className="text-base font-semibold text-brand-text-primary mb-2">{card.title}</h3>
-										<p className="text-sm text-brand-text-secondary leading-relaxed">{card.description}</p>
-									</div>
-								</div>
-							</article>
-						))}
+								</article>
+							))}
+						</div>
 					</div>
 				</div>
 			</section>
@@ -560,19 +588,45 @@ export function SpendContent() {
 				</div>
 			</section>
 
-			{/* Section 6: Vendor Telemetry Comparison */}
-			<section className="bg-brand-surface border-y border-brand-border/40">
-				<div className="container-custom py-[80px] lg:py-[120px]">
-					<div className="max-w-3xl mx-auto text-center space-y-6 mb-12">
-						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15]">
-							Native Vendor Tracking
-							<br />
-							<span className="underline-hand">Isn&apos;t Enough</span>
-						</h2>
-						<p className="text-lg text-brand-text-secondary text-pretty">
-							Each AI tool provides different levels of governance. StringCost fills the gaps across all of them.
-						</p>
+			{/* Stat strip — interstitial */}
+			<div className="bg-gradient-to-r from-brand-accent-100/30 via-brand-accent-200/20 to-brand-accent-100/30 border-y border-brand-border/30">
+				<div className="container-custom py-6 flex flex-wrap items-center justify-center gap-8 sm:gap-16 text-center">
+					<div>
+						<p className="text-2xl sm:text-3xl font-bold text-brand-text-primary">3 vendors</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Different telemetry levels</p>
 					</div>
+					<div className="hidden sm:block w-px h-10 bg-brand-border/50" />
+					<div>
+						<p className="text-2xl sm:text-3xl font-bold text-brand-text-primary">0</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Unified dashboards (until StringCost)</p>
+					</div>
+					<div className="hidden sm:block w-px h-10 bg-brand-border/50" />
+					<div>
+						<p className="text-2xl sm:text-3xl font-bold text-brand-text-primary">1 pane</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Of glass with StringCost</p>
+					</div>
+				</div>
+			</div>
+
+			{/* Section 6: Vendor Telemetry Comparison */}
+			<section className="bg-brand-surface">
+				<div className="container-custom py-[80px] lg:py-[120px]">
+					<div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+						<div className="space-y-6 lg:sticky lg:top-24">
+							<h2 className="text-[26px] sm:text-[34px] lg:text-[40px] font-matter font-bold tracking-tight leading-[1.2]">
+								Native Vendor Tracking
+								<br />
+								<span className="underline-hand">Isn&apos;t Enough</span>
+							</h2>
+							<p className="text-lg text-brand-text-secondary text-pretty">
+								Each AI tool provides different levels of governance. StringCost fills the gaps across all of them.
+							</p>
+							<div className="rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 mesh-gradient-bg">
+								<p className="text-sm font-medium text-brand-text-primary">
+									StringCost unifies all three into a single pane of glass with real-time attribution, anomaly detection, and automated chargebacks.
+								</p>
+							</div>
+						</div>
 
 					<div className="max-w-5xl mx-auto">
 						<div className="rounded-2xl border border-brand-border bg-white shadow-sm overflow-hidden">
@@ -613,13 +667,6 @@ export function SpendContent() {
 						</div>
 					</div>
 
-					{/* Bottom callout */}
-					<div className="max-w-3xl mx-auto mt-12">
-						<div className="rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 mesh-gradient-bg">
-							<p className="text-sm font-medium text-brand-text-primary text-center">
-								StringCost unifies all three into a single pane of glass with real-time attribution, anomaly detection, and automated chargebacks.
-							</p>
-						</div>
 					</div>
 				</div>
 			</section>
@@ -629,18 +676,23 @@ export function SpendContent() {
 				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(217,193,215,0.15),transparent_50%)]" />
 
 				<div className="container-custom relative z-10 py-[80px] lg:py-[120px]">
-					<div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15]">
-							The Financial Case for a
-							<br />
-							<span className="underline-hand">500-Employee Enterprise</span>
-						</h2>
-						<p className="text-lg text-brand-text-secondary text-pretty">
-							A typical mid-market company with 150 technical staff faces $120K–$180K/year in baseline AI tool costs — before overages.
-						</p>
-					</div>
+					<div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+						<div className="space-y-6 lg:sticky lg:top-24">
+							<h2 className="text-[26px] sm:text-[34px] lg:text-[40px] font-matter font-bold tracking-tight leading-[1.2]">
+								The Financial Case for a
+								<br />
+								<span className="underline-hand">500-Employee Enterprise</span>
+							</h2>
+							<p className="text-lg text-brand-text-secondary text-pretty">
+								A typical mid-market company with 150 technical staff faces $120K–$180K/year in baseline AI tool costs — before overages.
+							</p>
+							<div className="flex items-baseline gap-3">
+								<span className="text-5xl font-bold text-brand-accent-300">$180K</span>
+								<span className="text-sm text-brand-text-muted">/year baseline<br />before overages</span>
+							</div>
+						</div>
 
-					<div className="max-w-4xl mx-auto">
+					<div>
 						<div className="rounded-2xl border border-brand-border bg-white shadow-sm overflow-hidden">
 							{/* Header */}
 							<div className="grid grid-cols-[0.8fr_1fr_1fr] bg-brand-surface border-b border-brand-border">
@@ -681,6 +733,7 @@ export function SpendContent() {
 							))}
 						</div>
 					</div>
+				</div>
 				</div>
 			</section>
 
