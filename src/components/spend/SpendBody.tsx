@@ -352,6 +352,26 @@ export function SpendContent() {
 				</div>
 			</section>
 
+			{/* Stat strip — visual bridge */}
+			<div className="bg-gradient-to-r from-brand-accent-100/30 via-brand-accent-200/20 to-brand-accent-100/30">
+				<div className="container-custom py-8 flex flex-wrap items-center justify-center gap-10 sm:gap-20 text-center">
+					<div>
+						<p className="text-3xl sm:text-4xl font-bold text-brand-text-primary">250x</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Cost variance between users</p>
+					</div>
+					<div className="hidden sm:block w-px h-12 bg-brand-border/50" />
+					<div>
+						<p className="text-3xl sm:text-4xl font-bold text-brand-text-primary">$1,500</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Single runaway agent session</p>
+					</div>
+					<div className="hidden sm:block w-px h-12 bg-brand-border/50" />
+					<div>
+						<p className="text-3xl sm:text-4xl font-bold text-brand-text-primary">15 min</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">StringCost detection time</p>
+					</div>
+				</div>
+			</div>
+
 			{/* All Agents Are Coding Agents */}
 			<section className="relative overflow-hidden bg-gradient-to-br from-[#120A14] via-[#231029] to-[#3D1F4A] text-white">
 				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(217,193,215,0.15),transparent_50%)]" />
@@ -464,12 +484,29 @@ export function SpendContent() {
 						</p>
 					</div>
 
-					<div className="grid gap-6 md:grid-cols-3">
-						{shadowAICards.map((card, index) => (
+					<div className="grid gap-6 md:grid-cols-[1.3fr_0.7fr]">
+						{/* Featured card — spans 2 rows */}
+						<article className="group relative rounded-2xl border border-brand-border bg-white p-8 shadow-md transition-all duration-300 hover:shadow-xl hover:border-brand-accent-300 hover:-translate-y-1 md:row-span-2 flex flex-col justify-between">
+							<div className="flex items-start gap-4">
+								<div className="flex-shrink-0 h-14 w-14 rounded-2xl bg-gradient-to-br from-brand-accent-100/60 to-brand-accent-200/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+									<EyeOff className="h-7 w-7 text-brand-text-secondary" />
+								</div>
+								<div>
+									<h3 className="text-lg font-semibold text-brand-text-primary mb-2">{shadowAICards[0].title}</h3>
+									<p className="text-sm text-brand-text-secondary leading-relaxed">{shadowAICards[0].description}</p>
+								</div>
+							</div>
+							<div className="mt-6 pt-6 border-t border-brand-border/50">
+								<p className="text-4xl font-bold text-brand-accent-300">$4,800</p>
+								<p className="text-sm text-brand-text-muted mt-1">/year in unmanaged spend from just 20 developers</p>
+							</div>
+						</article>
+
+						{/* Stacked cards */}
+						{shadowAICards.slice(1).map((card, index) => (
 							<article
 								key={card.title}
-								className="group relative rounded-2xl border border-brand-border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-brand-accent-300 hover:-translate-y-1"
-								style={{ animationDelay: `${index * 100}ms` }}
+								className="group relative rounded-2xl border border-brand-border bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:border-brand-accent-300 hover:-translate-y-1"
 							>
 								<div className="flex items-start gap-4">
 									<div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-gradient-to-br from-brand-accent-100/60 to-brand-accent-200/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -492,7 +529,9 @@ export function SpendContent() {
 
 				<div className="container-custom relative z-10 py-[80px] lg:py-[120px]">
 					<div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15]">
+						<p className="text-6xl sm:text-7xl font-bold text-brand-accent-300">$5,000+</p>
+						<p className="text-sm text-brand-text-muted uppercase tracking-wider">/year wasted on unused licenses alone</p>
+						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15] pt-4">
 							Track Every Dollar to the
 							<br />
 							<span className="underline-hand">Developer and the Project</span>
@@ -560,6 +599,26 @@ export function SpendContent() {
 				</div>
 			</section>
 
+			{/* Stat strip — second visual break */}
+			<div className="bg-gradient-to-r from-brand-accent-200/20 via-brand-accent-300/10 to-brand-accent-200/20">
+				<div className="container-custom py-8 flex flex-wrap items-center justify-center gap-10 sm:gap-20 text-center">
+					<div>
+						<p className="text-3xl sm:text-4xl font-bold text-brand-text-primary">3 vendors</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Different telemetry levels</p>
+					</div>
+					<div className="hidden sm:block w-px h-12 bg-brand-border/50" />
+					<div>
+						<p className="text-3xl sm:text-4xl font-bold text-brand-text-primary">0</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Unified dashboards (until StringCost)</p>
+					</div>
+					<div className="hidden sm:block w-px h-12 bg-brand-border/50" />
+					<div>
+						<p className="text-3xl sm:text-4xl font-bold text-brand-text-primary">1 pane</p>
+						<p className="text-xs text-brand-text-muted uppercase tracking-wider mt-1">Of glass with StringCost</p>
+					</div>
+				</div>
+			</div>
+
 			{/* Section 6: Vendor Telemetry Comparison */}
 			<section className="bg-brand-surface border-y border-brand-border/40">
 				<div className="container-custom py-[80px] lg:py-[120px]">
@@ -574,10 +633,10 @@ export function SpendContent() {
 						</p>
 					</div>
 
-					<div className="max-w-5xl mx-auto">
-						<div className="rounded-2xl border border-brand-border bg-white shadow-sm overflow-hidden">
+					<div>
+						<div className="rounded-2xl border border-brand-border bg-white shadow-md overflow-hidden">
 							{/* Header */}
-							<div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] bg-brand-surface border-b border-brand-border">
+							<div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] bg-brand-accent-100/30 border-b border-brand-border">
 								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-brand-text-muted">Dimension</div>
 								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-brand-text-muted border-x border-brand-border/50">
 									GitHub Copilot
@@ -594,7 +653,7 @@ export function SpendContent() {
 							{vendorComparisons.map((row, index) => (
 								<div
 									key={row.dimension}
-									className={`grid grid-cols-[1.2fr_1fr_1fr_1fr] ${index !== vendorComparisons.length - 1 ? "border-b border-brand-border/50" : ""}`}
+									className={`grid grid-cols-[1.2fr_1fr_1fr_1fr] ${index % 2 === 1 ? "bg-brand-surface/50" : ""} ${index !== vendorComparisons.length - 1 ? "border-b border-brand-border/50" : ""}`}
 								>
 									<div className="p-4 flex items-center">
 										<span className="text-sm font-medium text-brand-text-primary">{row.dimension}</span>
@@ -614,9 +673,9 @@ export function SpendContent() {
 					</div>
 
 					{/* Bottom callout */}
-					<div className="max-w-3xl mx-auto mt-12">
-						<div className="rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 mesh-gradient-bg">
-							<p className="text-sm font-medium text-brand-text-primary text-center">
+					<div className="mt-12">
+						<div className="rounded-2xl bg-brand-accent-300/10 p-6 border-l-4 border-brand-accent-300 mesh-gradient-bg">
+							<p className="text-base font-medium text-brand-text-primary">
 								StringCost unifies all three into a single pane of glass with real-time attribution, anomaly detection, and automated chargebacks.
 							</p>
 						</div>
@@ -630,56 +689,52 @@ export function SpendContent() {
 
 				<div className="container-custom relative z-10 py-[80px] lg:py-[120px]">
 					<div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15]">
+						<p className="text-6xl sm:text-7xl font-bold text-brand-accent-300">$180K</p>
+						<p className="text-sm text-brand-text-muted uppercase tracking-wider">/year baseline AI tool costs — before overages</p>
+						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15] pt-4">
 							The Financial Case for a
 							<br />
 							<span className="underline-hand">500-Employee Enterprise</span>
 						</h2>
 						<p className="text-lg text-brand-text-secondary text-pretty">
-							A typical mid-market company with 150 technical staff faces $120K–$180K/year in baseline AI tool costs — before overages.
+							A typical mid-market company with 150 technical staff. Here&apos;s where the risk hides.
 						</p>
 					</div>
 
-					<div className="max-w-4xl mx-auto">
-						<div className="rounded-2xl border border-brand-border bg-white shadow-sm overflow-hidden">
-							{/* Header */}
-							<div className="grid grid-cols-[0.8fr_1fr_1fr] bg-brand-surface border-b border-brand-border">
-								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-brand-text-muted">Risk</div>
-								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-rose-600 border-x border-brand-border/50">
-									Unmanaged
+					<div className="max-w-4xl mx-auto space-y-3">
+						{/* Header labels */}
+						<div className="grid grid-cols-[0.8fr_1fr_1fr] px-6">
+							<div className="text-xs font-semibold uppercase tracking-wider text-brand-text-muted">Risk</div>
+							<div className="text-xs font-semibold uppercase tracking-wider text-center text-rose-600">Unmanaged</div>
+							<div className="text-xs font-semibold uppercase tracking-wider text-center text-emerald-600">With StringCost</div>
+						</div>
+
+						{/* Card rows */}
+						{riskMatrix.map((row) => (
+							<div
+								key={row.risk}
+								className="grid grid-cols-[0.8fr_1fr_1fr] rounded-xl border border-brand-border bg-white shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
+							>
+								<div className="p-4 flex items-center gap-3">
+									<div className="flex-shrink-0 h-10 w-10 rounded-lg bg-brand-accent-100/40 flex items-center justify-center">
+										<row.icon className="h-5 w-5 text-brand-text-secondary" />
+									</div>
+									<span className="text-sm font-semibold text-brand-text-primary">{row.risk}</span>
 								</div>
-								<div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-emerald-600">
-									With StringCost
+								<div className="p-4 flex items-center justify-center bg-rose-50/50">
+									<div className="flex items-center gap-2 text-sm text-rose-700">
+										<X className="h-4 w-4 text-rose-400 flex-shrink-0" />
+										{row.consequence}
+									</div>
+								</div>
+								<div className="p-4 flex items-center justify-center bg-emerald-50/50">
+									<div className="flex items-center gap-2 text-sm text-emerald-700">
+										<CheckCircle2 className="h-4 w-4 text-emerald-500 flex-shrink-0" />
+										{row.solution}
+									</div>
 								</div>
 							</div>
-
-							{/* Rows */}
-							{riskMatrix.map((row, index) => (
-								<div
-									key={row.risk}
-									className={`grid grid-cols-[0.8fr_1fr_1fr] ${index !== riskMatrix.length - 1 ? "border-b border-brand-border/50" : ""}`}
-								>
-									<div className="p-4 flex items-center gap-3">
-										<div className="flex-shrink-0 h-8 w-8 rounded-lg bg-brand-accent-100/40 flex items-center justify-center">
-											<row.icon className="h-4 w-4 text-brand-text-secondary" />
-										</div>
-										<span className="text-sm font-medium text-brand-text-primary">{row.risk}</span>
-									</div>
-									<div className="p-4 flex items-center justify-center border-x border-brand-border/30 bg-rose-50/50">
-										<div className="flex items-center gap-2 text-sm text-rose-700">
-											<X className="h-4 w-4 text-rose-400 flex-shrink-0" />
-											{row.consequence}
-										</div>
-									</div>
-									<div className="p-4 flex items-center justify-center bg-emerald-50/50">
-										<div className="flex items-center gap-2 text-sm text-emerald-700">
-											<CheckCircle2 className="h-4 w-4 text-emerald-500 flex-shrink-0" />
-											{row.solution}
-										</div>
-									</div>
-								</div>
-							))}
-						</div>
+						))}
 					</div>
 				</div>
 			</section>
