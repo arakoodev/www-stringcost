@@ -434,7 +434,7 @@ export function SpendContent() {
 					<div className="max-w-3xl mx-auto mb-8">
 						<div className="border-l-2 border-brand-accent-200 pl-5 py-2">
 							<p className="text-sm text-white/70">
-								Even <strong className="text-white">OpenClaw</strong> — a general-purpose personal AI assistant with 60K+ GitHub stars — now ships a coding-agent skill that spawns Codex and Claude Code sub-agents. Every agent is becoming a coding agent.
+								<strong className="text-white">OpenClaw</strong> (60K+ GitHub stars) proves the point. It isn&apos;t an assistant that happens to code — it&apos;s a coding agent that happens to assist. Built on Pi&apos;s philosophy: only 4 core tools (Read, Write, Edit, Bash). Everything else is generated code. Agents write their own skills as Markdown files, hot-reloaded in 250ms. Extension through code generation, not protocol integration — and <strong className="text-white">every extension burns tokens</strong>.
 							</p>
 						</div>
 					</div>
