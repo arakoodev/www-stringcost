@@ -295,10 +295,155 @@ export function SpendContent() {
 						</article>
 					</div>
 
-					<div className="max-w-3xl mx-auto mt-12">
-						<div className="rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 mesh-gradient-bg">
+					{/* Fast Company + Garry Tan callouts */}
+					<div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto mt-12">
+
+					{/* Fast Company */}
+					<div className="rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 shadow-sm mesh-gradient-bg">
+						<div className="flex flex-col gap-4">
+							<div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+								<div className="sm:flex-1">
+									<p className="font-body text-base font-semibold text-brand-text-primary sm:text-lg">
+										<a href="https://www.fastcompany.com/91520702/y-combinator-garry-tan-agentic-ai-social-media" target="_blank" rel="noopener noreferrer" className="hover:underline">
+											Fast Company:
+										</a>
+									</p>
+									<p className="mt-2 font-body text-base italic text-brand-text-secondary sm:text-lg">
+										<em>&ldquo;Y Combinator&apos;s CEO says he ships <strong className="underline-hand text-brand-text-primary">37,000 lines of AI code per day</strong>. A developer looked under the hood.&rdquo;</em>
+									</p>
+								</div>
+							</div>
+							<div className="border-l-4 border-brand-accent-200 pl-4">
+								<p className="font-body text-sm text-brand-text-secondary">
+									Code generation is no longer constrained — one developer can produce more output than an entire team. Without tight spend controls, that velocity translates directly into <strong className="text-brand-text-primary">uncapped token consumption</strong> and <strong className="text-brand-text-primary">runaway invoices</strong>.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					{/* Garry Tan tweet */}
+					<div className="rounded-2xl border border-brand-accent-100 bg-brand-surface p-6 shadow-sm">
+						<div className="flex items-center gap-3 mb-4">
+							<div className="h-10 w-10 rounded-full bg-brand-accent-100 flex items-center justify-center text-sm font-bold text-brand-text-secondary">GT</div>
+							<div>
+								<a href="https://x.com/garrytan/status/2031910564344262988" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-brand-text-primary hover:underline">@garrytan</a>
+								<p className="text-xs text-brand-text-muted">Y Combinator CEO</p>
+							</div>
+						</div>
+						<blockquote className="text-sm text-brand-text-secondary leading-relaxed italic mb-4">
+							&ldquo;I&apos;m working on 3 different big projects simultaneously across 15 sessions all the time. In the last 7 days I&apos;m averaging <strong className="underline-hand text-brand-text-primary not-italic">17k lines of code per day</strong>, 35% tests.&rdquo;
+						</blockquote>
+						<div className="border-l-4 border-brand-accent-200 pl-3">
+							<p className="text-xs text-brand-text-muted">
+								One developer now produces more code than an entire team. Every line is a metered token burn.
+							</p>
+						</div>
+					</div>
+
+					</div>
+
+					<div className="max-w-3xl mx-auto mt-6">
+						<div className="rounded-2xl border border-brand-overlay/60 bg-brand-surface p-6">
 							<p className="text-sm font-medium text-brand-text-primary text-center">
 								78% of IT leaders report unexpected charges from AI consumption tiers. The flat-rate SaaS budget is a myth in the age of LLM inference.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* All Agents Are Coding Agents */}
+			<section className="relative overflow-hidden bg-gradient-to-br from-[#120A14] via-[#231029] to-[#3D1F4A] text-white">
+				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(217,193,215,0.15),transparent_50%)]" />
+				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_80%,rgba(217,185,167,0.1),transparent_40%)]" />
+
+				<div className="container-custom relative z-10 py-[80px] lg:py-[120px]">
+					<div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
+						<div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 backdrop-blur-sm mx-auto">
+							<Zap className="h-4 w-4 text-brand-accent-200" />
+							<span className="text-sm font-medium text-white/80">The CLI Is the New Runtime</span>
+						</div>
+
+						<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-matter font-bold tracking-tight leading-[1.15]">
+							All agents are coding agents.
+							<br />
+							<span className="bg-gradient-to-r from-white via-brand-accent-100 to-brand-accent-200 bg-clip-text text-transparent">
+								Your compliance &amp; spend boundary is the CLI.
+							</span>
+						</h2>
+						<p className="text-lg text-white/80 text-pretty">
+							AI agents aren&apos;t chatbots anymore — they generate code at industrial scale, and they all run through CLIs. That makes the CLI your financial control plane.
+						</p>
+					</div>
+
+					{/* Tweet callout cards */}
+					<div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto mb-10">
+						{/* Garry Tan */}
+						<div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+							<div className="flex items-center gap-3 mb-4">
+								<div className="h-10 w-10 rounded-full bg-brand-accent-300/30 flex items-center justify-center text-sm font-bold text-brand-accent-200">GT</div>
+								<div>
+									<a href="https://x.com/garrytan/status/2031910564344262988" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:underline">@garrytan</a>
+									<p className="text-xs text-white/50">Y Combinator CEO</p>
+								</div>
+							</div>
+							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
+								&ldquo;<strong className="text-white not-italic">MCP sucks honestly.</strong> It eats too much context window and you have to toggle it on and off and the auth sucks. I vibe coded a <strong className="underline-hand-green text-white not-italic">CLI wrapper</strong> in 30 minutes&hellip; it worked 100x better and was like 100LOC.&rdquo;
+							</blockquote>
+							<p className="text-xs text-white/50 border-l-2 border-brand-accent-200 pl-3">
+								YC&apos;s CEO ditched MCP for a CLI he built in 30 minutes.
+							</p>
+						</div>
+
+						{/* Morgan Linton / Perplexity */}
+						<div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+							<div className="flex items-center gap-3 mb-4">
+								<div className="h-10 w-10 rounded-full bg-brand-accent-300/30 flex items-center justify-center text-sm font-bold text-brand-accent-200">ML</div>
+								<div>
+									<a href="https://x.com/morganlinton/status/2031795683897077965" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:underline">@morganlinton</a>
+									<p className="text-xs text-white/50">on Perplexity</p>
+								</div>
+							</div>
+							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
+								&ldquo;The cofounder and CTO of Perplexity just said internally at Perplexity they&apos;re <strong className="underline-hand-green text-white not-italic">moving away from MCPs</strong> and instead using APIs and CLIs.&rdquo;
+							</blockquote>
+							<p className="text-xs text-white/50 border-l-2 border-brand-accent-200 pl-3">
+								Perplexity is dropping MCP for APIs and CLIs internally.
+							</p>
+						</div>
+
+						{/* Karan Vaidya */}
+						<div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
+							<div className="flex items-center gap-3 mb-4">
+								<div className="h-10 w-10 rounded-full bg-brand-accent-300/30 flex items-center justify-center text-sm font-bold text-brand-accent-200">KV</div>
+								<div>
+									<a href="https://x.com/KaranVaidya6/status/2037530089706176638" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:underline">@KaranVaidya6</a>
+									<p className="text-xs text-white/50">Composio</p>
+								</div>
+							</div>
+							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
+								&ldquo;We posed a simple question: MCP or CLI? Basically everyone under 35 said CLI. Final score — <strong className="underline-hand-green text-white not-italic">MCP: 3 vs CLI: 17</strong>. SF has spoken.&rdquo;
+							</blockquote>
+							<p className="text-xs text-white/50 border-l-2 border-brand-accent-200 pl-3">
+								SF developers voted. The CLI won in a landslide.
+							</p>
+						</div>
+					</div>
+
+					{/* OpenClaw callout */}
+					<div className="max-w-3xl mx-auto mb-8">
+						<div className="border-l-2 border-brand-accent-200 pl-5 py-2">
+							<p className="text-sm text-white/70">
+								Even <strong className="text-white">OpenClaw</strong> — a general-purpose personal AI assistant with 60K+ GitHub stars — now ships a coding-agent skill that spawns Codex and Claude Code sub-agents. Every agent is becoming a coding agent.
+							</p>
+						</div>
+					</div>
+
+					{/* Bottom punchline */}
+					<div className="max-w-3xl mx-auto">
+						<div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6 text-center">
+							<p className="text-sm font-medium text-white">
+								If every agent writes code through a CLI, then the CLI is your financial control plane. StringCost sits at that boundary — tracking every token, every session, every dollar.
 							</p>
 						</div>
 					</div>
