@@ -14,6 +14,7 @@ import {
 const buttonBase =
 	"inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-matter font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]";
 const primaryButton = `${buttonBase} bg-[#210F26] text-white hover:bg-[#0D0D0D]`;
+const heroPrimaryButton = `${buttonBase} bg-white text-[#210F26] hover:bg-brand-accent-100 shadow-[0_18px_36px_-20px_rgba(255,255,255,0.9)]`;
 const secondaryButton = `${buttonBase} border border-brand-accent-300 text-brand-text-secondary hover:bg-brand-accent-100/60`;
 const secondaryButtonLight = `${buttonBase} border border-white/30 text-white hover:bg-white/10 hover:border-white/50`;
 
@@ -116,26 +117,26 @@ const runtimePressurePoints = [
 	},
 ];
 
-const runtimeBoundarySteps = [
+const cliBridgeSteps = [
 	{
-		step: "01",
-		title: "OpenShell runtime",
-		description: "Agents execute inside a permissioned sandbox instead of directly on a raw workstation or server.",
+		step: "Runtime",
+		title: "Execution stays contained",
+		description: "OpenShell contains the agent before it spends.",
 	},
 	{
-		step: "02",
-		title: "CLI and tool traffic",
-		description: "Most real work becomes shell commands, code generation, file edits, and external tool calls.",
+		step: "CLI",
+		title: "Commands are the meter",
+		description: "Shell and tool calls are where cost actually forms.",
 	},
 	{
-		step: "03",
-		title: "Customer-prem proxy",
-		description: "StringCost sits on the egress path in your environment and turns execution into enforceable spend events.",
+		step: "Proxy",
+		title: "Egress becomes policy",
+		description: "The proxy turns live execution into enforceable spend events.",
 	},
 	{
-		step: "04",
-		title: "Managed control plane",
-		description: "Finance and platform teams get live policy, reporting, attribution, and chargeback workflows.",
+		step: "Ledger",
+		title: "Finance gets closure",
+		description: "The managed plane handles attribution and chargeback.",
 	},
 ];
 
@@ -178,6 +179,56 @@ function SectionLabel({
 	);
 }
 
+function HeroSummaryCard({className = ""}: {className?: string}) {
+	return (
+		<div
+			className={`glow-card spend-hero-glow rounded-[28px] border border-white/14 spend-dark-panel p-5 shadow-xl ${className}`}
+		>
+			<div className="flex items-start justify-between gap-4">
+				<div>
+					<p className="text-xs uppercase tracking-[0.22em] text-white/45">Live proxy snapshot</p>
+					<p className="mt-2 text-lg font-semibold text-white">Spend control before the invoice exists</p>
+				</div>
+				<span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
+					Live
+				</span>
+			</div>
+
+			<div className="mt-5 rounded-2xl border border-rose-400/18 bg-rose-500/10 p-4">
+				<div className="flex items-start justify-between gap-3">
+					<div className="min-w-0">
+						<p className="text-[10px] uppercase tracking-[0.22em] text-rose-200/70">Proxy event</p>
+						<p className="mt-2 text-sm font-semibold text-white">Agent loop exceeded baseline by 18x</p>
+						<p className="mt-1 text-sm leading-6 text-white/68">
+							Paused after 15 minutes with repo mapping and chargeback preserved.
+						</p>
+					</div>
+					<AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-rose-300" />
+				</div>
+			</div>
+
+			<div className="mt-4 grid gap-3 sm:grid-cols-3">
+				{heroLiveMetrics.map((stat) => (
+					<div
+						key={stat.label}
+						className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4"
+					>
+						<p className="text-[10px] uppercase tracking-[0.18em] text-white/45">{stat.label}</p>
+						<p className={`mt-3 text-xl font-semibold ${stat.tone}`}>{stat.value}</p>
+					</div>
+				))}
+			</div>
+
+			<div className="mt-4 rounded-2xl border border-white/10 bg-black/20 px-4 py-4 text-sm">
+				<div className="flex items-center justify-between gap-3">
+					<span className="text-white/72">Incident rule</span>
+					<span className="font-semibold text-white">Suspend at 8x baseline</span>
+				</div>
+			</div>
+		</div>
+	);
+}
+
 export function SpendHero() {
 	return (
 		<section className="relative overflow-hidden bg-gradient-to-br from-[#120A14] via-[#231029] to-[#3D1F4A] text-white">
@@ -187,18 +238,18 @@ export function SpendHero() {
 			<div className="glow-orb glow-orb--rose float-slow -left-24 -top-24 h-72 w-72 opacity-45" />
 			<div className="glow-orb glow-orb--peach float-medium -bottom-24 right-0 h-96 w-96 opacity-30" />
 
-			<div className="container-custom relative z-10 py-[96px] lg:py-[132px]">
-				<div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_480px] lg:items-center lg:gap-16 xl:grid-cols-[minmax(0,1fr)_520px] xl:gap-20">
-					<div className="max-w-3xl space-y-8">
+			<div className="container-custom relative z-10 py-[84px] lg:py-[104px] xl:py-[128px]">
+				<div className="grid gap-12 xl:grid-cols-[minmax(0,1fr)_420px] xl:items-start xl:gap-16">
+					<div className="max-w-[640px] space-y-10 lg:space-y-12">
 						<SectionLabel light>OpenShell-based runtime + customer-prem proxy</SectionLabel>
 
-						<div className="space-y-5">
-							<h1 className="font-display text-[34px] sm:text-[50px] md:text-[64px] lg:text-[78px] font-bold tracking-tight leading-[1.02] text-balance">
+						<div className="space-y-8">
+							<h1 className="font-display text-[28px] sm:text-[34px] md:text-[40px] lg:text-[44px] xl:text-[48px] font-bold tracking-tight leading-[1.06] text-balance">
 								Control AI spend where agents run.
 								<br />
 								<span className="text-white/65">Not after the invoice lands.</span>
 							</h1>
-							<div className="max-w-2xl space-y-4 text-lg sm:text-xl leading-[1.62] text-white/78 text-pretty">
+							<div className="max-w-[560px] space-y-4 text-base sm:text-[1.0625rem] lg:text-lg leading-[1.7] text-white/70 text-pretty">
 								<p>
 									StringCost gives enterprises an OpenShell-based runtime for coding agents and a proxy
 									deployed in the customer environment.
@@ -210,236 +261,43 @@ export function SpendHero() {
 							</div>
 						</div>
 
-						<div className="grid max-w-2xl gap-3 sm:grid-cols-3">
+						<div className="grid max-w-[620px] gap-3 sm:grid-cols-3">
 							{headlineStats.map((stat) => (
 								<div
 									key={stat.label}
-									className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 backdrop-blur-sm"
+									className="flex min-h-[112px] flex-col justify-between rounded-2xl border border-white/15 bg-white/10 px-5 py-6 backdrop-blur-sm"
 								>
-									<p className={`text-2xl font-semibold ${stat.tone}`}>{stat.value}</p>
-									<p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/55">{stat.label}</p>
+									<p className={`text-[28px] font-semibold leading-none ${stat.tone}`}>{stat.value}</p>
+									<p className="pt-4 text-[11px] uppercase tracking-[0.18em] text-white/52 sm:text-xs sm:tracking-[0.2em]">
+										{stat.label}
+									</p>
 								</div>
 							))}
 						</div>
 
-						<div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+						<div className="flex flex-col gap-3 pt-3 sm:flex-row sm:items-center sm:gap-4">
 							<span className="cta-glow">
-								<a href="http://app.stringcost.com/" className={primaryButton}>
+								<a href="http://app.stringcost.com/" className={`${heroPrimaryButton} w-full sm:w-auto`}>
 									Track your AI spend
 									<ArrowRight className="ml-2 h-4 w-4" />
 								</a>
 							</span>
 							<a
 								href="https://calendar.app.google/hjN2HkZBLJMtSuku7"
-								className={secondaryButtonLight}
+								className={`${secondaryButtonLight} w-full sm:w-auto`}
 							>
 								Contact sales
 							</a>
 						</div>
 
-						<div className="lg:hidden">
-							<div className="glow-card spend-hero-glow rounded-[28px] border border-white/14 spend-dark-panel p-5 shadow-xl">
-								<div className="flex items-start justify-between gap-4">
-									<div>
-										<p className="text-xs uppercase tracking-[0.22em] text-white/45">Deployment</p>
-										<p className="mt-2 text-lg font-semibold text-white">Runtime, proxy, and managed controls</p>
-									</div>
-									<span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
-										Live
-									</span>
-								</div>
-
-								<div className="mt-5 space-y-3">
-									{heroArchitectureLayers.map((layer) => (
-										<div
-											key={layer.title}
-											className="rounded-2xl border border-white/10 bg-white/5 p-4"
-										>
-											<div className="flex items-start gap-3">
-												<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-black/20">
-													<layer.icon className="h-4 w-4 text-brand-accent-200" />
-												</div>
-												<div className="min-w-0">
-													<p className="text-[10px] uppercase tracking-[0.22em] text-white/45">
-														{layer.kicker}
-													</p>
-													<p className="mt-1.5 text-sm font-semibold text-white">{layer.title}</p>
-													<p className="mt-1.5 text-sm leading-6 text-white/68">{layer.description}</p>
-												</div>
-											</div>
-										</div>
-									))}
-								</div>
-
-								<div className="my-5 spend-divider" />
-
-								<div className="rounded-2xl border border-rose-400/18 bg-rose-500/10 p-4">
-									<div className="flex items-start justify-between gap-3">
-										<div className="min-w-0">
-											<p className="text-[10px] uppercase tracking-[0.22em] text-rose-200/70">Proxy event</p>
-											<p className="mt-2 text-sm font-semibold text-white">Agent loop exceeded baseline by 18x</p>
-											<p className="mt-1 text-sm leading-6 text-white/68">
-												Paused after 15 minutes with repo mapping and chargeback preserved.
-											</p>
-										</div>
-										<AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-rose-300" />
-									</div>
-								</div>
-
-								<div className="mt-4 grid grid-cols-3 gap-2">
-									{heroLiveMetrics.map((stat) => (
-										<div
-											key={stat.label}
-											className="rounded-2xl border border-white/10 bg-black/20 p-3"
-										>
-											<p className="text-[10px] uppercase tracking-[0.18em] text-white/45">{stat.label}</p>
-											<p className={`mt-2 text-base font-semibold ${stat.tone}`}>{stat.value}</p>
-										</div>
-									))}
-								</div>
-							</div>
-						</div>
-
-						<div className="hidden max-w-2xl gap-3 text-sm text-white/58 md:grid md:grid-cols-3">
-							<div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-								<p className="font-semibold text-white">Runtime boundary</p>
-								<p className="mt-1">OpenShell-based sandboxes for agent execution.</p>
-							</div>
-							<div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-								<p className="font-semibold text-white">Proxy boundary</p>
-								<p className="mt-1">Deployed in your environment before vendor billing starts.</p>
-							</div>
-							<div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-								<p className="font-semibold text-white">Finance boundary</p>
-								<p className="mt-1">Managed policy, attribution, alerts, and chargebacks.</p>
-							</div>
+						<div className="xl:hidden">
+							<HeroSummaryCard />
 						</div>
 					</div>
 
-					<div className="relative hidden w-full max-w-[520px] justify-self-start lg:block lg:justify-self-end">
+					<div className="relative hidden w-full max-w-[420px] justify-self-start xl:block xl:justify-self-end xl:pt-12">
 						<div className="absolute -inset-6 rounded-[40px] bg-gradient-to-br from-white/10 via-transparent to-brand-accent-200/15 blur-3xl" />
-						<div className="glow-card spend-hero-glow relative w-full rounded-[32px] border border-white/14 spend-dark-panel p-6 shadow-2xl xl:p-7">
-							<div className="glow-sheen" />
-							<div className="space-y-5">
-								<div className="flex items-center justify-between">
-									<div>
-										<p className="text-xs uppercase tracking-[0.24em] text-white/55">StringCost</p>
-										<p className="mt-2 text-xl font-semibold text-white">Runtime, proxy, and spend control</p>
-									</div>
-									<span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
-										Live anomaly detection
-									</span>
-								</div>
-
-								<div className="space-y-4">
-									{heroArchitectureLayers.map((layer) => (
-										<div
-											key={layer.title}
-											className="rounded-[28px] border border-white/10 bg-white/5 p-5"
-										>
-											<div className="flex items-start gap-4">
-												<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-black/20">
-													<layer.icon className="h-5 w-5 text-brand-accent-200" />
-												</div>
-												<div className="min-w-0">
-													<p className="text-[11px] uppercase tracking-[0.22em] text-white/45">
-														{layer.kicker}
-													</p>
-													<p className="mt-2 text-base font-semibold text-white">{layer.title}</p>
-													<p className="mt-2 text-sm leading-6 text-white/68">{layer.description}</p>
-												</div>
-											</div>
-										</div>
-									))}
-								</div>
-
-								<div className="spend-divider" />
-
-								<div className="grid gap-4 xl:grid-cols-2">
-									<div className="rounded-[28px] border border-rose-400/18 bg-rose-500/10 p-5 sm:col-span-2">
-										<div className="flex items-start justify-between gap-4">
-											<div className="min-w-0">
-												<p className="text-xs uppercase tracking-[0.22em] text-rose-200/70">
-													Proxy event
-												</p>
-												<p className="mt-2 text-lg font-semibold text-white">
-													Agent loop exceeded baseline by 18x
-												</p>
-												<p className="mt-1 text-sm leading-6 text-white/70">
-													The proxy paused the session after 15 minutes, preserved repo attribution,
-													and kept the chargeback route intact.
-												</p>
-											</div>
-											<AlertTriangle className="mt-1 h-5 w-5 flex-shrink-0 text-rose-300" />
-										</div>
-									</div>
-
-									<div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
-										<div className="flex items-center justify-between">
-											<p className="text-xs uppercase tracking-[0.22em] text-white/50">Managed plane</p>
-											<p className="text-xs text-white/45">Live</p>
-										</div>
-										<div className="mt-4 grid grid-cols-3 gap-3">
-											{heroLiveMetrics.map((stat) => (
-												<div
-													key={stat.label}
-													className="rounded-2xl border border-white/10 bg-black/20 p-3"
-												>
-													<p className="text-[11px] uppercase tracking-[0.2em] text-white/45">
-														{stat.label}
-													</p>
-													<p className={`mt-2 text-lg font-semibold ${stat.tone}`}>{stat.value}</p>
-												</div>
-											))}
-										</div>
-										<div className="mt-4 space-y-3 text-sm">
-											<div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-												<span className="text-white/72">User cap</span>
-												<span className="font-semibold text-white">$300 / day</span>
-											</div>
-											<div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-												<span className="text-white/72">Incident rule</span>
-												<span className="font-semibold text-white">Suspend at 8x</span>
-											</div>
-										</div>
-									</div>
-
-									<div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
-										<div className="flex items-center justify-between">
-											<p className="text-xs uppercase tracking-[0.22em] text-white/50">Attribution feed</p>
-											<p className="text-xs text-white/45">Live</p>
-										</div>
-										<div className="mt-4 space-y-3 text-sm">
-											{heroAttributionLines.map((line) => (
-												<div
-													key={line}
-													className="flex items-center gap-3 rounded-2xl border border-white/8 bg-black/20 px-4 py-3 text-white/70"
-												>
-													<span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-													<span>{line}</span>
-												</div>
-											))}
-										</div>
-										<div className="mt-4 space-y-3">
-											{heroVendorMix.map((row) => (
-												<div key={row.label} className="space-y-2">
-													<div className="flex items-center justify-between text-sm">
-														<span className="text-white/72">{row.label}</span>
-														<span className="text-white">{row.amount}</span>
-													</div>
-													<div className="h-2 rounded-full bg-white/8">
-														<div
-															className="h-full rounded-full bg-gradient-to-r from-brand-accent-100 via-brand-accent-200 to-brand-accent-300"
-															style={{width: row.width}}
-														/>
-													</div>
-												</div>
-											))}
-										</div>
-									</div>
-							</div>
-						</div>
-					</div>
+						<HeroSummaryCard />
 					</div>
 				</div>
 			</div>
@@ -450,6 +308,110 @@ export function SpendHero() {
 export function SpendContent() {
 	return (
 		<>
+			<section className="bg-brand-surface border-y border-brand-border/40">
+				<div className="container-custom py-[72px] lg:py-[96px]">
+					<div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+						<div className="space-y-6">
+							<SectionLabel>Deployment model</SectionLabel>
+							<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-display font-bold tracking-tight leading-[1.1] text-balance text-brand-text-primary">
+								The runtime, proxy, and ledger are separate on purpose.
+							</h2>
+							<p className="text-lg leading-8 text-brand-text-secondary text-pretty">
+								OpenShell contains execution. StringCost sits on the egress path. The managed control plane
+								closes the financial loop with policy, attribution, and reporting.
+							</p>
+							<div className="rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6">
+								<p className="text-sm font-medium text-brand-text-primary">
+									The important point is not observability after the fact. It is control while the session is
+									still alive.
+								</p>
+							</div>
+						</div>
+
+						<div className="grid gap-4 md:grid-cols-2">
+							{heroArchitectureLayers.map((layer, index) => (
+								<div
+									key={layer.title}
+									className={`rounded-[28px] border border-brand-border bg-white p-6 shadow-sm ${
+										index === 2 ? "md:col-span-2" : ""
+									}`}
+								>
+									<div className="flex items-start gap-4">
+										<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-accent-100/50">
+											<layer.icon className="h-5 w-5 text-brand-text-secondary" />
+										</div>
+										<div>
+											<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">{layer.kicker}</p>
+											<p className="mt-2 text-lg font-semibold text-brand-text-primary">{layer.title}</p>
+											<p className="mt-2 text-sm leading-6 text-brand-text-secondary">{layer.description}</p>
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<div className="mt-12 glow-card spend-panel rounded-[32px] border border-brand-border p-6 shadow-lg">
+						<div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+							<div className="rounded-[28px] border border-brand-border/70 bg-white p-6">
+								<div className="flex items-center gap-3">
+									<div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-accent-100/50">
+										<Users className="h-5 w-5 text-brand-text-secondary" />
+									</div>
+									<div>
+										<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">What the proxy sees</p>
+										<p className="mt-1 text-lg font-semibold text-brand-text-primary">
+											Repo, user, and cost center before vendor billing lands
+										</p>
+									</div>
+								</div>
+								<div className="mt-5 space-y-3 text-sm text-brand-text-secondary">
+									{heroAttributionLines.map((line) => (
+										<div
+											key={line}
+											className="flex items-center gap-3 rounded-2xl border border-brand-border/60 bg-brand-base px-4 py-3"
+										>
+											<span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+											<span>{line}</span>
+										</div>
+									))}
+								</div>
+							</div>
+
+							<div className="space-y-5">
+								<div className="rounded-[28px] border border-rose-200 bg-rose-50 p-6">
+									<p className="text-xs uppercase tracking-[0.2em] text-rose-700">Live control</p>
+									<p className="mt-2 text-lg font-semibold text-brand-text-primary">
+										Proxy event fired before the invoice existed
+									</p>
+									<p className="mt-2 text-sm leading-6 text-brand-text-secondary">
+										Agent loop exceeded baseline by 18x. The session paused after 15 minutes with repo mapping
+										and chargeback context intact.
+									</p>
+								</div>
+
+								<div className="rounded-[28px] border border-brand-border/70 bg-white p-6">
+									<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">Vendor surface</p>
+									<div className="mt-4 flex flex-wrap gap-2">
+										{heroVendorMix.map((row) => (
+											<span
+												key={row.label}
+												className="rounded-full border border-brand-border/70 bg-brand-base px-3 py-1.5 text-xs text-brand-text-secondary"
+											>
+												{row.label}
+											</span>
+										))}
+									</div>
+									<p className="mt-4 text-sm leading-6 text-brand-text-secondary">
+										This is the layer that turns raw execution into a ledger entry finance can govern.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section className="relative overflow-hidden bg-brand-base text-brand-text-primary">
 				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(217,193,215,0.2),transparent_60%)]" />
 
@@ -669,13 +631,13 @@ export function SpendContent() {
 						</p>
 					</div>
 
-					<div className="grid gap-4 lg:grid-cols-4 max-w-6xl mx-auto mb-10">
-						{runtimeBoundarySteps.map((item) => (
+					<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto mb-10">
+						{cliBridgeSteps.map((item) => (
 							<div
 								key={item.step}
-								className="rounded-[28px] border border-white/15 bg-white/5 p-5 backdrop-blur-sm"
+								className="rounded-[24px] border border-white/15 bg-white/5 p-4 backdrop-blur-sm"
 							>
-								<div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/20 text-sm font-semibold text-brand-accent-200">
+								<div className="inline-flex rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-accent-200">
 									{item.step}
 								</div>
 								<p className="mt-4 text-base font-semibold text-white">{item.title}</p>
@@ -823,9 +785,9 @@ export function SpendContent() {
 							))}
 						</div>
 
-						<div className="spend-divider my-6" />
+						<div className="spend-divider my-10" />
 
-						<div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+						<div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
 							<div className="rounded-[32px] border border-brand-border/70 bg-white p-6">
 								<div className="flex items-center justify-between">
 									<div>
@@ -859,59 +821,32 @@ export function SpendContent() {
 								</div>
 							</div>
 
-							<div className="space-y-5">
-								<div className="rounded-[32px] border border-brand-border/70 bg-white p-6">
-									<div className="flex items-center gap-3">
-										<div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-accent-100/40">
-											<Users className="h-5 w-5 text-brand-text-secondary" />
-										</div>
-										<div>
-											<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">Attribution</p>
-											<p className="mt-1 text-lg font-semibold text-brand-text-primary">
-												User, repo, team, and cost center
-											</p>
-										</div>
+							<div className="rounded-[32px] border border-emerald-200 bg-emerald-50 p-6">
+								<div className="flex items-center gap-3">
+									<div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100">
+										<TrendingUp className="h-5 w-5 text-emerald-700" />
 									</div>
-									<div className="mt-4 space-y-3 text-sm text-brand-text-secondary">
-										<div className="rounded-2xl border border-brand-border/60 bg-brand-base px-4 py-3">
-											agent-coder-12 -&gt; payments-api -&gt; platform
-										</div>
-										<div className="rounded-2xl border border-brand-border/60 bg-brand-base px-4 py-3">
-											cursor-credit-burst -&gt; akhil -&gt; engineering
-										</div>
-										<div className="rounded-2xl border border-brand-border/60 bg-brand-base px-4 py-3">
-											claude-code-session -&gt; rollout client -&gt; chargeback
-										</div>
+									<div>
+										<p className="text-xs uppercase tracking-[0.2em] text-emerald-700">Enforcement</p>
+										<p className="mt-1 text-lg font-semibold text-brand-text-primary">
+											Policy fires while the session is live
+										</p>
 									</div>
 								</div>
-
-								<div className="rounded-[32px] border border-emerald-200 bg-emerald-50 p-6">
-									<div className="flex items-center gap-3">
-										<div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100">
-											<TrendingUp className="h-5 w-5 text-emerald-700" />
-										</div>
-										<div>
-											<p className="text-xs uppercase tracking-[0.2em] text-emerald-700">Enforcement</p>
-											<p className="mt-1 text-lg font-semibold text-brand-text-primary">
-												Policy fires while the session is live
-											</p>
-										</div>
+								<div className="mt-5 space-y-3 text-sm text-brand-text-secondary">
+									<div className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-white px-4 py-3">
+										<span>User cap</span>
+										<span className="font-semibold text-brand-text-primary">$300 / day</span>
 									</div>
-									<div className="mt-4 space-y-3 text-sm text-brand-text-secondary">
-										<div className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-white px-4 py-3">
-											<span>User cap</span>
-											<span className="font-semibold text-brand-text-primary">$300 / day</span>
-										</div>
-										<div className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-white px-4 py-3">
-											<span>Incident rule</span>
-											<span className="font-semibold text-brand-text-primary">Suspend at 8x baseline</span>
-										</div>
-										<div className="rounded-2xl border border-emerald-200 bg-white px-4 py-3">
-											<p className="font-semibold text-brand-text-primary">Result</p>
-											<p className="mt-1">
-												Runaway session caught after 15 minutes, not on the monthly invoice.
-											</p>
-										</div>
+									<div className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-white px-4 py-3">
+										<span>Incident rule</span>
+										<span className="font-semibold text-brand-text-primary">Suspend at 8x baseline</span>
+									</div>
+									<div className="rounded-2xl border border-emerald-200 bg-white px-4 py-3">
+										<p className="font-semibold text-brand-text-primary">Result</p>
+										<p className="mt-1">
+											Runaway session caught after 15 minutes, not on the monthly invoice.
+										</p>
 									</div>
 								</div>
 							</div>
