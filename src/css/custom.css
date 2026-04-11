@@ -925,3 +925,24 @@ body {
 		animation: none;
 	}
 }
+
+/* Sandbox Page */
+.sandbox-code [class*="codeBlockContainer"] {
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	background: transparent;
+}
+
+.sandbox-code [class*="codeBlockContent"] pre,
+.sandbox-code pre,
+.sandbox-code code {
+	white-space: pre-wrap !important;
+	word-break: break-word !important;
+	overflow-wrap: break-word !important;
+}
+
+.sandbox-code [class*="codeBlockContent"] {
+	overflow-x: hidden;
+}
