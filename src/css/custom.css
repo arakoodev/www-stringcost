@@ -938,11 +938,11 @@ body {
 .sandbox-code [class*="codeBlockContent"] pre,
 .sandbox-code pre,
 .sandbox-code code {
-	white-space: pre-wrap !important;
-	word-break: break-word !important;
-	overflow-wrap: break-word !important;
+	white-space: pre !important;
+	word-break: normal !important;
+	overflow-wrap: normal !important;
 }
 
 .sandbox-code [class*="codeBlockContent"] {
-	overflow-x: hidden;
+	overflow-x: auto;
 }
