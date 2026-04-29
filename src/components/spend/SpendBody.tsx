@@ -6,8 +6,6 @@ import {
 	CheckCircle2,
 	ShieldCheck,
 	Sparkles,
-	TrendingUp,
-	Users,
 	Zap,
 } from "lucide-react";
 
@@ -57,49 +55,34 @@ const vendorComparisons = [
 	},
 ];
 
-const controlPillars = [
+const claudeRolloutSteps = [
 	{
-		title: "Collect telemetry",
+		kicker: "01",
+		title: "Contain",
 		description:
-			"Vendor APIs, proxy events, identity data, and billing metadata land in one stream.",
-		icon: Sparkles,
-	},
-	{
-		title: "Normalize economics",
-		description:
-			"Seats, credits, premium requests, and tokens become one comparable ledger.",
-		icon: BarChart3,
-	},
-	{
-		title: "Attribute and enforce",
-		description:
-			"Map costs to users, repos, teams, and cost centers, then trigger policy in real time.",
-		icon: ShieldCheck,
-	},
-];
-
-const heroArchitectureLayers = [
-	{
-		kicker: "Runtime",
-		title: "OpenShell-based agent sandbox",
-		description:
-			"Run coding agents inside a locked-down runtime with explicit permissions and a defined egress path.",
+			"Claude Code runs in an OpenShell-based container instead of directly on laptops with SSH keys, cloud credentials, and production env files.",
 		icon: ShieldCheck,
 	},
 	{
-		kicker: "Proxy",
-		title: "StringCost proxy in your environment",
+		kicker: "02",
+		title: "Route",
 		description:
-			"Every model call, tool call, and CLI session flows through the proxy before it becomes vendor spend.",
+			"Model calls, tool calls, and CLI sessions exit through a customer-prem StringCost proxy before they become vendor spend.",
 		icon: Zap,
 	},
 	{
-		kicker: "Managed plane",
-		title: "Cloud policy, reporting, and governance",
+		kicker: "03",
+		title: "Govern",
 		description:
-			"Budgets, repo attribution, anomaly detection, and chargebacks live in one managed control plane.",
+			"The managed plane maps usage to user, repo, team, and cost center, then applies limits, alerts, and chargeback.",
 		icon: BarChart3,
 	},
+];
+
+const claudeSessionRows = [
+	{label: "Developer", value: "Normal Claude CLI workflow"},
+	{label: "Platform", value: "Egress and key controls"},
+	{label: "Finance", value: "Live spend by owner, repo, vendor"},
 ];
 
 const runtimePressurePoints = [
@@ -114,29 +97,6 @@ const runtimePressurePoints = [
 	{
 		title: "Invoice lag",
 		description: "By the time the bill arrives, the only thing left to do is explain the overage.",
-	},
-];
-
-const cliBridgeSteps = [
-	{
-		step: "Runtime",
-		title: "Execution stays contained",
-		description: "OpenShell contains the agent before it spends.",
-	},
-	{
-		step: "CLI",
-		title: "Commands are the meter",
-		description: "Shell and tool calls are where cost actually forms.",
-	},
-	{
-		step: "Proxy",
-		title: "Egress becomes policy",
-		description: "The proxy turns live execution into enforceable spend events.",
-	},
-	{
-		step: "Ledger",
-		title: "Finance gets closure",
-		description: "The managed plane handles attribution and chargeback.",
 	},
 ];
 
@@ -305,108 +265,97 @@ export function SpendHero() {
 	);
 }
 
+export function SpendReportPreview() {
+	return (
+		<section className="bg-brand-surface text-brand-text-primary">
+			<div className="container-custom py-[48px] lg:py-[72px]">
+				<div className="mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-brand-border bg-white shadow-2xl">
+					<img
+						src="/img/report-hero.webp"
+						alt="StringCost financial reports dashboard showing vendor token spend, COGS, revenue, and gross margin"
+						width={1354}
+						height={909}
+						loading="lazy"
+						className="h-auto w-full"
+					/>
+				</div>
+			</div>
+		</section>
+	);
+}
+
 export function SpendContent() {
 	return (
 		<>
-			<section className="bg-brand-surface border-y border-brand-border/40">
-				<div className="container-custom py-[72px] lg:py-[96px]">
-					<div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-						<div className="space-y-6">
-							<SectionLabel>Deployment model</SectionLabel>
-							<h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-display font-bold tracking-tight leading-[1.1] text-balance text-brand-text-primary">
-								The runtime, proxy, and ledger are separate on purpose.
+			<section className="relative overflow-hidden bg-brand-surface border-y border-brand-border/40">
+				<div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_50%_0%,rgba(217,193,215,0.28),transparent_68%)]" />
+				<div className="container-custom relative z-10 py-[72px] lg:py-[96px]">
+					<div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+						<div className="max-w-3xl">
+							<SectionLabel>Enterprise Claude rollout</SectionLabel>
+							<h2 className="mt-5 text-[28px] sm:text-[36px] lg:text-[46px] font-display font-bold tracking-tight leading-[1.08] text-balance text-brand-text-primary">
+								Start using Claude without giving up control of spend, keys, or data.
 							</h2>
-							<p className="text-lg leading-8 text-brand-text-secondary text-pretty">
-								OpenShell contains execution. StringCost sits on the egress path. The managed control plane
-								closes the financial loop with policy, attribution, and reporting.
+							<p className="mt-5 max-w-2xl text-lg leading-8 text-brand-text-secondary text-pretty">
+								The first enterprise rollout should feel normal for developers and controlled for platform,
+								security, and finance.
 							</p>
-							<div className="rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6">
-								<p className="text-sm font-medium text-brand-text-primary">
-									The important point is not observability after the fact. It is control while the session is
-									still alive.
-								</p>
-							</div>
 						</div>
+						<div className="w-full rounded-[28px] border border-emerald-200 bg-white/80 p-5 shadow-sm backdrop-blur-sm lg:w-[300px]">
+							<div className="flex items-center justify-between gap-4">
+								<p className="text-xs uppercase tracking-[0.22em] text-brand-text-muted">Rollout state</p>
+								<span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+									<span className="h-2 w-2 rounded-full bg-emerald-500" />
+									Live policy
+								</span>
+							</div>
+							<p className="mt-4 text-2xl font-display font-bold text-brand-text-primary">Claude-ready boundary</p>
+							<p className="mt-2 text-sm leading-6 text-brand-text-secondary">
+								Container, proxy, and ledger aligned before broad adoption.
+							</p>
+						</div>
+					</div>
 
-						<div className="grid gap-4 md:grid-cols-2">
-							{heroArchitectureLayers.map((layer, index) => (
-								<div
-									key={layer.title}
-									className={`rounded-[28px] border border-brand-border bg-white p-6 shadow-sm ${
-										index === 2 ? "md:col-span-2" : ""
-									}`}
-								>
-									<div className="flex items-start gap-4">
-										<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-accent-100/50">
-											<layer.icon className="h-5 w-5 text-brand-text-secondary" />
+					<div className="mt-10 glow-card spend-panel rounded-[36px] border border-brand-border p-5 shadow-lg sm:p-6 lg:p-7">
+						<div className="grid gap-4 lg:grid-cols-3">
+							{claudeRolloutSteps.map((step, index) => (
+								<div key={step.title} className="relative rounded-[28px] border border-brand-border/70 bg-white p-5 shadow-sm">
+									{index < claudeRolloutSteps.length - 1 && (
+										<div className="absolute left-[calc(100%-0.5rem)] top-1/2 z-10 hidden h-px w-8 bg-gradient-to-r from-brand-accent-200 to-transparent lg:block" />
+									)}
+									<div className="flex items-start gap-4 lg:block">
+										<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-accent-100/55 ring-1 ring-brand-accent-200/30">
+											<step.icon className="h-5 w-5 text-brand-text-secondary" />
 										</div>
-										<div>
-											<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">{layer.kicker}</p>
-											<p className="mt-2 text-lg font-semibold text-brand-text-primary">{layer.title}</p>
-											<p className="mt-2 text-sm leading-6 text-brand-text-secondary">{layer.description}</p>
+										<div className="lg:mt-5">
+											<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">{step.kicker}</p>
+											<p className="mt-2 text-xl font-semibold text-brand-text-primary">{step.title}</p>
+											<p className="mt-2 text-sm leading-6 text-brand-text-secondary">{step.description}</p>
 										</div>
 									</div>
 								</div>
 							))}
 						</div>
-					</div>
 
-					<div className="mt-12 glow-card spend-panel rounded-[32px] border border-brand-border p-6 shadow-lg">
-						<div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-							<div className="rounded-[28px] border border-brand-border/70 bg-white p-6">
-								<div className="flex items-center gap-3">
-									<div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-accent-100/50">
-										<Users className="h-5 w-5 text-brand-text-secondary" />
-									</div>
-									<div>
-										<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">What the proxy sees</p>
-										<p className="mt-1 text-lg font-semibold text-brand-text-primary">
-											Repo, user, and cost center before vendor billing lands
-										</p>
-									</div>
+						<div className="mt-5 grid overflow-hidden rounded-[24px] border border-brand-border/70 bg-brand-base sm:grid-cols-3">
+							{claudeSessionRows.map((row, index) => (
+								<div
+									key={row.label}
+									className={`px-5 py-4 ${index !== claudeSessionRows.length - 1 ? "border-b border-brand-border/70 sm:border-b-0 sm:border-r" : ""}`}
+								>
+									<p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-text-muted">
+										{row.label}
+									</p>
+									<p className="mt-2 text-sm font-medium text-brand-text-primary">{row.value}</p>
 								</div>
-								<div className="mt-5 space-y-3 text-sm text-brand-text-secondary">
-									{heroAttributionLines.map((line) => (
-										<div
-											key={line}
-											className="flex items-center gap-3 rounded-2xl border border-brand-border/60 bg-brand-base px-4 py-3"
-										>
-											<span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-											<span>{line}</span>
-										</div>
-									))}
-								</div>
-							</div>
+							))}
+						</div>
 
-							<div className="space-y-5">
-								<div className="rounded-[28px] border border-rose-200 bg-rose-50 p-6">
-									<p className="text-xs uppercase tracking-[0.2em] text-rose-700">Live control</p>
-									<p className="mt-2 text-lg font-semibold text-brand-text-primary">
-										Proxy event fired before the invoice existed
-									</p>
-									<p className="mt-2 text-sm leading-6 text-brand-text-secondary">
-										Agent loop exceeded baseline by 18x. The session paused after 15 minutes with repo mapping
-										and chargeback context intact.
-									</p>
-								</div>
-
-								<div className="rounded-[28px] border border-brand-border/70 bg-white p-6">
-									<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">Vendor surface</p>
-									<div className="mt-4 flex flex-wrap gap-2">
-										{heroVendorMix.map((row) => (
-											<span
-												key={row.label}
-												className="rounded-full border border-brand-border/70 bg-brand-base px-3 py-1.5 text-xs text-brand-text-secondary"
-											>
-												{row.label}
-											</span>
-										))}
-									</div>
-									<p className="mt-4 text-sm leading-6 text-brand-text-secondary">
-										This is the layer that turns raw execution into a ledger entry finance can govern.
-									</p>
-								</div>
-							</div>
+						<div className="mt-5 rounded-2xl border border-brand-accent-300/50 bg-brand-accent-300/10 px-5 py-4">
+							<p className="text-sm font-medium leading-6 text-brand-text-primary">
+								The result: developers can start with Claude Code, while enterprise controls exist before
+								usage becomes a procurement surprise.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -503,81 +452,6 @@ export function SpendContent() {
 						</div>
 					</div>
 
-					<div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto mt-8">
-						<div className="rounded-2xl border border-brand-accent-300 bg-brand-accent-300/10 p-6 shadow-sm mesh-gradient-bg">
-							<div className="flex flex-col gap-4">
-								<div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-									<div className="sm:flex-1">
-										<p className="font-body text-base font-semibold text-brand-text-primary sm:text-lg">
-											<a
-												href="https://www.fastcompany.com/91520702/y-combinator-garry-tan-agentic-ai-social-media"
-												target="_blank"
-												rel="noopener noreferrer"
-												className="hover:underline"
-											>
-												Fast Company:
-											</a>
-										</p>
-										<p className="mt-2 font-body text-base italic text-brand-text-secondary sm:text-lg">
-											<em>
-												&ldquo;Y Combinator&apos;s CEO says he ships{" "}
-												<strong className="underline-hand text-brand-text-primary">37,000 lines of AI code per day</strong>.
-												A developer looked under the hood.&rdquo;
-											</em>
-										</p>
-									</div>
-								</div>
-								<div className="border-l-4 border-brand-accent-200 pl-4">
-									<p className="font-body text-sm text-brand-text-secondary">
-										When one developer can ship that much AI-generated code, the real meter is runtime
-										execution, not seat count. Without a proxy on that path, the extra velocity turns straight
-										into <strong className="text-brand-text-primary">uncapped token burn</strong> and{" "}
-										<strong className="text-brand-text-primary">runaway invoices</strong>.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div className="rounded-2xl border border-brand-accent-100 bg-brand-surface p-6 shadow-sm">
-							<div className="flex items-center gap-3 mb-4">
-								<div className="h-10 w-10 rounded-full bg-brand-accent-100 flex items-center justify-center text-sm font-bold text-brand-text-secondary">
-									GT
-								</div>
-								<div>
-									<a
-										href="https://x.com/garrytan/status/2031910564344262988"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-sm font-semibold text-brand-text-primary hover:underline"
-									>
-										@garrytan
-									</a>
-									<p className="text-xs text-brand-text-muted">Y Combinator CEO</p>
-								</div>
-							</div>
-							<blockquote className="text-sm text-brand-text-secondary leading-relaxed italic mb-4">
-								&ldquo;I&apos;m working on 3 different big projects simultaneously across 15 sessions all the time.
-								In the last 7 days I&apos;m averaging{" "}
-								<strong className="underline-hand text-brand-text-primary not-italic">17k lines of code per day</strong>,
-								35% tests.&rdquo;
-							</blockquote>
-							<div className="border-l-4 border-brand-accent-200 pl-3">
-								<p className="text-xs text-brand-text-muted">
-									Fifteen concurrent sessions means fifteen live cost surfaces. The control point is the runtime
-									and proxy boundary, not the invoice artifact at month-end.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div className="max-w-3xl mx-auto mt-8">
-						<div className="rounded-2xl border border-brand-overlay/60 bg-brand-surface p-5">
-							<p className="text-sm font-medium text-brand-text-primary text-center">
-								78% of IT leaders report unexpected charges from AI consumption tiers. The flat-rate SaaS budget
-								is a myth in the age of LLM inference.
-							</p>
-						</div>
-					</div>
 				</div>
 			</section>
 
@@ -618,8 +492,6 @@ export function SpendContent() {
 						</div>
 
 						<h2 className="text-[28px] sm:text-[36px] lg:text-[46px] font-display font-bold tracking-tight leading-[1.1] text-balance">
-							All agents are coding agents.
-							<br />
 							<span className="bg-gradient-to-r from-white via-brand-accent-100 to-brand-accent-200 bg-clip-text text-transparent">
 								Your compliance &amp; spend boundary is the CLI.
 							</span>
@@ -631,25 +503,44 @@ export function SpendContent() {
 						</p>
 					</div>
 
-					<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto mb-10">
-						{cliBridgeSteps.map((item) => (
-							<div
-								key={item.step}
-								className="rounded-[24px] border border-white/15 bg-white/5 p-4 backdrop-blur-sm"
-							>
-								<div className="inline-flex rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-accent-200">
-									{item.step}
+					<div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto mt-8">
+						<div className="rounded-2xl border border-brand-accent-200/50 bg-brand-accent-300/10 p-6 shadow-sm mesh-gradient-bg">
+							<div className="flex flex-col gap-4">
+								<div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+									<div className="sm:flex-1">
+										<p className="font-body text-base font-semibold text-white sm:text-lg">
+											<a
+												href="https://www.fastcompany.com/91520702/y-combinator-garry-tan-agentic-ai-social-media"
+												target="_blank"
+												rel="noopener noreferrer"
+												className="hover:underline"
+											>
+												Fast Company:
+											</a>
+										</p>
+										<p className="mt-2 font-body text-base italic text-white/72 sm:text-lg">
+											<em>
+												&ldquo;Y Combinator&apos;s CEO says he ships{" "}
+												<strong className="underline-hand text-white">37,000 lines of AI code per day</strong>.
+												A developer looked under the hood.&rdquo;
+											</em>
+										</p>
+									</div>
 								</div>
-								<p className="mt-4 text-base font-semibold text-white">{item.title}</p>
-								<p className="mt-2 text-sm leading-6 text-white/68">{item.description}</p>
+								<div className="border-l-4 border-brand-accent-200 pl-4">
+									<p className="font-body text-sm text-white/72">
+										When one developer can ship that much AI-generated code, the real meter is runtime
+										execution, not seat count. Without a proxy on that path, the extra velocity turns straight
+										into <strong className="text-brand-text-primary">uncapped token burn</strong> and{" "}
+										<strong className="text-brand-text-primary">runaway invoices</strong>.
+									</p>
+								</div>
 							</div>
-						))}
-					</div>
+						</div>
 
-					<div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto mb-10">
-						<div className="rounded-2xl border border-rose-300/25 bg-gradient-to-br from-rose-400/12 via-white/5 to-transparent p-6 backdrop-blur-sm shadow-[0_20px_60px_-40px_rgba(251,113,133,0.6)]">
+						<div className="rounded-2xl border border-white/15 bg-white/5 p-6 shadow-sm">
 							<div className="flex items-center gap-3 mb-4">
-								<div className="h-10 w-10 rounded-full bg-rose-300/20 ring-1 ring-rose-200/30 flex items-center justify-center text-sm font-bold text-rose-200">
+								<div className="h-10 w-10 rounded-full bg-brand-accent-100/30 flex items-center justify-center text-sm font-bold text-white/72">
 									GT
 								</div>
 								<div>
@@ -657,80 +548,38 @@ export function SpendContent() {
 										href="https://x.com/garrytan/status/2031910564344262988"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-sm font-semibold text-white hover:text-rose-100 hover:underline"
+										className="text-sm font-semibold text-white hover:underline"
 									>
 										@garrytan
 									</a>
-									<p className="text-xs text-rose-100/65">Y Combinator CEO</p>
+									<p className="text-xs text-white/55">Y Combinator CEO</p>
 								</div>
 							</div>
-							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
-								&ldquo;<strong className="text-white not-italic">MCP sucks honestly.</strong> It eats too much
-								context window and you have to toggle it on and off and the auth sucks. I vibe coded a{" "}
-								<strong className="underline-hand-green text-white not-italic">CLI wrapper</strong> in 30
-								minutes... it worked 100x better and was like 100LOC.&rdquo;
+							<blockquote className="text-sm text-white/72 leading-relaxed italic mb-4">
+								&ldquo;I&apos;m working on 3 different big projects simultaneously across 15 sessions all the time.
+								In the last 7 days I&apos;m averaging{" "}
+								<strong className="underline-hand text-white not-italic">17k lines of code per day</strong>,
+								35% tests.&rdquo;
 							</blockquote>
-							<p className="text-xs text-rose-100/70 border-l-2 border-rose-200/60 pl-3">
-								YC&apos;s CEO ditched MCP for a CLI he built in 30 minutes.
-							</p>
+							<div className="border-l-4 border-brand-accent-200 pl-3">
+								<p className="text-xs text-white/55">
+									Fifteen concurrent sessions means fifteen live cost surfaces. The control point is the runtime
+									and proxy boundary, not the invoice artifact at month-end.
+								</p>
+							</div>
 						</div>
+					</div>
 
-						<div className="rounded-2xl border border-sky-300/25 bg-gradient-to-br from-sky-400/12 via-white/5 to-transparent p-6 backdrop-blur-sm shadow-[0_20px_60px_-40px_rgba(56,189,248,0.55)]">
-							<div className="flex items-center gap-3 mb-4">
-								<div className="h-10 w-10 rounded-full bg-sky-300/20 ring-1 ring-sky-200/30 flex items-center justify-center text-sm font-bold text-sky-200">
-									ML
-								</div>
-								<div>
-									<a
-										href="https://x.com/morganlinton/status/2031795683897077965"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-sm font-semibold text-white hover:text-sky-100 hover:underline"
-									>
-										@morganlinton
-									</a>
-									<p className="text-xs text-sky-100/65">on Perplexity</p>
-								</div>
-							</div>
-							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
-								&ldquo;The cofounder and CTO of Perplexity just said internally at Perplexity they&apos;re{" "}
-								<strong className="underline-hand-green text-white not-italic">moving away from MCPs</strong> and
-								instead using APIs and CLIs.&rdquo;
-							</blockquote>
-							<p className="text-xs text-sky-100/70 border-l-2 border-sky-200/60 pl-3">
-								Perplexity is dropping MCP for APIs and CLIs internally.
-							</p>
-						</div>
-
-						<div className="rounded-2xl border border-amber-300/25 bg-gradient-to-br from-amber-300/12 via-white/5 to-transparent p-6 backdrop-blur-sm shadow-[0_20px_60px_-40px_rgba(251,191,36,0.5)]">
-							<div className="flex items-center gap-3 mb-4">
-								<div className="h-10 w-10 rounded-full bg-amber-300/20 ring-1 ring-amber-200/30 flex items-center justify-center text-sm font-bold text-amber-100">
-									KV
-								</div>
-								<div>
-									<a
-										href="https://x.com/KaranVaidya6/status/2037530089706176638"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-sm font-semibold text-white hover:text-amber-50 hover:underline"
-									>
-										@KaranVaidya6
-									</a>
-									<p className="text-xs text-amber-50/65">Composio</p>
-								</div>
-							</div>
-							<blockquote className="text-sm text-white/80 leading-relaxed italic mb-4">
-								&ldquo;We posed a simple question: MCP or CLI? Basically everyone under 35 said CLI. Final score
-								- <strong className="underline-hand-green text-white not-italic">MCP: 3 vs CLI: 17</strong>. SF
-								has spoken.&rdquo;
-							</blockquote>
-							<p className="text-xs text-amber-50/70 border-l-2 border-amber-200/60 pl-3">
-								SF developers voted. The CLI won in a landslide.
+					<div className="max-w-3xl mx-auto mt-8">
+						<div className="rounded-2xl border border-white/15 bg-white/5 p-5">
+							<p className="text-sm font-medium text-white text-center">
+								78% of IT leaders report unexpected charges from AI consumption tiers. The flat-rate SaaS budget
+								is a myth in the age of LLM inference.
 							</p>
 						</div>
 					</div>
 
-					<div className="max-w-3xl mx-auto mb-8">
+					<div className="max-w-3xl mx-auto mb-10">
 						<div className="border-l-2 border-brand-accent-200 pl-5 py-2">
 							<p className="text-sm text-white/70">
 								<strong className="text-white">OpenClaw</strong> (60K+ GitHub stars) proves the point. It
@@ -743,117 +592,8 @@ export function SpendContent() {
 						</div>
 					</div>
 
-					<div className="max-w-3xl mx-auto">
-						<div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6 text-center">
-							<p className="text-sm font-medium text-white">
-								If agents write code through a CLI, then the spend boundary is where that CLI leaves the
-								sandbox. StringCost owns that path: runtime policy in OpenShell, egress control in the proxy,
-								and ledger policy in the managed plane.
-							</p>
-						</div>
 					</div>
-				</div>
-			</section>
-
-			<section className="bg-brand-surface">
-				<div className="container-custom py-[60px] lg:py-[84px]">
-					<div className="max-w-3xl space-y-4 mb-10">
-						<SectionLabel>How StringCost works</SectionLabel>
-						<h2 className="text-[28px] sm:text-[36px] lg:text-[46px] font-display font-bold tracking-tight leading-[1.1] text-balance text-brand-text-primary">
-							StringCost is the operating layer between your tools and the invoice.
-						</h2>
-						<p className="text-lg leading-8 text-brand-text-secondary text-pretty">
-							Instead of waiting for every AI vendor to expose the same controls, StringCost builds one spend
-							system across all of them. It sees the telemetry, normalizes the economics, and turns budget policy
-							into runtime enforcement.
-						</p>
-					</div>
-
-					<div className="glow-card spend-panel rounded-[36px] border border-brand-border p-6 shadow-lg">
-						<div className="grid gap-6 lg:grid-cols-3">
-							{controlPillars.map((pillar) => (
-								<div
-									key={pillar.title}
-									className="rounded-[28px] border border-brand-border/70 bg-white px-5 py-5"
-								>
-									<pillar.icon className="h-5 w-5 text-brand-text-secondary" />
-									<h3 className="mt-4 text-base font-semibold text-brand-text-primary">{pillar.title}</h3>
-									<p className="mt-2 text-sm leading-6 text-brand-text-secondary">
-										{pillar.description}
-									</p>
-								</div>
-							))}
-						</div>
-
-						<div className="spend-divider my-10" />
-
-						<div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-							<div className="rounded-[32px] border border-brand-border/70 bg-white p-6">
-								<div className="flex items-center justify-between">
-									<div>
-										<p className="text-xs uppercase tracking-[0.2em] text-brand-text-muted">Unified ledger</p>
-										<p className="mt-2 text-xl font-semibold text-brand-text-primary">
-											One stream of spend across seats, credits, and tokens
-										</p>
-									</div>
-									<BarChart3 className="h-5 w-5 text-brand-text-secondary" />
-								</div>
-								<div className="mt-6 space-y-4">
-									{[
-										{label: "Cursor pooled credits", amount: "$182.40", width: "74%"},
-										{label: "Claude Code sessions", amount: "$149.20", width: "61%"},
-										{label: "Copilot premium requests", amount: "$94.60", width: "42%"},
-										{label: "Direct API usage", amount: "$56.50", width: "28%"},
-									].map((row) => (
-										<div key={row.label} className="space-y-2">
-											<div className="flex items-center justify-between text-sm">
-												<span className="text-brand-text-secondary">{row.label}</span>
-												<span className="font-semibold text-brand-text-primary">{row.amount}</span>
-											</div>
-											<div className="h-2 rounded-full bg-brand-base">
-												<div
-													className="h-full rounded-full bg-gradient-to-r from-brand-accent-100 via-brand-accent-200 to-brand-accent-300"
-													style={{width: row.width}}
-												/>
-											</div>
-										</div>
-									))}
-								</div>
-							</div>
-
-							<div className="rounded-[32px] border border-emerald-200 bg-emerald-50 p-6">
-								<div className="flex items-center gap-3">
-									<div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100">
-										<TrendingUp className="h-5 w-5 text-emerald-700" />
-									</div>
-									<div>
-										<p className="text-xs uppercase tracking-[0.2em] text-emerald-700">Enforcement</p>
-										<p className="mt-1 text-lg font-semibold text-brand-text-primary">
-											Policy fires while the session is live
-										</p>
-									</div>
-								</div>
-								<div className="mt-5 space-y-3 text-sm text-brand-text-secondary">
-									<div className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-white px-4 py-3">
-										<span>User cap</span>
-										<span className="font-semibold text-brand-text-primary">$300 / day</span>
-									</div>
-									<div className="flex items-center justify-between rounded-2xl border border-emerald-200 bg-white px-4 py-3">
-										<span>Incident rule</span>
-										<span className="font-semibold text-brand-text-primary">Suspend at 8x baseline</span>
-									</div>
-									<div className="rounded-2xl border border-emerald-200 bg-white px-4 py-3">
-										<p className="font-semibold text-brand-text-primary">Result</p>
-										<p className="mt-1">
-											Runaway session caught after 15 minutes, not on the monthly invoice.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+				</section>
 
 			<section className="bg-brand-base">
 				<div className="container-custom py-[60px] lg:py-[84px]">

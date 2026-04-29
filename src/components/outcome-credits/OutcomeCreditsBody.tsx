@@ -17,47 +17,46 @@ export function OutcomeCreditsHero() {
 			<div className='container-custom flex flex-col gap-8 py-[72px] sm:py-[100px] lg:py-[128px]'>
 				<span className='font-body text-[15px] uppercase tracking-[0.3em] text-brand-text-muted font-medium'>Billing Infrastructure for Agents</span>
 				<div className='flex flex-col gap-6 max-w-4xl'>
-					<h1 className='font-display text-[28px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold tracking-tight leading-[1.1] text-balance'>
+					<h1 className='font-display text-[34px] sm:text-[52px] lg:text-[76px] font-bold tracking-tight leading-[1.04] text-balance'>
 						StringCost:<br />Credit-based Billing for AI Companies.
 					</h1>
-					<div className='space-y-6 max-w-3xl'>
-						<div className='space-y-4'>
-							<p className='font-display text-lg sm:text-xl font-medium leading-[1.4] text-brand-text-primary text-pretty border-l-4 border-brand-accent-300 pl-4'>
-								StringCost automatically creates and <span className='highlight-hand-inline font-semibold'>prices credits</span> from your underlying token, reasoning, and MCP costs. Then <span className='underline-hand'>calculates consumption</span>, <span className='underline-hand'>margin</span>, handles <span className='underline-hand'>billing overages</span> and <span className='underline-hand'>invoicing</span> with complex <span className='underline-hand'>Cost-Plus</span> calculations.
-							</p>
-							
-							<p className='font-body text-lg leading-[1.55] text-brand-text-secondary text-pretty'>
-								Implement the credit-based billing model used by <strong className='text-brand-text-primary'>Lovable</strong> without building the backend yourself. Without integrating any complex code or SDKs.
-							</p>
-						</div>
+					<div className='space-y-5 max-w-2xl'>
+						<p className='font-display text-lg sm:text-xl font-medium leading-[1.4] text-brand-text-primary text-pretty border-l-4 border-brand-accent-300 pl-4'>
+							StringCost automatically creates and <span className='highlight-hand-inline font-semibold'>prices credits</span> from your underlying token, reasoning, and MCP costs. Then <span className='underline-hand'>calculates consumption</span>, <span className='underline-hand'>margin</span>, handles <span className='underline-hand'>billing overages</span> and <span className='underline-hand'>invoicing</span> with complex <span className='underline-hand'>Cost-Plus</span> calculations.
+						</p>
+
+						<p className='font-body text-lg leading-[1.55] text-brand-text-secondary text-pretty'>
+							Implement the credit-based billing model used by <strong className='text-brand-text-primary'>Lovable</strong> without building the backend yourself. Without integrating any complex code or SDKs.
+						</p>
 					</div>
-					<div className='flex flex-wrap gap-2 pt-2'>
+
+					<div className='flex flex-wrap gap-2 pt-1'>
 						{creditTags.map((tag) => (
 							<span key={tag.label} className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${tag.color}`}>
 								{tag.label}
 							</span>
 						))}
 					</div>
-				</div>
 
-				<div className='flex flex-col gap-3 sm:flex-row sm:items-center pt-4'>
-					<span className="cta-glow">
+					<div className='flex flex-col gap-3 sm:flex-row sm:items-center pt-2'>
+						<span className="cta-glow">
+							<a
+								href='http://app.stringcost.com/'
+								className={primaryButton}
+							>
+								Launch Credit Billing Free
+								<ArrowRight className="w-4 h-4 ml-2" />
+							</a>
+						</span>
 						<a
 							href='http://app.stringcost.com/'
-							className={primaryButton}
+							className={secondaryButton}
 						>
-							Launch Credit Billing Free
-							<ArrowRight className="w-4 h-4 ml-2" />
+							Take a Quick Tour
 						</a>
-					</span>
-					<a
-						href='http://app.stringcost.com/'
-						className={secondaryButton}
-					>
-						Take a Quick Tour
-					</a>
+					</div>
+					<p className="text-xs text-brand-text-muted tracking-wide">Used by AI-first companies worldwide</p>
 				</div>
-				<p className="text-xs text-brand-text-muted mt-3 tracking-wide">Used by AI-first companies worldwide</p>
 			</div>
 		</section>
 	);
@@ -376,6 +375,22 @@ export function OutcomeCreditsContent() {
 								</p>
 							</div>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* Financial Reporting Preview */}
+			<section className='bg-brand-base text-brand-text-primary pb-[72px] lg:pb-[100px]'>
+				<div className='container-custom'>
+					<div className='mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-brand-border bg-white shadow-2xl'>
+						<img
+							src='/img/report-hero.webp'
+							alt='StringCost financial reports dashboard showing vendor token spend, COGS, revenue, and gross margin'
+							width={1354}
+							height={909}
+							loading='lazy'
+							className='h-auto w-full'
+						/>
 					</div>
 				</div>
 			</section>

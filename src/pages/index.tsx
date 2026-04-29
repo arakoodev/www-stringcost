@@ -1,1 +1,1 @@
-export {default} from "../components/outcome-credits/OutcomeCreditsPage";
+export {default} from "../components/spend/SpendPage";
